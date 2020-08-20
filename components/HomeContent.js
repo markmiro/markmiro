@@ -4,8 +4,8 @@ export default function HomeContent() {
   return (
     <div>
       <img
-        src="/mark-miro-portrait-1x.jpg"
-        srcset="/mark-miro-portrait-2x.jpg 2x"
+        src="/markmiro-portrait-1x.jpg"
+        srcset="/markmiro-portrait-2x.jpg 2x"
       />
       <h1>
         Mark Miro
