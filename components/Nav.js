@@ -4,10 +4,12 @@ import { useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
 import c from 'classnames'
 
-import Spacer from './Spacer'
-import ActiveLink from './ActiveLink'
+import theme from './theme'
 import navLinks from './navLinks'
 import socialLinks from './socialLinks'
+import Spacer from './Spacer'
+import ActiveLink from './ActiveLink'
+import MyNameAndTitle from './MyNameAndTitle'
 
 const nav = css`
   overflow: scroll;
@@ -17,18 +19,17 @@ const nav = css`
   justify-content: space-between;
   flex-shrink: 0;
 
-  padding: 1em;
-  background: #eee;
-  min-width: 12em;
-  line-height: 1.5;
+  padding: ${theme.space[2]} ${theme.space[3]};
+  min-width: ${theme.measure.navColumnText};
+  line-height: ${theme.lineHeights[1]};
 
-  @media (max-width: 767px) {
+  @media ${theme.mediaQueryies.mobileAndBelow} {
     height: 0;
     overflow: hidden;
     display: none;
   }
 
-  @media (min-width: 768px) {
+  @media ${theme.mediaQueryies.mobileAndAbove} {
     position: sticky;
     max-height: 100vh;
     top: 0;
@@ -48,7 +49,7 @@ const flexCol = css`
 
 export default function Nav() {
   const [navMobileShow, setNavMobileShow] = useState(false)
-  const isMobile = useMediaQuery({ maxWidth: 767 })
+  const isMobile = useMediaQuery({ query: theme.mediaQueryies.mobileAndBelow })
 
   return (
     <>
@@ -57,11 +58,8 @@ export default function Nav() {
       )}
       <nav className={c(nav, navMobileShow && navMobileShowCss)}>
         <section className={flexCol}>
-          <h1>
-            Mark Miro
-            <br />
-            <small>UI Engineer</small>
-          </h1>
+          <MyNameAndTitle />
+          <Spacer size={2} />
           {navLinks.map(({ href, children }) => (
             <ActiveLink key={href} href={href}>
               {children}

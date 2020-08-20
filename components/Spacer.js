@@ -1,9 +1,11 @@
+import theme from './theme'
+
 export default function Spacer({ size }) {
   return (
     <div
       style={{
-        width: `${size}em`,
-        height: `${size}em`,
+        width: theme.space[size],
+        height: theme.space[size],
         flexShrink: 0,
       }}
     />

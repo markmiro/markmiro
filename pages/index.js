@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { styled } from 'linaria/react'
 
 import HomeContent from '../components/HomeContent'
+import theme from '../components/theme'
 
 const HomeContainer = styled.div`
   flex-shrink: 0;
@@ -9,16 +10,16 @@ const HomeContainer = styled.div`
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  padding-top: 2em;
-  padding-bottom: 2em;
+  padding-top: ${theme.space[3]};
+  padding-bottom: ${theme.space[3]};
 `
 
 const Footer = styled.footer`
-  padding: 1em;
-  border-top: 1px solid #eee;
-  font-size: 14px;
+  padding: ${theme.space[1]};
+  border-top: 1px solid ${theme.colors.neutral.light};
+  font-size: ${theme.fontSizes[-1]};
   text-align: center;
-  color: #999;
+  color: ${theme.colors.neutral.dark};
 `
 
 export default function Home() {

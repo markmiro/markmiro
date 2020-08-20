@@ -1,25 +1,27 @@
 import Head from 'next/head'
 import { css } from 'linaria'
+
+import theme from './theme'
 import Nav from './Nav'
 import Spacer from './Spacer'
 
 const page = css`
   display: flex;
   align-items: flex-start;
-  @media (max-width: 767px) {
+  @media ${theme.mediaQueryies.mobileAndBelow} {
     flex-direction: column;
   }
 `
 
 const content = css`
   flex-grow: 1;
-  padding: calc(1em + 3vw);
+  padding: calc(${theme.space[0]} + 3vw);
   display: flex;
   justify-content: center;
 `
 
 const contentInner = css`
-  max-width: 35em;
+  max-width: ${theme.measure[0]};
 `
 
 export default function Page({ title, children }) {

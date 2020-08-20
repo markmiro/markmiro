@@ -1,12 +1,15 @@
 // Code stolen from: https://nextjs.org/docs/api-reference/next/router#userouter
 import { useRouter } from 'next/router'
+import theme from './theme'
 
 function ActiveLink({ children, href }) {
   const router = useRouter()
 
   const style = {
-    marginRight: 10,
-    color: router.pathname === href ? 'red' : 'black',
+    color:
+      router.pathname === href
+        ? theme.colors.red
+        : theme.colors.neutral.darkest,
   }
 
   const handleClick = (e) => {
