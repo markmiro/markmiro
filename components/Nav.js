@@ -25,14 +25,16 @@ export default function Nav() {
             <small>UI Engineer</small>
           </h1>
           {navLinks.map(({ href, children }) => (
-            <ActiveLink href={href}>{children}</ActiveLink>
+            <ActiveLink key={href} href={href}>
+              {children}
+            </ActiveLink>
           ))}
         </section>
         <Spacer size={2} />
         <section className={styles.flexcol}>
           <header>Links</header>
           {socialLinks.map(({ href, children }) => (
-            <Link href={href}>
+            <Link key={href} href={href}>
               <a>{children}</a>
             </Link>
           ))}

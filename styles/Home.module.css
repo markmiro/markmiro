@@ -1,0 +1,51 @@
+.homeContainer {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+.name {
+  margin-top: 49px; /* to align with the dark/light separation line in the background of markmiro-portrait.jpg */
+  font-size: 48px;
+  font-weight: 400;
+}
+
+.title {
+  font-size: 18px;
+  display: block;
+}
+
+.link {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.hr {
+  border: none;
+  border-top: 0.5px solid black;
+  opacity: 0.25;
+}
+
+.social {
+  display: flex;
+  margin-top: -6px; /* Minor adjustment so social links appear to be the same distance from the hr element as the img element right above that hr element */
+  font-size: 14px;
+}
+
+.flexcol {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.footer {
+  padding: 1em;
+  border-top: 1px solid #eee;
+  font-size: 14px;
+  text-align: center;
+  color: #999;
+}
