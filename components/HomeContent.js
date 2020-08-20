@@ -5,7 +5,7 @@ export default function HomeContent() {
     <div>
       <img
         src="/markmiro-portrait-1x.jpg"
-        srcset="/markmiro-portrait-2x.jpg 2x"
+        srcSet="/markmiro-portrait-2x.jpg 2x"
       />
       <h1>
         Mark Miro
@@ -13,17 +13,31 @@ export default function HomeContent() {
       </h1>
       <section>
         <nav>
-          <Link href="/about">About</Link>
-          <Link href="/posts">Posts</Link>
-          <Link href="/projects">Projects</Link>
+          <Link href="/about">
+            <a>About</a>
+          </Link>
+          <Link href="/posts">
+            <a>Posts</a>
+          </Link>
+          <Link href="/projects">
+            <a>Projects</a>
+          </Link>
         </nav>
       </section>
       <section>
         <header>Links</header>
-        <Link href="https://codepen.io/markmiro">CodePen</Link>
-        <Link href="https://codesandbox.io/u/markmiro">CodeSandBox</Link>
-        <Link href="https://twitter.com/markmiro">Twitter</Link>
-        <Link href="https://github.com/markmiro">GitHub</Link>
+        <Link href="https://codepen.io/markmiro">
+          <a>CodePen</a>
+        </Link>
+        <Link href="https://codesandbox.io/u/markmiro">
+          <a>CodeSandBox</a>
+        </Link>
+        <Link href="https://twitter.com/markmiro">
+          <a>Twitter</a>
+        </Link>
+        <Link href="https://github.com/markmiro">
+          <a>GitHub</a>
+        </Link>
       </section>
       <footer>Last updated Jan 2, 2020</footer>
     </div>
