@@ -1,0 +1,21 @@
+.page {
+  display: flex;
+  align-items: flex-start;
+}
+
+@media (max-width: 767px) {
+  .page {
+    flex-direction: column;
+  }
+}
+
+.content {
+  flex-grow: 1;
+  padding: calc(1em + 3vw);
+  display: flex;
+  justify-content: center;
+}
+
+.contentInner {
+  max-width: 35em;
+}
