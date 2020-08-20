@@ -3,8 +3,10 @@ import { useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
 import c from 'classnames'
 import styles from '../styles/Nav.module.css'
-import ActiveLink from './ActiveLink'
 import Spacer from './Spacer'
+import ActiveLink from './ActiveLink'
+import navLinks from './navLinks'
+import socialLinks from './socialLinks'
 
 export default function Nav() {
   const [navMobileShow, setNavMobileShow] = useState(false)
@@ -22,26 +24,18 @@ export default function Nav() {
             <br />
             <small>UI Engineer</small>
           </h1>
-          <ActiveLink href="/">Home</ActiveLink>
-          <ActiveLink href="/about">About</ActiveLink>
-          <ActiveLink href="/posts">Posts</ActiveLink>
-          <ActiveLink href="/projects">Projects</ActiveLink>
+          {navLinks.map(({ href, children }) => (
+            <ActiveLink href={href}>{children}</ActiveLink>
+          ))}
         </section>
         <Spacer size={2} />
         <section className={styles.flexcol}>
           <header>Links</header>
-          <Link href="https://codepen.io/markmiro">
-            <a>CodePen</a>
-          </Link>
-          <Link href="https://codesandbox.io/u/markmiro">
-            <a>CodeSandBox</a>
-          </Link>
-          <Link href="https://twitter.com/markmiro">
-            <a>Twitter</a>
-          </Link>
-          <Link href="https://github.com/markmiro">
-            <a>GitHub</a>
-          </Link>
+          {socialLinks.map(({ href, children }) => (
+            <Link href={href}>
+              <a>{children}</a>
+            </Link>
+          ))}
         </section>
       </nav>
     </>
