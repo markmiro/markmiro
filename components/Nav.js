@@ -1,12 +1,50 @@
 import Link from 'next/link'
+import { css } from 'linaria'
 import { useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
 import c from 'classnames'
-import styles from '../styles/Nav.module.css'
+
 import Spacer from './Spacer'
 import ActiveLink from './ActiveLink'
 import navLinks from './navLinks'
 import socialLinks from './socialLinks'
+
+const nav = css`
+  overflow: scroll;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-shrink: 0;
+
+  padding: 1em;
+  background: #eee;
+  min-width: 12em;
+  line-height: 1.5;
+
+  @media (max-width: 767px) {
+    height: 0;
+    overflow: hidden;
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    position: sticky;
+    max-height: 100vh;
+    top: 0;
+  }
+`
+
+const navMobileShowCss = css`
+  height: 100%;
+  display: flex;
+`
+
+const flexCol = css`
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+`
 
 export default function Nav() {
   const [navMobileShow, setNavMobileShow] = useState(false)
@@ -17,8 +55,8 @@ export default function Nav() {
       {isMobile && (
         <button onClick={() => setNavMobileShow((s) => !s)}>Menu</button>
       )}
-      <nav className={c(styles.nav, navMobileShow && styles.navMobileShow)}>
-        <section className={styles.flexcol}>
+      <nav className={c(nav, navMobileShow && navMobileShowCss)}>
+        <section className={flexCol}>
           <h1>
             Mark Miro
             <br />
@@ -31,7 +69,7 @@ export default function Nav() {
           ))}
         </section>
         <Spacer size={2} />
-        <section className={styles.flexcol}>
+        <section className={flexCol}>
           <header>Links</header>
           {socialLinks.map(({ href, children }) => (
             <Link key={href} href={href}>

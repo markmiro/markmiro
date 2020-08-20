@@ -1,10 +1,25 @@
 import Head from 'next/head'
-import HomeContent from '../components/HomeContent'
-import styles from '../styles/Home.module.css'
+import { styled } from 'linaria/react'
 
-function HomeContainer({ children }) {
-  return <div className={styles.homeContainer}>{children}</div>
-}
+import HomeContent from '../components/HomeContent'
+
+const HomeContainer = styled.div`
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 2em;
+  padding-bottom: 2em;
+`
+
+const Footer = styled.footer`
+  padding: 1em;
+  border-top: 1px solid #eee;
+  font-size: 14px;
+  text-align: center;
+  color: #999;
+`
 
 export default function Home() {
   return (
@@ -22,7 +37,7 @@ export default function Home() {
       <HomeContainer>
         <HomeContent />
       </HomeContainer>
-      <footer className={styles.footer}>Last updated August 19, 2020</footer>
+      <Footer>Last updated August 19, 2020</Footer>
     </div>
   )
 }

@@ -1,8 +1,40 @@
 import Link from 'next/link'
-import styles from '../styles/Home.module.css'
+import { css } from 'linaria'
+
 import navLinks from './navLinks'
 import socialLinks from './socialLinks'
 import Spacer from './Spacer'
+
+const styles = {
+  name: css`
+    margin-top: 49px; /* to align with the dark/light separation line in the background of markmiro-portrait.jpg */
+    font-size: 48px;
+    font-weight: 400;
+  `,
+  title: css`
+    font-size: 18px;
+    display: block;
+  `,
+  link: css`
+    padding-top: 2px;
+    padding-bottom: 2px;
+  `,
+  hr: css`
+    border: none;
+    border-top: 0.5px solid black;
+    opacity: 0.25;
+  `,
+  social: css`
+    display: flex;
+    margin-top: -6px; /* Minor adjustment so social links appear to be the same distance from the hr element as the img element right above that hr element */
+    font-size: 14px;
+  `,
+  flexCol: css`
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+  `,
+}
 
 const MyPortrait = () => (
   <img src="/markmiro-portrait-1x.jpg" srcSet="/markmiro-portrait-2x.jpg 2x" />
@@ -28,7 +60,7 @@ export default function HomeContent() {
         <div>
           <MyNameAndTitle />
           <section style={{ marginTop: 40 }}>
-            <nav className={styles.flexcol}>
+            <nav className={styles.flexCol}>
               {navLinks.map(({ href, children }) => (
                 <Link key={href} href={href}>
                   <a className={styles.link}>{children}</a>
