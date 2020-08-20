@@ -1,7 +1,9 @@
+// Code stolen from: https://nextjs.org/docs/api-reference/next/router#userouter
 import { useRouter } from 'next/router'
 
 function ActiveLink({ children, href }) {
   const router = useRouter()
+
   const style = {
     marginRight: 10,
     color: router.pathname === href ? 'red' : 'black',
