@@ -1,7 +1,5 @@
 import Link from 'next/link'
-import { css } from 'linaria'
 
-import theme from './theme'
 import navLinks from './navLinks'
 import socialLinks from './socialLinks'
 import Spacer from './Spacer'
@@ -9,21 +7,7 @@ import MyNameAndTitle from './MyNameAndTitle'
 import { HStack, VStack } from './Stack'
 import Hr from './Hr'
 import MyPortrait from './MyPortrait'
-
-const styles = {
-  link: css`
-    padding-top: 2px;
-    padding-bottom: 2px;
-  `,
-  social: css`
-    font-size: ${theme.fontSizes[-1]};
-  `,
-  flexCol: css`
-    display: flex;
-    flex-direction: column;
-    flex-shrink: 0;
-  `,
-}
+import A from './A'
 
 export default function HomeContent() {
   return (
@@ -44,10 +28,10 @@ export default function HomeContent() {
             }}
           />
           <section>
-            <VStack as="nav" space={0}>
+            <VStack as="nav" space={0} style={{ alignItems: 'start' }}>
               {navLinks.map(({ href, children }) => (
-                <Link key={href} href={href}>
-                  <a className={styles.link}>{children}</a>
+                <Link key={href} href={href} passHref>
+                  <A>{children}</A>
                 </Link>
               ))}
             </VStack>
@@ -60,10 +44,10 @@ export default function HomeContent() {
       <section>
         <header>Around the web:</header>
         <Spacer size={1} />
-        <HStack className={styles.social}>
+        <HStack>
           {socialLinks.map(({ href, children }) => (
-            <Link key={href} href={href}>
-              <a>{children}</a>
+            <Link key={href} href={href} passHref>
+              <A>{children}</A>
             </Link>
           ))}
         </HStack>

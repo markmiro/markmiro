@@ -49,10 +49,12 @@ export default {
     mobileAndAbove: `(min-width: ${breakpoints.mobile})`,
   },
   colors: {
+    blue: '#1B3DAA',
     red: '#F34228',
     neutral: {
       lightest: '#fff',
       light: '#ddd',
+      medium: '#bbb',
       dark: '#999',
       darkest: '#000',
     },

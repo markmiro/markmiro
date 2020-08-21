@@ -11,9 +11,8 @@ const GlobalStyles = styled.div`
     }
 
     a {
-      color: inherit;
-      text-decoration: underline;
-      text-underline-offset: 3px;
+      color: ${theme.colors.blue};
+      text-decoration: none;
     }
 
     * {

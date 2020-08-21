@@ -13,8 +13,8 @@ const title = css`
 `
 
 const MyNameAndTitle = () => (
-  <Link href="/">
-    <a style={{ textDecoration: 'none', lineHeight: 1 }}>
+  <Link href="/" passHref>
+    <a style={{ color: 'inherit', lineHeight: 1 }}>
       <h1>
         <div className={name}>Mark Miro</div>
         <small className={title}>UI Engineer</small>

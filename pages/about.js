@@ -4,6 +4,7 @@ import theme from '../components/theme'
 import { Section } from '../components/Heading'
 import Hr from '../components/Hr'
 import MyPortrait from '../components/MyPortrait'
+import A from '../components/A'
 
 export default function About() {
   return (
@@ -11,7 +12,7 @@ export default function About() {
       <VStack space={3}>
         <HStack space={3} style={{ alignItems: 'flex-start' }}>
           <MyPortrait width={150} />
-          <VStack>
+          <VStack style={{ alignItems: 'start' }}>
             <Section>
               <div
                 style={{
@@ -27,11 +28,11 @@ export default function About() {
                   nice-looking domain name)
                 </small>
               </div>
-              <a href="https://goo.gl/maps/pX9D3Wg7oFmHW3jW8">Sacramento, CA</a>
-              <a href="mailto:contact@markmiro.com">contact@markmiro.com</a>
-              <a href="/Mark-Miro-Resume-Jan-02-2020.pdf" target="_blank">
+              <A href="https://goo.gl/maps/pX9D3Wg7oFmHW3jW8">Sacramento, CA</A>
+              <A href="mailto:contact@markmiro.com">contact@markmiro.com</A>
+              <A href="/Mark-Miro-Resume-Jan-02-2020.pdf" target="_blank">
                 PDF Resume
-              </a>
+              </A>
             </Section>
           </VStack>
         </HStack>

@@ -14,6 +14,7 @@ import MyNameAndTitle from './MyNameAndTitle'
 import { Overline } from './Heading'
 import { VStack } from './Stack'
 import Button from './Button'
+import A from './A'
 
 const nav = css`
   overflow: scroll;
@@ -75,7 +76,7 @@ export default function Nav() {
         <section className={flexCol}>
           <MyNameAndTitle />
           <Spacer size={4} />
-          <VStack>
+          <VStack style={{ alignItems: 'start' }}>
             {navLinks.map(({ href, children }) => (
               <ActiveLink key={href} href={href}>
                 {children}
@@ -87,10 +88,10 @@ export default function Nav() {
         <section className={flexCol}>
           <Overline>Links</Overline>
           <Spacer size={0} />
-          <VStack>
+          <VStack style={{ alignItems: 'start' }}>
             {socialLinks.map(({ href, children }) => (
-              <Link key={href} href={href}>
-                <a style={{ fontSize: theme.fontSizes[-1] }}>{children}</a>
+              <Link key={href} href={href} passHref>
+                <A style={{ fontSize: theme.fontSizes[-1] }}>{children}</A>
               </Link>
             ))}
           </VStack>
