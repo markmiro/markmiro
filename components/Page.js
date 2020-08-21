@@ -16,7 +16,7 @@ const page = css`
 
 const content = css`
   flex-grow: 1;
-  padding: calc(${theme.space[0]} + 5vw);
+  padding: ${theme.pagePadding};
   display: flex;
   justify-content: center;
 `

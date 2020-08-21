@@ -1,5 +1,14 @@
 import { modularScale } from 'polished'
 
+const space = [
+  modularScale(0, '8px'),
+  modularScale(1, '8px'),
+  modularScale(2, '8px'),
+  modularScale(3, '8px'),
+  modularScale(4, '8px'),
+  modularScale(5, '8px'),
+]
+
 const breakpoints = {
   mobile: '767px',
 }
@@ -28,14 +37,7 @@ export default {
     navColumnText: `calc(${fontSizes[0]} * 12)`,
   },
   fontSizes,
-  space: [
-    modularScale(0, '8px'),
-    modularScale(1, '8px'),
-    modularScale(2, '8px'),
-    modularScale(3, '8px'),
-    modularScale(4, '8px'),
-    modularScale(5, '8px'),
-  ],
+  space,
   letterSpacings: [0, '1.2px'],
   lineHeights: ['1.25', '1.5'],
   fontWeights: ['300', '400', '600'],
@@ -55,4 +57,5 @@ export default {
       darkest: '#000',
     },
   },
+  pagePadding: space[4],
 }

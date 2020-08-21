@@ -21,7 +21,7 @@ const nav = css`
   justify-content: space-between;
   flex-shrink: 0;
 
-  padding: ${theme.space[2]} ${theme.space[3]};
+  padding: ${theme.pagePadding};
   min-width: ${theme.measure.navColumnText};
 
   @media ${theme.mediaQueryies.mobileAndBelow} {
