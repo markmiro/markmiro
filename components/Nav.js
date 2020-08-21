@@ -3,6 +3,7 @@ import { css } from 'linaria'
 import { useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
 import c from 'classnames'
+import { styled } from 'linaria/react'
 
 import theme from './theme'
 import navLinks from './navLinks'
@@ -12,6 +13,7 @@ import ActiveLink from './ActiveLink'
 import MyNameAndTitle from './MyNameAndTitle'
 import { Overline } from './Heading'
 import { VStack } from './Stack'
+import Button from './Button'
 
 const nav = css`
   overflow: scroll;
@@ -48,6 +50,16 @@ const flexCol = css`
   flex-shrink: 0;
 `
 
+const MobileNav = styled.nav`
+  width: 100%;
+  padding-top: ${theme.pagePadding};
+  padding-left: ${theme.pagePadding};
+  padding-right: ${theme.pagePadding};
+  /* Not doing bottom padding to avoid doubling up on spacing */
+  display: flex;
+  justify-content: space-between;
+`
+
 export default function Nav() {
   const [navMobileShow, setNavMobileShow] = useState(false)
   const isMobile = useMediaQuery({ query: theme.mediaQueryies.mobileAndBelow })
@@ -55,7 +67,9 @@ export default function Nav() {
   return (
     <>
       {isMobile && (
-        <button onClick={() => setNavMobileShow((s) => !s)}>Menu</button>
+        <MobileNav>
+          <Button onClick={() => setNavMobileShow((s) => !s)}>Menu</Button>
+        </MobileNav>
       )}
       <nav className={c(nav, navMobileShow && navMobileShowCss)}>
         <section className={flexCol}>
