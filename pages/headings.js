@@ -27,14 +27,6 @@ export default function Headings() {
                 <Section>
                   <Heading>Heading 6</Heading>
                   <BodyText />
-                  <Section>
-                    <Heading>Heading 7</Heading>
-                    <BodyText />
-                    {/* <Section>
-                      <Heading>Heading 8</Heading>
-                      <BodyText />
-                    </Section> */}
-                  </Section>
                 </Section>
               </Section>
             </Section>
