@@ -10,7 +10,7 @@ import Button from './Button'
 const page = css`
   display: flex;
   align-items: flex-start;
-  @media ${theme.mediaQueryies.mobileAndBelow} {
+  @media ${theme.mediaQueries.mobileAndBelow} {
     flex-direction: column;
   }
   min-height: 100vh;

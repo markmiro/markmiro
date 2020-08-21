@@ -13,7 +13,7 @@ import A from './A'
 import theme from './theme'
 
 const responsivePortrait = css`
-  @media ${theme.mediaQueryies.mobileAndBelow} {
+  @media ${theme.mediaQueries.mobileAndBelow} {
     border: 4px solid blue;
   }
 `
@@ -103,7 +103,7 @@ const MobileHome = () => (
 )
 
 export default function HomeContent() {
-  const isDesktop = useMediaQuery({ query: theme.mediaQueryies.mobileAndAbove })
+  const isDesktop = useMediaQuery({ query: theme.mediaQueries.mobileAndAbove })
 
   return isDesktop ? <DesktopHome /> : <MobileHome />
 }

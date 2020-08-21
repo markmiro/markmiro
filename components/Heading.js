@@ -18,7 +18,7 @@ const HeadingThing = styled.header`
   font-weight: ${theme.fontWeights[2]};
   font-size: ${(props) => theme.fontSizes[props.index - 2]};
 
-  @media ${theme.mediaQueryies.mobileAndAbove} {
+  @media ${theme.mediaQueries.mobileAndAbove} {
     font-size: ${(props) => theme.fontSizes[props.index]};
   }
 `

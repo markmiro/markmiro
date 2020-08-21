@@ -45,7 +45,7 @@ export default {
   lineHeights: ['1.25', '1.5'],
   fontWeights: ['300', '400', '600'],
   breakpoints,
-  mediaQueryies: {
+  mediaQueries: {
     // Using this format to work with `react-responsive` package
     // EX: useMediaQuery({ query: '(min-device-width: 1824px)' })
     mobileAndBelow: `(max-width: ${breakpoints.mobile})`,

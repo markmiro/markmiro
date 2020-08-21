@@ -27,13 +27,13 @@ const nav = css`
   padding: ${theme.pagePadding};
   min-width: ${theme.measure.navColumnText};
 
-  @media ${theme.mediaQueryies.mobileAndBelow} {
+  @media ${theme.mediaQueries.mobileAndBelow} {
     height: 0;
     overflow: hidden;
     display: none;
   }
 
-  @media ${theme.mediaQueryies.mobileAndAbove} {
+  @media ${theme.mediaQueries.mobileAndAbove} {
     position: sticky;
     max-height: 100vh;
     top: 0;
@@ -63,7 +63,7 @@ const MobileNav = styled.nav`
 
 export default function Nav() {
   const [navMobileShow, setNavMobileShow] = useState(false)
-  const isMobile = useMediaQuery({ query: theme.mediaQueryies.mobileAndBelow })
+  const isMobile = useMediaQuery({ query: theme.mediaQueries.mobileAndBelow })
 
   return (
     <>
