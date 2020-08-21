@@ -3,23 +3,14 @@ import { VStack, HStack } from '../components/Stack'
 import theme from '../components/theme'
 import { Section } from '../components/Heading'
 import Hr from '../components/Hr'
-
-const MyPortrait = () => (
-  <img
-    src="/markmiro-portrait-1x.jpg"
-    srcSet="/markmiro-portrait-2x.jpg 2x"
-    style={{
-      width: 150,
-    }}
-  />
-)
+import MyPortrait from '../components/MyPortrait'
 
 export default function About() {
   return (
     <Page title="About">
       <VStack space={3}>
         <HStack space={3} style={{ alignItems: 'flex-start' }}>
-          <MyPortrait />
+          <MyPortrait width={150} />
           <VStack>
             <Section>
               <div

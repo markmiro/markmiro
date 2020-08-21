@@ -8,6 +8,7 @@ import Spacer from './Spacer'
 import MyNameAndTitle from './MyNameAndTitle'
 import { HStack, VStack } from './Stack'
 import Hr from './Hr'
+import MyPortrait from './MyPortrait'
 
 const styles = {
   link: css`
@@ -23,10 +24,6 @@ const styles = {
     flex-shrink: 0;
   `,
 }
-
-const MyPortrait = () => (
-  <img src="/markmiro-portrait-1x.jpg" srcSet="/markmiro-portrait-2x.jpg 2x" />
-)
 
 export default function HomeContent() {
   return (
