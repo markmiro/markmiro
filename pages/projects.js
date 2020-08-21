@@ -1,10 +1,10 @@
 import Page from '../components/Page'
+import LoremParagraphs from '../components/LoremParagraphs'
 
 export default function Projects() {
   return (
     <Page title="Projects">
-      Ex in nostrud labore nostrud cillum. Qui laboris duis sit nulla fugiat
-      aliqua minim eu. Mollit esse sit ut sit labore sit amet.
+      <LoremParagraphs count={15} />
     </Page>
   )
 }
