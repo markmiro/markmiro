@@ -6,10 +6,7 @@ function ActiveLink({ children, href }) {
   const router = useRouter()
 
   const style = {
-    color:
-      router.pathname === href
-        ? theme.colors.red
-        : theme.colors.neutral.darkest,
+    color: router.pathname === href ? theme.colors.red : 'inherit',
   }
 
   const handleClick = (e) => {

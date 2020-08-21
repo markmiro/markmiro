@@ -24,6 +24,13 @@ const GlobalStyles = styled.div`
       font-weight: normal;
       line-height: 1;
     }
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        color: ${theme.colors.neutral.lightest};
+        background: ${theme.colors.neutral.darkest};
+      }
+    }
   }
 `
 

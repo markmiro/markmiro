@@ -49,7 +49,7 @@ export default {
   colors: {
     red: '#F34228',
     neutral: {
-      // lightest
+      lightest: '#fff',
       light: '#ddd',
       dark: '#999',
       darkest: '#000',
