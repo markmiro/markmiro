@@ -4,6 +4,7 @@ import { css } from 'linaria'
 import theme from './theme'
 import Nav from './Nav'
 import Spacer from './Spacer'
+import Heading from './Heading'
 
 const page = css`
   display: flex;
@@ -15,7 +16,7 @@ const page = css`
 
 const content = css`
   flex-grow: 1;
-  padding: calc(${theme.space[0]} + 3vw);
+  padding: calc(${theme.space[0]} + 5vw);
   display: flex;
   justify-content: center;
 `
@@ -33,10 +34,14 @@ export default function Page({ title, children }) {
       <Nav />
       <section className={content}>
         <div className={contentInner}>
-          <heading>
-            <h2>{title}</h2>
-          </heading>
-          <Spacer size={1} />
+          <Heading
+            style={{
+              borderBottom: '1px solid',
+            }}
+          >
+            {title}
+          </Heading>
+          <Spacer size={4} />
           {children}
         </div>
       </section>

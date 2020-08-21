@@ -12,6 +12,9 @@ const fontSizes = {
   '2': modularScale(2, '16px'),
   '3': modularScale(3, '16px'),
   '4': modularScale(4, '16px'),
+  '5': modularScale(5, '16px'),
+  '6': modularScale(6, '16px'),
+  '7': modularScale(7, '16px'),
 }
 
 // Based on: https://styled-system.com/theme-specification
@@ -21,7 +24,7 @@ export default {
       "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, sans-serif",
   },
   measure: {
-    '0': `calc(${fontSizes[0]} * 36)`,
+    '0': `calc(${fontSizes[0]} * 38)`,
     navColumnText: `calc(${fontSizes[0]} * 12)`,
   },
   fontSizes,
@@ -33,8 +36,9 @@ export default {
     modularScale(4, '8px'),
     modularScale(5, '8px'),
   ],
+  letterSpacings: [0, '1.2px'],
   lineHeights: ['1.25', '1.5'],
-  fontWeights: ['300', '400'],
+  fontWeights: ['300', '400', '600'],
   breakpoints,
   mediaQueryies: {
     // Using this format to work with `react-responsive` package

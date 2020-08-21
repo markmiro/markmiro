@@ -10,6 +10,8 @@ import socialLinks from './socialLinks'
 import Spacer from './Spacer'
 import ActiveLink from './ActiveLink'
 import MyNameAndTitle from './MyNameAndTitle'
+import { Overline } from './Heading'
+import { VStack } from './Stack'
 
 const nav = css`
   overflow: scroll;
@@ -21,7 +23,6 @@ const nav = css`
 
   padding: ${theme.space[2]} ${theme.space[3]};
   min-width: ${theme.measure.navColumnText};
-  line-height: ${theme.lineHeights[1]};
 
   @media ${theme.mediaQueryies.mobileAndBelow} {
     height: 0;
@@ -59,21 +60,26 @@ export default function Nav() {
       <nav className={c(nav, navMobileShow && navMobileShowCss)}>
         <section className={flexCol}>
           <MyNameAndTitle />
-          <Spacer size={2} />
-          {navLinks.map(({ href, children }) => (
-            <ActiveLink key={href} href={href}>
-              {children}
-            </ActiveLink>
-          ))}
+          <Spacer size={4} />
+          <VStack>
+            {navLinks.map(({ href, children }) => (
+              <ActiveLink key={href} href={href}>
+                {children}
+              </ActiveLink>
+            ))}
+          </VStack>
         </section>
-        <Spacer size={2} />
+        <Spacer size={4} />
         <section className={flexCol}>
-          <header>Links</header>
-          {socialLinks.map(({ href, children }) => (
-            <Link key={href} href={href}>
-              <a>{children}</a>
-            </Link>
-          ))}
+          <Overline>Links</Overline>
+          <Spacer size={0} />
+          <VStack>
+            {socialLinks.map(({ href, children }) => (
+              <Link key={href} href={href}>
+                <a style={{ fontSize: theme.fontSizes[-1] }}>{children}</a>
+              </Link>
+            ))}
+          </VStack>
         </section>
       </nav>
     </>

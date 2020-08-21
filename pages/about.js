@@ -8,7 +8,7 @@ export default function About() {
         <div
           key={i}
           style={{
-            fontWeight: theme.fontWeights[0],
+            // fontWeight: theme.fontWeights[0],
             paddingBottom: theme.space[2],
             lineHeight: theme.lineHeights[0],
           }}

@@ -6,6 +6,7 @@ import navLinks from './navLinks'
 import socialLinks from './socialLinks'
 import Spacer from './Spacer'
 import MyNameAndTitle from './MyNameAndTitle'
+import { HStack, VStack } from './Stack'
 
 const styles = {
   link: css`
@@ -17,7 +18,6 @@ const styles = {
     border-top: 1px solid ${theme.colors.neutral.light};
   `,
   social: css`
-    display: flex;
     font-size: ${theme.fontSizes[-1]};
   `,
   flexCol: css`
@@ -50,13 +50,13 @@ export default function HomeContent() {
             }}
           />
           <section>
-            <nav className={styles.flexCol}>
+            <VStack as="nav" space={0}>
               {navLinks.map(({ href, children }) => (
                 <Link key={href} href={href}>
                   <a className={styles.link}>{children}</a>
                 </Link>
               ))}
-            </nav>
+            </VStack>
           </section>
         </div>
       </div>
@@ -66,13 +66,13 @@ export default function HomeContent() {
       <section>
         <header>Around the web:</header>
         <Spacer size={1} />
-        <div className={styles.social}>
+        <HStack className={styles.social}>
           {socialLinks.map(({ href, children }) => (
             <Link key={href} href={href}>
-              <a style={{ marginRight: theme.space[0] }}>{children}</a>
+              <a>{children}</a>
             </Link>
           ))}
-        </div>
+        </HStack>
       </section>
     </div>
   )
