@@ -29,10 +29,11 @@ export default function About() {
               />
               <div>
                 <div style={{ fontWeight: theme.fontWeights[2] }}>
-                  Mark Mironuk
+                  Mark Miro
                 </div>
                 <small style={{ fontSize: theme.fontSizes[-1] }}>
-                  (I shorten my legal name to "Mark Miro" for aesthetics)
+                  (legally, my last name is "Mironyuk", but I shortened for the
+                  nice-looking domain name)
                 </small>
               </div>
               <a href="https://goo.gl/maps/pX9D3Wg7oFmHW3jW8">Sacramento, CA</a>
