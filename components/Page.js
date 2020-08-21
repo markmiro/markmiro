@@ -37,6 +37,8 @@ export default function Page({ title, children }) {
         <div className={contentInner}>
           <Heading
             style={{
+              fontWeight: theme.fontWeights[2],
+              paddingBottom: 6,
               borderBottom: '1px solid',
             }}
           >

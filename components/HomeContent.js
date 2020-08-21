@@ -24,7 +24,7 @@ export default function HomeContent() {
           <MyNameAndTitle />
           <div
             style={{
-              height: 58 /* adjustment to line up with my shoulder in markmiro-portrait.jpg */,
+              height: 64 /* adjustment to line up with my shoulder in markmiro-portrait.jpg */,
             }}
           />
           <section>
