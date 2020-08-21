@@ -38,15 +38,7 @@ export default function Page({ title, children }) {
         <Nav />
         <section className={content}>
           <div className={contentInner}>
-            <Heading
-              style={{
-                fontWeight: theme.fontWeights[2],
-                paddingBottom: 6,
-                borderBottom: '1px solid',
-              }}
-            >
-              {title}
-            </Heading>
+            <Heading>{title}</Heading>
             <Spacer size={4} />
             {children}
           </div>
@@ -54,7 +46,7 @@ export default function Page({ title, children }) {
       </div>
       <footer style={{ padding: theme.space[4] }}>
         <Button
-          onClick={() => window.scrollTo({ top: 0 })}
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           style={{ width: '100%' }}
         >
           Scroll to Top

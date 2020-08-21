@@ -1,12 +1,15 @@
 import { modularScale } from 'polished'
 
+const ms = modularScale
+
 const space = [
-  modularScale(0, '8px'),
-  modularScale(1, '8px'),
-  modularScale(2, '8px'),
-  modularScale(3, '8px'),
-  modularScale(4, '8px'),
-  modularScale(5, '8px'),
+  `clamp(${ms(0, '8px')}, ${ms(0, '1vw')}, ${ms(0, '12px')})`,
+  `clamp(${ms(1, '8px')}, ${ms(1, '1vw')}, ${ms(1, '12px')})`,
+  `clamp(${ms(2, '8px')}, ${ms(2, '1vw')}, ${ms(2, '12px')})`,
+  `clamp(${ms(3, '8px')}, ${ms(3, '1vw')}, ${ms(3, '12px')})`,
+  `clamp(${ms(4, '8px')}, ${ms(4, '1vw')}, ${ms(4, '12px')})`,
+  `clamp(${ms(5, '8px')}, ${ms(5, '1vw')}, ${ms(5, '12px')})`,
+  `clamp(${ms(6, '8px')}, ${ms(6, '1vw')}, ${ms(6, '12px')})`,
 ]
 
 const breakpoints = {
@@ -14,16 +17,16 @@ const breakpoints = {
 }
 
 const fontSizes = {
-  '-2': modularScale(-2, '16px'),
-  '-1': modularScale(-1, '16px'),
-  '0': modularScale(0, '16px'),
-  '1': modularScale(1, '16px'),
-  '2': modularScale(2, '16px'),
-  '3': modularScale(3, '16px'),
-  '4': modularScale(4, '16px'),
-  '5': modularScale(5, '16px'),
-  '6': modularScale(6, '16px'),
-  '7': modularScale(7, '16px'),
+  '-2': ms(-2, '16px'),
+  '-1': ms(-1, '16px'),
+  '0': ms(0, '16px'),
+  '1': ms(1, '16px'),
+  '2': ms(2, '16px'),
+  '3': ms(3, '16px'),
+  '4': ms(4, '16px'),
+  '5': ms(5, '16px'),
+  '6': ms(6, '16px'),
+  '7': ms(7, '16px'),
 }
 
 // Based on: https://styled-system.com/theme-specification

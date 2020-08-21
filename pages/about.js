@@ -39,7 +39,7 @@ export default function About() {
         <Hr />
         <div
           style={{
-            fontSize: theme.fontSizes[2],
+            fontSize: theme.fontSizes[0],
             lineHeight: theme.lineHeights[0],
           }}
         >

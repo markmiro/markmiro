@@ -1,6 +1,6 @@
-import Heading, { Section } from '../components/Heading'
-import theme from '../components/theme'
-import { VStack } from '../components/Stack'
+import Heading, { Section } from '../../components/Heading'
+import theme from '../../components/theme'
+import { VStack } from '../../components/Stack'
 
 const BodyText = () => (
   <div style={{ color: theme.colors.neutral.dark }}>Body text lorem ipsum</div>

@@ -1,8 +1,8 @@
 import { styled } from 'linaria/react'
-import theme from './theme'
 import { createContext, useContext } from 'react'
+import theme from './theme'
 
-const HeadingSizeContext = createContext(1)
+export const HeadingSizeContext = createContext(1)
 
 export function Section({ children }) {
   const headingSize = useContext(HeadingSizeContext)
@@ -13,6 +13,15 @@ export function Section({ children }) {
     </HeadingSizeContext.Provider>
   )
 }
+
+const HeadingThing = styled.header`
+  font-weight: ${theme.fontWeights[2]};
+  font-size: ${(props) => theme.fontSizes[props.index - 2]};
+
+  @media ${theme.mediaQueryies.mobileAndAbove} {
+    font-size: ${(props) => theme.fontSizes[props.index]};
+  }
+`
 
 function Heading({ children, style, ...props }) {
   const headingSize = useContext(HeadingSizeContext)
@@ -27,18 +36,10 @@ function Heading({ children, style, ...props }) {
     throw new Error("Can't make a heading this small")
   }
 
-  return React.createElement(
-    'h' + headingSize,
-    {
-      style: {
-        fontSize: theme.fontSizes[index],
-        // fontSize: stripUnit(theme.fontSizes[index]) / 11 + 'vw',
-        // fontWeight: theme.fontWeights[2],
-        ...style,
-      },
-      ...props,
-    },
-    children
+  return (
+    <HeadingThing as={`h${headingSize}`} index={index} {...props}>
+      {children}
+    </HeadingThing>
   )
 }
 
