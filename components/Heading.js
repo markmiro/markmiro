@@ -44,7 +44,7 @@ function Heading({ children, style, ...props }) {
 
 // Overline is an all-caps and small heading
 // https://material.io/design/typography/the-type-system.html
-export const Overline = styled.heading`
+export const Overline = styled.header`
   text-transform: uppercase;
   letter-spacing: ${theme.letterSpacings[1]};
   font-weight: ${theme.fontWeights[1]};
