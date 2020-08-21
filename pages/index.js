@@ -15,9 +15,9 @@ const HomeContainer = styled.div`
 `
 
 const Footer = styled.footer`
-  padding: ${theme.space[1]};
+  padding: ${theme.space[2]};
   border-top: 1px solid ${theme.colors.neutral.light};
-  font-size: ${theme.fontSizes[-1]};
+  font-weight: ${theme.fontWeights[0]};
   text-align: center;
   color: ${theme.colors.neutral.dark};
 `
