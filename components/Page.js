@@ -22,6 +22,7 @@ const content = css`
 `
 
 const contentInner = css`
+  width: 100%;
   max-width: ${theme.measure[0]};
 `
 

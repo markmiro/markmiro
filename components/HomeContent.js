@@ -7,15 +7,12 @@ import socialLinks from './socialLinks'
 import Spacer from './Spacer'
 import MyNameAndTitle from './MyNameAndTitle'
 import { HStack, VStack } from './Stack'
+import Hr from './Hr'
 
 const styles = {
   link: css`
     padding-top: 2px;
     padding-bottom: 2px;
-  `,
-  hr: css`
-    border: none;
-    border-top: 1px solid ${theme.colors.neutral.light};
   `,
   social: css`
     font-size: ${theme.fontSizes[-1]};
@@ -61,7 +58,7 @@ export default function HomeContent() {
         </div>
       </div>
       <Spacer size={3} />
-      <hr className={styles.hr} />
+      <Hr />
       <Spacer size={3} />
       <section>
         <header>Around the web:</header>
