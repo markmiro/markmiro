@@ -1,63 +1,44 @@
-import Link from 'next/link'
 import { css } from '@emotion/core'
 import { useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
 import styled from '@emotion/styled'
 
 import theme from './theme'
-import navLinks from './navLinks'
-import socialLinks from './socialLinks'
-import Spacer from './Spacer'
-import ActiveLink from './ActiveLink'
-import MyNameAndTitle from './MyNameAndTitle'
-import { Overline } from './Heading'
-import { VStack } from './Stack'
 import Button from './Button'
-import A from './A'
+import NavInner from './NavInner'
 
-const nav = css`
-  overflow: scroll;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  flex-shrink: 0;
-
+const wrapper = css`
   padding: ${theme.pagePadding};
   min-width: ${theme.measure.navColumnText};
+`
 
-  @media ${theme.mediaQueries.mobileAndBelow} {
-    height: 0;
-    overflow: hidden;
-    display: none;
-  }
+const hideMobile = css`
+  display: none;
+  height: 0;
 
   @media ${theme.mediaQueries.mobileAndAbove} {
+    display: block;
+    height: auto;
+
     position: sticky;
-    max-height: 100vh;
     top: 0;
+
+    /* If window height is too small, just want to scroll nav, not the whole page */
+    max-height: 100vh;
+    overflow: scroll;
   }
 `
 
-const navMobileShowCss = css`
-  height: 100%;
-  display: flex;
-`
-
-const flexCol = css`
-  display: flex;
-  flex-direction: column;
-  flex-shrink: 0;
+const showMobile = css`
+  display: block;
+  height: auto;
 `
 
 const MobileNav = styled.nav`
-  width: 100%;
   padding-top: ${theme.pagePadding};
   padding-left: ${theme.pagePadding};
   padding-right: ${theme.pagePadding};
   /* Not doing bottom padding to avoid doubling up on spacing */
-  display: flex;
-  justify-content: space-between;
 `
 
 export default function Nav() {
@@ -71,31 +52,9 @@ export default function Nav() {
           <Button onClick={() => setNavMobileShow((s) => !s)}>Menu</Button>
         </MobileNav>
       )}
-      <nav css={[nav, navMobileShow && navMobileShowCss]}>
-        <section className={flexCol}>
-          <MyNameAndTitle />
-          <Spacer size={4} />
-          <VStack style={{ alignItems: 'start' }}>
-            {navLinks.map(({ href, children }) => (
-              <ActiveLink key={href} href={href}>
-                {children}
-              </ActiveLink>
-            ))}
-          </VStack>
-        </section>
-        <Spacer size={4} />
-        <section className={flexCol}>
-          <Overline>Links</Overline>
-          <Spacer size={0} />
-          <VStack style={{ alignItems: 'start' }}>
-            {socialLinks.map(({ href, children }) => (
-              <Link key={href} href={href} passHref>
-                <A style={{ fontSize: theme.fontSizes[-1] }}>{children}</A>
-              </Link>
-            ))}
-          </VStack>
-        </section>
-      </nav>
+      <div css={[wrapper, hideMobile, navMobileShow && showMobile]}>
+        <NavInner />
+      </div>
     </>
   )
 }

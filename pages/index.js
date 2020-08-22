@@ -1,14 +1,28 @@
 import Head from 'next/head'
 import styled from '@emotion/styled'
 
-import HomeContent from '../components/HomeContent'
 import theme from '../components/theme'
+import NavInner from '../components/NavInner'
+import Vr from '../components/Vr'
+import { HStack } from '../components/Stack'
+import MyPortrait from '../components/MyPortrait'
+
+const ContentContainer = styled.div`
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: ${theme.pagePadding};
+  padding-bottom: ${theme.pagePadding};
+`
 
 const Footer = styled.footer`
-  padding: ${theme.space[2]};
   border-top: 1px solid ${theme.colors.neutral.light};
-  font-weight: ${theme.fontWeights[0]};
+  padding: ${theme.space[1]};
   text-align: center;
+  font-weight: ${theme.fontWeights[0]};
+  font-size: ${theme.fontSizes[-1]};
   color: ${theme.colors.neutral.dark};
 `
 
@@ -25,7 +39,17 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/favicon.png" />
       </Head>
-      <HomeContent />
+      <ContentContainer>
+        <HStack space={2}>
+          <MyPortrait width="15vw" />
+          <Vr />
+          <div
+            style={{ marginTop: -6 /* Minor adjustment to visually align */ }}
+          >
+            <NavInner />
+          </div>
+        </HStack>
+      </ContentContainer>
       <Footer>Last updated August 19, 2020</Footer>
     </div>
   )
