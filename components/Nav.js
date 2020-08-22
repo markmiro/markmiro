@@ -1,9 +1,8 @@
 import Link from 'next/link'
-import { css } from 'linaria'
+import { css } from '@emotion/core'
 import { useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
-import c from 'classnames'
-import { styled } from 'linaria/react'
+import styled from '@emotion/styled'
 
 import theme from './theme'
 import navLinks from './navLinks'
@@ -72,7 +71,7 @@ export default function Nav() {
           <Button onClick={() => setNavMobileShow((s) => !s)}>Menu</Button>
         </MobileNav>
       )}
-      <nav className={c(nav, navMobileShow && navMobileShowCss)}>
+      <nav css={[nav, navMobileShow && navMobileShowCss]}>
         <section className={flexCol}>
           <MyNameAndTitle />
           <Spacer size={4} />

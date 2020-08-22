@@ -1,5 +1,4 @@
 import Headings from './headings'
-import Linaria from './linaria'
 import Theme from './theme'
 import Heading, { Section, HeadingSizeContext } from '../../components/Heading'
 
@@ -17,9 +16,6 @@ export default function Stories() {
         <HeadingSizeContext.Provider value={0}>
           <Headings />
         </HeadingSizeContext.Provider>
-      </Headed>
-      <Headed title="<Linaria />">
-        <Linaria />
       </Headed>
       <Headed title="<Theme />">
         <Theme />

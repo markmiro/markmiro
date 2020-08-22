@@ -1,5 +1,5 @@
-const { styled } = require('linaria/react')
-const { default: theme } = require('./theme')
+import styled from '@emotion/styled'
+import theme from './theme'
 
 const A = styled.a`
   color: inherit;

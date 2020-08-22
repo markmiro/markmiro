@@ -1,5 +1,4 @@
-import { styled } from 'linaria/react'
-import theme from './theme'
+import styled from '@emotion/styled'
 
 const Hr = styled.hr`
   border: none;

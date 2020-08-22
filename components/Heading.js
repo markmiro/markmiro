@@ -1,4 +1,4 @@
-import { styled } from 'linaria/react'
+import styled from '@emotion/styled'
 import { createContext, useContext } from 'react'
 import theme from './theme'
 

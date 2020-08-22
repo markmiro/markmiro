@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { css } from 'linaria'
+import { css } from '@emotion/core'
 
 import theme from './theme'
 import Nav from './Nav'
@@ -31,13 +31,13 @@ const contentInner = css`
 export default function Page({ title, children }) {
   return (
     <>
-      <div className={page}>
+      <div css={page}>
         <Head>
           <title>{title} | Mark Miro</title>
         </Head>
         <Nav />
-        <section className={content}>
-          <div className={contentInner}>
+        <section css={content}>
+          <div css={contentInner}>
             <Heading>{title}</Heading>
             <Spacer size={4} />
             {children}

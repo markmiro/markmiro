@@ -1,5 +1,5 @@
-const { styled } = require('linaria/react')
-const { default: theme } = require('./theme')
+import styled from '@emotion/styled'
+import theme from './theme'
 
 const Button = styled.button`
   border: 1px solid;

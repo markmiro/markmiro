@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { styled } from 'linaria/react'
+import styled from '@emotion/styled'
 
 import HomeContent from '../components/HomeContent'
 import theme from '../components/theme'

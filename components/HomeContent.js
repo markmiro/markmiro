@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { styled } from 'linaria/react'
+import styled from '@emotion/styled'
 import MediaQuery from 'react-responsive'
 
 import navLinks from './navLinks'
