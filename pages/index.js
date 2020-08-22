@@ -4,16 +4,6 @@ import { styled } from 'linaria/react'
 import HomeContent from '../components/HomeContent'
 import theme from '../components/theme'
 
-const HomeContainer = styled.div`
-  flex-shrink: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding-top: ${theme.space[3]};
-  padding-bottom: ${theme.space[3]};
-`
-
 const Footer = styled.footer`
   padding: ${theme.space[2]};
   border-top: 1px solid ${theme.colors.neutral.light};
@@ -35,9 +25,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/favicon.png" />
       </Head>
-      <HomeContainer>
-        <HomeContent />
-      </HomeContainer>
+      <HomeContent />
       <Footer>Last updated August 19, 2020</Footer>
     </div>
   )
