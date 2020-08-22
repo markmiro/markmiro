@@ -3,13 +3,13 @@ import { modularScale } from 'polished'
 const ms = modularScale
 
 const space = [
-  `clamp(${ms(0, '8px')}, ${ms(0, '1vw')}, ${ms(0, '12px')})`,
-  `clamp(${ms(1, '8px')}, ${ms(1, '1vw')}, ${ms(1, '12px')})`,
-  `clamp(${ms(2, '8px')}, ${ms(2, '1vw')}, ${ms(2, '12px')})`,
-  `clamp(${ms(3, '8px')}, ${ms(3, '1vw')}, ${ms(3, '12px')})`,
-  `clamp(${ms(4, '8px')}, ${ms(4, '1vw')}, ${ms(4, '12px')})`,
-  `clamp(${ms(5, '8px')}, ${ms(5, '1vw')}, ${ms(5, '12px')})`,
-  `clamp(${ms(6, '8px')}, ${ms(6, '1vw')}, ${ms(6, '12px')})`,
+  ms(0, '8px'),
+  ms(1, '8px'),
+  ms(2, '8px'),
+  ms(3, '8px'),
+  ms(4, '8px'),
+  ms(5, '8px'),
+  ms(6, '8px'),
 ]
 
 const breakpoints = {

@@ -41,7 +41,7 @@ export default function Home() {
       </Head>
       <ContentContainer>
         <HStack space={2}>
-          <MyPortrait width="15vw" />
+          <MyPortrait width="100px" />
           <Vr />
           <div
             style={{ marginTop: -6 /* Minor adjustment to visually align */ }}

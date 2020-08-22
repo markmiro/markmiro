@@ -38,7 +38,14 @@ export default function Page({ title, children }) {
         <Nav />
         <section css={content}>
           <div css={contentInner}>
-            <Heading>{title}</Heading>
+            <div
+              style={{
+                marginTop: -3 /* Visual adjustment to align with top of nav */,
+                marginBottom: -3 /* Visual adjustment so bottom space also looks more even */,
+              }}
+            >
+              <Heading>{title}</Heading>
+            </div>
             <Spacer size={4} />
             {children}
           </div>
