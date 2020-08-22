@@ -66,7 +66,7 @@ const DesktopHome = () => (
 )
 
 const MobileHome = () => (
-  <div style={{ padding: theme.pagePadding }}>
+  <div style={{ padding: theme.pagePadding, minHeight: '100vh' }}>
     <VStack space={3}>
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
         <MyPortrait width="20vmin" />
