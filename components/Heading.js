@@ -23,7 +23,7 @@ const HeadingThing = styled.header`
   }
 `
 
-function Heading({ children, style, ...props }) {
+function Heading({ children, ...props }) {
   const headingSize = useContext(HeadingSizeContext)
 
   const index = 6 - headingSize
