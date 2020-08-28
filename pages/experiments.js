@@ -122,7 +122,7 @@ export default function Experiments() {
           href="https://codepen.io/markmiro/pen/ZmEbeo"
           heading="Fixed content in scrollable window"
           slug="fixed-content-in-scrollable-window"
-        ></Experiment>
+        />
       </Grid>
     </Page>
   )
