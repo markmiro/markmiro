@@ -5,7 +5,7 @@ const Button = styled.button`
   color: inherit;
   border: 1px solid;
   background: transparent;
-  padding: ${theme.space[0]};
+  padding: ${theme.space[0]} ${theme.space[1]};
   font-family: ${theme.fonts.body};
   &:active {
     color: inherit;
