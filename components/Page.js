@@ -9,7 +9,6 @@ import Button from './Button'
 
 const page = css`
   display: flex;
-  align-items: flex-start;
   @media ${theme.mediaQueries.mobileAndBelow} {
     flex-direction: column;
   }
@@ -25,7 +24,7 @@ const content = css`
 
 const contentInner = css`
   width: 100%;
-  max-width: ${theme.measure[0]};
+  max-width: ${theme.measure[1]};
 `
 
 export default function Page({ title, children }) {
@@ -40,22 +39,19 @@ export default function Page({ title, children }) {
           <div css={contentInner}>
             <div
               style={{
-                marginTop: -3 /* Visual adjustment to align with top of nav */,
+                marginTop: -5 /* Visual adjustment to align with top of nav */,
                 marginBottom: -3 /* Visual adjustment so bottom space also looks more even */,
               }}
             >
               <Heading>{title}</Heading>
             </div>
-            <Spacer size={4} />
+            <Spacer size={7} />
             {children}
           </div>
         </section>
       </div>
-      <footer style={{ padding: theme.space[4] }}>
-        <Button
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          style={{ width: '100%' }}
-        >
+      <footer style={{ padding: theme.space[4], textAlign: 'right' }}>
+        <Button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
           Scroll to Top
         </Button>
       </footer>

@@ -10,6 +10,8 @@ const space = [
   ms(4, '8px'),
   ms(5, '8px'),
   ms(6, '8px'),
+  ms(7, '8px'),
+  ms(8, '8px'),
 ]
 
 const breakpoints = {
@@ -17,16 +19,16 @@ const breakpoints = {
 }
 
 const fontSizes = {
-  '-2': ms(-2, '16px'),
-  '-1': ms(-1, '16px'),
-  '0': ms(0, '16px'),
-  '1': ms(1, '16px'),
-  '2': ms(2, '16px'),
-  '3': ms(3, '16px'),
-  '4': ms(4, '16px'),
-  '5': ms(5, '16px'),
-  '6': ms(6, '16px'),
-  '7': ms(7, '16px'),
+  '-2': ms(-2, '1em'),
+  '-1': ms(-1, '1em'),
+  '0': ms(0, '1em'),
+  '1': ms(1, '1em'),
+  '2': ms(2, '1em'),
+  '3': ms(3, '1em'),
+  '4': ms(4, '1em'),
+  '5': ms(5, '1em'),
+  '6': ms(6, '1em'),
+  '7': ms(7, '1em'),
 }
 
 // Based on: https://styled-system.com/theme-specification
@@ -36,13 +38,14 @@ export default {
       "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, sans-serif",
   },
   measure: {
-    '0': `calc(${fontSizes[0]} * 38)`,
+    '0': `calc(${fontSizes[0]} * 30)`,
+    '1': `calc(${fontSizes[0]} * 40)`,
     navColumnText: `calc(${fontSizes[0]} * 12)`,
   },
   fontSizes,
   space,
-  letterSpacings: [0, '1.2px'],
-  lineHeights: ['1.25', '1.5'],
+  letterSpacings: [0, '0.07em'],
+  lineHeights: ['1.3'],
   fontWeights: ['300', '400', '600'],
   breakpoints,
   mediaQueries: {
