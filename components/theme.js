@@ -2,16 +2,18 @@ import { modularScale } from 'polished'
 
 const ms = modularScale
 
+const round = (n) => Math.round(n * 100) / 100
+
 const space = [
-  ms(0, '8px'),
-  ms(1, '8px'),
-  ms(2, '8px'),
-  ms(3, '8px'),
-  ms(4, '8px'),
-  ms(5, '8px'),
-  ms(6, '8px'),
-  ms(7, '8px'),
-  ms(8, '8px'),
+  round(ms(0, 8)) + 'px',
+  round(ms(1, 8)) + 'px',
+  round(ms(2, 8)) + 'px',
+  round(ms(3, 8)) + 'px',
+  round(ms(4, 8)) + 'px',
+  round(ms(5, 8)) + 'px',
+  round(ms(6, 8)) + 'px',
+  round(ms(7, 8)) + 'px',
+  round(ms(8, 8)) + 'px',
 ]
 
 const breakpoints = {
@@ -19,16 +21,16 @@ const breakpoints = {
 }
 
 const fontSizes = {
-  '-2': ms(-2, '1em'),
-  '-1': ms(-1, '1em'),
-  '0': ms(0, '1em'),
-  '1': ms(1, '1em'),
-  '2': ms(2, '1em'),
-  '3': ms(3, '1em'),
-  '4': ms(4, '1em'),
-  '5': ms(5, '1em'),
-  '6': ms(6, '1em'),
-  '7': ms(7, '1em'),
+  '-2': round(ms(-2, 1)) + 'em',
+  '-1': round(ms(-1, 1)) + 'em',
+  '0': round(ms(0, 1)) + 'em',
+  '1': round(ms(1, 1)) + 'em',
+  '2': round(ms(2, 1)) + 'em',
+  '3': round(ms(3, 1)) + 'em',
+  '4': round(ms(4, 1)) + 'em',
+  '5': round(ms(5, 1)) + 'em',
+  '6': round(ms(6, 1)) + 'em',
+  '7': round(ms(7, 1)) + 'em',
 }
 
 // Based on: https://styled-system.com/theme-specification
