@@ -22,6 +22,8 @@
     "react-responsive": "8.1.0"
   },
   "devDependencies": {
+    "human-format": "0.11.0",
+    "nodejs-fs-utils": "1.2.5",
     "prettier": "2.0.5"
   }
 }

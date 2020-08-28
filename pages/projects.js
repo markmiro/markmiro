@@ -9,13 +9,6 @@ import P from '../components/P'
 import Spacer from '../components/Spacer'
 import { css } from '@emotion/core'
 
-const Img = styled.img`
-  display: block;
-  background: ${theme.colors.neutral.medium};
-  width: 100%;
-  padding-bottom: 50%;
-`
-
 const Project = ({ title, img, children }) => (
   <Section>
     <VStack space={0}>

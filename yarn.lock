@@ -3052,6 +3052,11 @@ https-proxy-agent@5.0.0:
     agent-base "6"
     debug "4"
 
+human-format@0.11.0:
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/human-format/-/human-format-0.11.0.tgz#bfc85a6e135f9a9292d641a38e979ed9f82557e9"
+  integrity sha512-g4UtoBnhfitCjkGjjiOlY8tkmArIcrstBa5adihxSJwSde1A7iQzvrNLB5ceX89FHXzYi9yTi04t3m82J/XIag==
+
 hyphenate-style-name@^1.0.0:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/hyphenate-style-name/-/hyphenate-style-name-1.0.4.tgz#691879af8e220aea5750e8827db4ef62a54e361d"
@@ -3723,6 +3728,11 @@ mkdirp@^0.5.1, mkdirp@^0.5.3:
   dependencies:
     minimist "^1.2.5"
 
+module-require@*:
+  version "1.4.5"
+  resolved "https://registry.yarnpkg.com/module-require/-/module-require-1.4.5.tgz#633df0833443c9ad8596f4c42e5237348355af88"
+  integrity sha1-Yz3wgzRDya2FlvTELlI3NINVr4g=
+
 move-concurrently@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/move-concurrently/-/move-concurrently-1.0.1.tgz#be2c005fda32e0b29af1f05d7c4b33214c701f92"
@@ -3908,6 +3918,13 @@ node-releases@^1.1.58, node-releases@^1.1.60:
   version "1.1.60"
   resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-1.1.60.tgz#6948bdfce8286f0b5d0e5a88e8384e954dfe7084"
   integrity sha512-gsO4vjEdQaTusZAEebUWp2a5d7dF5DYoIpDG7WySnk7BuZDW+GPpHXoXXuYawRBr/9t5q54tirPz79kFIWg4dA==
+
+nodejs-fs-utils@1.2.5:
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/nodejs-fs-utils/-/nodejs-fs-utils-1.2.5.tgz#0f5dd1c44097842de8bcc5f838ec87296d2f79e5"
+  integrity sha512-QuIFfHWaQJhjmUnGSCq+knKrYL2Q8HJUNAzRk8qoHK+g0oKzq57MdB4tODIknclKII0oAO0kO1lDt8yLyLhsAQ==
+  dependencies:
+    module-require "*"
 
 normalize-html-whitespace@1.0.0:
   version "1.0.0"
