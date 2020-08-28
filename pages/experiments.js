@@ -3,6 +3,7 @@ import { css } from '@emotion/core'
 
 import Page from '../components/Page'
 import theme from '../components/theme'
+import Card from '../components/Card'
 import A from '../components/A'
 import { VStack } from '../components/Stack'
 
@@ -55,16 +56,10 @@ function Experiment({ heading, slug, href }) {
         color: inherit;
       `}
     >
-      <VStack
-        space={2}
-        css={css`
-          border: 1px solid ${theme.colors.neutral.light};
-          padding: ${theme.space[2]};
-        `}
-      >
+      <Card as={VStack} space={2}>
         <Img src={`/prebuild/videos/${slug}.gif`} />
         <FakeA>{heading}</FakeA>
-      </VStack>
+      </Card>
     </a>
   )
 }
