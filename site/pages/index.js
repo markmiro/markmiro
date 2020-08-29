@@ -6,6 +6,7 @@ import NavInner from '../components/NavInner'
 import Vr from '../components/Vr'
 import { HStack } from '../components/Stack'
 import MyPortrait from '../components/MyPortrait'
+import updated from '../prebuild/date-updated.json'
 
 const ContentContainer = styled.div`
   flex-shrink: 0;
@@ -50,7 +51,7 @@ export default function Home() {
           </div>
         </HStack>
       </ContentContainer>
-      <Footer>Last updated August 28, 2020</Footer>
+      <Footer>Last updated {new Date(updated).toLocaleString()}</Footer>
     </div>
   )
 }
