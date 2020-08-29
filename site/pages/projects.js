@@ -59,7 +59,7 @@ export default function Projects() {
     <Page title="Projects">
       <VStack space={7}>
         <Project
-          href="https://markmiro.com/huet"
+          href="https://markmiro.github.io/huet"
           heading="Huet"
           slug="project-huet"
         >
@@ -67,7 +67,7 @@ export default function Projects() {
           can say "I want this to be red" and have it look good (accesible).
         </Project>
         <Project
-          href="https://markmiro.com/jpeg-text-degrader"
+          href="https://markmiro.github.io/jpeg-text-degrader"
           heading="JPEG Text Degrader"
           slug="project-jpeg-text-degrader"
         >
