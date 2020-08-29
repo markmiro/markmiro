@@ -16,8 +16,8 @@ const Project = ({ href, heading, slug, children }) => (
       <VStack space={2}>
         {slug && (
           <img
-            src={`/${slug}-1x.png`}
-            srcSet={`/${slug}-2x.png 2x`}
+            src={`/figma-export/${slug}-1x.png`}
+            srcSet={`/figma-export/${slug}-2x.png 2x`}
             css={css`
               width: 100%;
               display: block;

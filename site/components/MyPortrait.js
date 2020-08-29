@@ -1,8 +1,8 @@
 const MyPortrait = ({ width = 200, style, ...props }) => (
   <img
     {...props}
-    src="/markmiro-portrait-1x.jpg"
-    srcSet="/markmiro-portrait-2x.jpg 2x"
+    src="/figma-export/markmiro-portrait-1x.jpg"
+    srcSet="/figma-export/markmiro-portrait-2x.jpg 2x"
     style={{
       display: 'block',
       flexShrink: 0,
