@@ -1,0 +1,12 @@
+{
+  "name": "markmiro-videos",
+  "private": true,
+  "scripts": {
+    "convert-videos": "node convert-videos.js"
+  },
+  "devDependencies": {
+    "human-format": "0.11.0",
+    "nodejs-fs-utils": "1.2.5",
+    "prettier": "2.0.5"
+  }
+}

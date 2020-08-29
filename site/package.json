@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "postinstall": "cd videos && yarn install",
+    "preprebuild": "node preprebuild.js",
     "prebuild": "node prebuild.js",
     "build": "next build",
     "start": "next start",
