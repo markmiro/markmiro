@@ -3,6 +3,7 @@ import theme from './theme'
 import Link from 'next/link'
 
 const Title = styled.div`
+  letter-spacing: -0.8px;
   font-size: ${theme.fontSizes[3]};
   font-weight: ${theme.fontWeights[1]};
 `
