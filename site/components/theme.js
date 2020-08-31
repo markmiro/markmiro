@@ -1,4 +1,5 @@
-import { modularScale } from 'polished'
+import { modularScale, setLightness } from 'polished'
+import { css } from '@emotion/core'
 
 const ms = modularScale
 
@@ -30,6 +31,29 @@ const fontSizes = {
   '7': round(ms(7, 1)) + 'em',
 }
 
+export const colorsCss = css`
+  :root {
+    --blue: ${setLightness(0.5, '#1b3daa')};
+    --red: ${setLightness(0.5, '#f34228')};
+    --c0: hsl(0deg, 0%, 100%);
+    --c1: hsl(0deg, 0%, 90%);
+    --c2: hsl(0deg, 0%, 70%);
+    --c3: hsl(0deg, 0%, 60%);
+    --c4: hsl(0deg, 0%, 0%);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --blue: ${setLightness(0.8, '#1b3daa')};
+      --red: ${setLightness(0.8, '#f34228')};
+      --c4: hsl(0deg, 0%, 100%);
+      --c3: hsl(0deg, 0%, 60%);
+      --c2: hsl(0deg, 0%, 40%);
+      --c1: hsl(0deg, 0%, 30%);
+      --c0: hsl(0deg, 0%, 0%);
+    }
+  }
+`
+
 // Based on: https://styled-system.com/theme-specification
 export default {
   fonts: {
@@ -44,7 +68,7 @@ export default {
   fontSizes,
   space,
   letterSpacings: {
-    '-1': '-0.03em',
+    '-1': '-0.02em',
     0: 0,
     1: '0.07em',
   },
@@ -61,14 +85,14 @@ export default {
     },
   },
   colors: {
-    blue: '#1B3DAA',
-    red: '#F34228',
+    blue: 'var(--blue)',
+    red: 'var(--red)',
     neutral: {
-      lightest: '#fff',
-      light: '#ddd',
-      medium: '#bbb',
-      dark: '#999',
-      darkest: '#000',
+      lightest: 'var(--c0)',
+      light: 'var(--c1)',
+      medium: 'var(--c2)',
+      dark: 'var(--c3)',
+      darkest: 'var(--c4)',
     },
   },
   pagePadding: space[4],

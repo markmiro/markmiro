@@ -3,14 +3,18 @@ import { CacheProvider, Global, css } from '@emotion/core'
 // Use only { cache } from 'emotion'. Don't use { css }.
 import { cache } from 'emotion'
 
-import theme from '../components/theme'
+import theme, { colorsCss } from '../components/theme'
 
 const globalStyles = css`
+  ${colorsCss}
+
   html,
   body {
     padding: 0;
     margin: 0;
     font-family: ${theme.fonts.body};
+    color: ${theme.colors.neutral.darkest};
+    background: ${theme.colors.neutral.lightest};
   }
 
   a {
@@ -25,13 +29,6 @@ const globalStyles = css`
     box-sizing: border-box;
     font-weight: normal;
     line-height: 1;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    body {
-      color: ${theme.colors.neutral.lightest};
-      background: ${theme.colors.neutral.darkest};
-    }
   }
 `
 
