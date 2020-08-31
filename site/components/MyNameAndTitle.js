@@ -5,7 +5,6 @@ import content from './_siteContent'
 
 const Title = styled.div`
   font-size: ${theme.fontSizes[2]};
-  font-weight: ${theme.fontWeights[2]};
 `
 
 const Subtitle = styled.small`

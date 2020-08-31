@@ -1,8 +1,9 @@
 import styled from '@emotion/styled'
+import { css } from '@emotion/core'
 
 import updated from '../prebuild/date-updated.json'
-import Spacer from './Spacer'
 import theme from './theme'
+import Spacer from './Spacer'
 import Button from './Button'
 
 const FooterBox = styled.footer`
@@ -17,7 +18,13 @@ const FooterBox = styled.footer`
 
 const Footer = () => (
   <FooterBox>
-    Updated {new Date(updated).toLocaleString()}
+    <span
+      css={css`
+        color: ${theme.colors.neutral.medium};
+      `}
+    >
+      Updated {new Date(updated).toLocaleString()}
+    </span>
     <Spacer size={1} />
     <Button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
       Scroll to Top ⤴

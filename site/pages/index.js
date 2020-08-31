@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import styled from '@emotion/styled'
+import { css } from '@emotion/core'
 
 import content from '../components/_siteContent'
 import theme from '../components/theme'
@@ -35,7 +36,11 @@ export default function Index() {
       <ContentContainer>
         <HStack space={2}>
           <MyPortrait width="100px" />
-          <Vr />
+          <Vr
+            css={css`
+              border-left: 1px solid ${theme.colors.neutral.darkest};
+            `}
+          />
           <div
             style={{ marginTop: -6 /* Minor adjustment to visually align */ }}
           >

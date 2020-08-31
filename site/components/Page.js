@@ -46,8 +46,8 @@ export default function Page({ title, children }) {
           <div css={contentInnerCss}>
             <div
               css={css`
-                margin-top: -3px; /* Visual adjustment to align with top of nav */
-                margin-bottom: -3px; /* Visual adjustment so bottom space also looks more even */
+                margin-top: -1.5px; /* Visual adjustment to align with top of nav */
+                margin-bottom: -1.5px; /* Visual adjustment so bottom space also looks more even */
                 letter-spacing: ${theme.letterSpacings[-1]};
               `}
             >

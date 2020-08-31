@@ -15,7 +15,7 @@ export function Section({ children }) {
 }
 
 const HeadingThing = styled.header`
-  font-weight: ${theme.fontWeights[2]};
+  /* font-weight: ${theme.fontWeights[2]}; */
   font-size: ${(props) => theme.fontSizes[props.index - 1]};
 
   @media ${theme.mediaQueries.mobileAndAbove} {
