@@ -18,7 +18,7 @@ const space = [
 ]
 
 const breakpoints = {
-  mobile: '767px',
+  mobile: 767,
 }
 
 const fontSizes = {
@@ -54,12 +54,11 @@ export default {
   },
   lineHeights: ['1.3'],
   fontWeights: ['300', '400', '600'],
-  breakpoints,
   mediaQueries: {
     // Using this format to work with `react-responsive` package
     // EX: useMediaQuery({ query: '(min-device-width: 1824px)' })
-    mobileAndBelow: `(max-width: ${breakpoints.mobile})`,
-    mobileAndAbove: `(min-width: ${breakpoints.mobile})`,
+    mobileAndBelow: `(max-width: ${breakpoints.mobile}px)`,
+    mobileAndAbove: `(min-width: ${breakpoints.mobile + 1}px)`,
   },
   colors: {
     blue: '#1B3DAA',
