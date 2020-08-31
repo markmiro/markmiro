@@ -1,6 +1,7 @@
 import styled from '@emotion/styled'
 import theme from './theme'
 import Link from 'next/link'
+import content from './_siteContent'
 
 const Title = styled.div`
   letter-spacing: -0.8px;
@@ -17,8 +18,8 @@ const MyNameAndTitle = () => (
   <Link href="/" passHref>
     <a style={{ color: 'inherit', lineHeight: 1 }}>
       <h1>
-        <Title>Mark Miro</Title>
-        <Subtitle>UI Engineer</Subtitle>
+        <Title>{content.siteName}</Title>
+        <Subtitle>{content.jobTitle}</Subtitle>
       </h1>
     </a>
   </Link>

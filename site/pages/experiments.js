@@ -6,6 +6,7 @@ import theme from '../components/theme'
 import Card from '../components/Card'
 import A from '../components/A'
 import { VStack } from '../components/Stack'
+import content from '../components/_siteContent'
 
 const Img = ({ src }) => (
   <div
@@ -68,61 +69,9 @@ export default function Experiments() {
   return (
     <Page title="Experiments">
       <Grid>
-        <Experiment
-          href="https://codepen.io/markmiro/pen/wbqMPa"
-          heading="3D Card"
-          slug="3d-card"
-        />
-        <Experiment
-          href="https://codepen.io/markmiro/pen/RYOgQK"
-          heading="Marquee"
-          slug="marquee"
-        />
-        <Experiment
-          href="https://codesandbox.io/s/987kj26rzw"
-          heading="React-like API in 70 lines"
-          slug="react-like-api-in-70-lines"
-        />
-        <Experiment
-          href="https://codepen.io/markmiro/full/mwKMvZ"
-          heading="Fireworks"
-          slug="fireworks"
-        />
-        <Experiment
-          href="https://codesandbox.io/s/yw6vxn7q1v"
-          heading="Parameterized UI Contrast"
-          slug="parameterized-ui-contrast"
-        />
-        <Experiment
-          href="https://codesandbox.io/s/7ywkjkqj96"
-          heading="Split View"
-          slug="split-view"
-        />
-        <Experiment
-          href="https://codepen.io/markmiro/pen/RYLbZx"
-          heading="Tooltip"
-          slug="tooltip"
-        />
-        <Experiment
-          href="https://codepen.io/markmiro/pen/YOaoYp"
-          heading="Minesweeper"
-          slug="minesweeper"
-        />
-        <Experiment
-          href="https://codesandbox.io/s/react-tree-reducer-example-redux-60r3p?file=/src/App.js"
-          heading="Performant Tree"
-          slug="performant-tree"
-        />
-        <Experiment
-          href="https://codepen.io/markmiro/pen/gdEJZr"
-          heading="Brutalist Toggle"
-          slug="brutalist-toggle"
-        />
-        <Experiment
-          href="https://codepen.io/markmiro/pen/ZmEbeo"
-          heading="Fixed content in scrollable window"
-          slug="fixed-content-in-scrollable-window"
-        />
+        {content.experiments.map(({ href, heading, slug }) => (
+          <Experiment href={href} heading={heading} slug={slug} />
+        ))}
       </Grid>
     </Page>
   )

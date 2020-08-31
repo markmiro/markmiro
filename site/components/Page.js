@@ -32,7 +32,9 @@ export default function Page({ title, children }) {
     <>
       <div css={page}>
         <Head>
-          <title>{title} | Mark Miro</title>
+          <title>
+            {title} | {content.siteName}
+          </title>
         </Head>
         <Nav />
         <section css={content}>

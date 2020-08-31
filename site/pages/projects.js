@@ -9,6 +9,7 @@ import P from '../components/P'
 import Spacer from '../components/Spacer'
 import Card from '../components/Card'
 import Button from '../components/Button'
+import content from '../components/_siteContent'
 
 const Project = ({ href, heading, slug, children }) => (
   <Section>
@@ -58,33 +59,13 @@ export default function Projects() {
   return (
     <Page title="Projects">
       <VStack space={7}>
-        <Project
-          href="https://markmiro.github.io/huet"
-          heading="Huet"
-          slug="project-huet"
-        >
-          Library for having the computer pick your exact hex color codes so you
-          can say "I want this to be red" and have it look good (accesible).
-        </Project>
-        <Project
-          href="https://markmiro.github.io/jpeg-text-degrader"
-          heading="JPEG Text Degrader"
-          slug="project-jpeg-text-degrader"
-        >
-          What if you take a JPEG image and then compress it again and again and
-          again and you get to watch it as it happens. Maybe it'll look like one
-          of those timelapses of decaying fruit. That could be something, right?
-        </Project>
-        {/* <Project heading="Validated">
-          An opinionated validation library that takes care of your UX. This
-          means the library decides when error messages are shown, so you only
-          have to worry about about validation rules.
-        </Project> */}
-        {/* <Project heading="Patchwork Browser" slug="project-patchwork-browser">
-          Exploration of what a web browser could be. Completely transform the
-          tab UI. A reinvention of the browser UI made for work.
-        </Project> */}
+        {content.projects.map(({ href, heading, slug, children }) => (
+          <Project href={href} heading={heading} slug={slug}>
+            {children}
+          </Project>
+        ))}
       </VStack>
+      {/* Spacer below */}
       <Spacer size={7} />
     </Page>
   )
