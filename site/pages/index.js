@@ -7,6 +7,7 @@ import Vr from '../components/Vr'
 import { HStack } from '../components/Stack'
 import MyPortrait from '../components/MyPortrait'
 import updated from '../prebuild/date-updated.json'
+import content from '../components/_siteContent'
 
 const ContentContainer = styled.div`
   flex-shrink: 0;
@@ -31,7 +32,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Mark Miro</title>
+        <title>{content.siteName}</title>
         {/*
           Generated with: https://favicon.io
           Font size: 88
