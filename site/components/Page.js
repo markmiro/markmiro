@@ -7,6 +7,7 @@ import Spacer from './Spacer'
 import Heading from './Heading'
 import Footer from './Footer'
 import Vr from './Vr'
+import content from './_siteContent'
 
 const page = css`
   display: flex;
@@ -16,14 +17,14 @@ const page = css`
   min-height: 100vh;
 `
 
-const content = css`
+const contentCss = css`
   flex-grow: 1;
   padding: ${theme.pagePadding};
   display: flex;
   justify-content: center;
 `
 
-const contentInner = css`
+const contentInnerCss = css`
   width: 100%;
   max-width: ${theme.measure[1]};
 `
@@ -39,8 +40,8 @@ export default function Page({ title, children }) {
         </Head>
         <Nav />
         <Vr />
-        <section css={content}>
-          <div css={contentInner}>
+        <section css={contentCss}>
+          <div css={contentInnerCss}>
             <div
               css={css`
                 margin-top: -3px; /* Visual adjustment to align with top of nav */
