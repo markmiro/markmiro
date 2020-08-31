@@ -21,7 +21,9 @@ const contentCss = css`
   flex-grow: 1;
   padding: ${theme.pagePadding};
   display: flex;
-  justify-content: center;
+  @media ${theme.mediaQueries.mobileAndAbove} {
+    justify-content: center;
+  }
 `
 
 const contentInnerCss = css`

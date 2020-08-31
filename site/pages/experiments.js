@@ -44,7 +44,7 @@ const FakeA = ({ children }) => (
 const Grid = styled.div`
   display: grid;
   grid-gap: ${theme.space[4]};
-  @media ${theme.mediaQueries.mobileAndAbove} {
+  @media ${theme.mediaQueries.experiments.mobileAndAbove} {
     grid-template-columns: 1fr 1fr;
   }
 `
@@ -57,7 +57,13 @@ function Experiment({ heading, slug, href }) {
         color: inherit;
       `}
     >
-      <Card as={VStack} space={2}>
+      <Card
+        as={VStack}
+        space={2}
+        css={css`
+          max-width: 20em;
+        `}
+      >
         <Img src={`/preprebuild/videos/${slug}.gif`} />
         <FakeA>{heading}</FakeA>
       </Card>

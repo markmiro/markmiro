@@ -17,7 +17,7 @@ const FooterBox = styled.footer`
 
 const Footer = () => (
   <FooterBox>
-    Last updated {new Date(updated).toLocaleString()}
+    Updated {new Date(updated).toLocaleString()}
     <Spacer size={1} />
     <Button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
       Scroll to Top ⤴
