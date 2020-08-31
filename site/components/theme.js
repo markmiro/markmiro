@@ -31,25 +31,39 @@ const fontSizes = {
   '7': round(ms(7, 1)) + 'em',
 }
 
+/*
+The structure of colors from c0 to c8
+- 0 means 0% contrast
+- 8 means 100% contrast
+- 'c' is short for 'contrast'
+- Easy to scale up and down number of colors and divide by 2. Some options
+  * c0, c8
+  * c0, c4, c8
+  * c0, c2, c4, c6, c8
+  * c0, c1, c2, ... , c8
+  * (c0 to c8 should be enough, right?)
+*/
 export const colorsCss = css`
   :root {
     --blue: ${setLightness(0.5, '#1b3daa')};
     --red: ${setLightness(0.5, '#f34228')};
+
     --c0: hsl(0deg, 0%, 100%);
-    --c1: hsl(0deg, 0%, 90%);
-    --c2: hsl(0deg, 0%, 70%);
-    --c3: hsl(0deg, 0%, 60%);
-    --c4: hsl(0deg, 0%, 0%);
+    --c2: hsl(0deg, 0%, 90%); /* start */
+    --c4: hsl(0deg, 0%, 80%); /* 10% diff */
+    --c6: hsl(0deg, 0%, 60%); /* 20% diff */
+    --c8: hsl(0deg, 0%, 0%); /* 40% diff */
   }
   @media (prefers-color-scheme: dark) {
     :root {
       --blue: ${setLightness(0.8, '#1b3daa')};
       --red: ${setLightness(0.8, '#f34228')};
-      --c4: hsl(0deg, 0%, 100%);
-      --c3: hsl(0deg, 0%, 60%);
-      --c2: hsl(0deg, 0%, 40%);
-      --c1: hsl(0deg, 0%, 30%);
+
       --c0: hsl(0deg, 0%, 0%);
+      --c2: hsl(0deg, 0%, 30%); /* start */
+      --c4: hsl(0deg, 0%, 40%); /* 10% diff */
+      --c6: hsl(0deg, 0%, 60%); /* 20% diff */
+      --c8: hsl(0deg, 0%, 100%); /* 40% diff */
     }
   }
 `
@@ -87,13 +101,11 @@ export default {
   colors: {
     blue: 'var(--blue)',
     red: 'var(--red)',
-    neutral: {
-      lightest: 'var(--c0)',
-      light: 'var(--c1)',
-      medium: 'var(--c2)',
-      dark: 'var(--c3)',
-      darkest: 'var(--c4)',
-    },
+    c0: 'var(--c0)',
+    c2: 'var(--c2)',
+    c4: 'var(--c4)',
+    c6: 'var(--c6)',
+    c8: 'var(--c8)',
   },
   pagePadding: space[4],
 }

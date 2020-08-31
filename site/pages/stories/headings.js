@@ -3,7 +3,7 @@ import theme from '../../components/theme'
 import { VStack } from '../../components/Stack'
 
 const BodyText = () => (
-  <div style={{ color: theme.colors.neutral.dark }}>Body text lorem ipsum</div>
+  <div style={{ color: theme.colors.c6 }}>Body text lorem ipsum</div>
 )
 
 export default function Headings() {

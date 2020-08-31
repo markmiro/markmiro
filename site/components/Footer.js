@@ -10,7 +10,7 @@ const FooterBox = styled.footer`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: 1px solid ${theme.colors.neutral.light};
+  border-top: 1px solid ${theme.colors.c2};
   padding: ${theme.pagePadding};
   font-weight: ${theme.fontWeights[0]};
   font-size: ${theme.fontSizes[-1]};
@@ -20,7 +20,7 @@ const Footer = () => (
   <FooterBox>
     <span
       css={css`
-        color: ${theme.colors.neutral.medium};
+        color: ${theme.colors.c4};
       `}
     >
       Updated {new Date(updated).toLocaleString()}

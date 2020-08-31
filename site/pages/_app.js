@@ -13,8 +13,8 @@ const globalStyles = css`
     padding: 0;
     margin: 0;
     font-family: ${theme.fonts.body};
-    color: ${theme.colors.neutral.darkest};
-    background: ${theme.colors.neutral.lightest};
+    color: ${theme.colors.c8};
+    background: ${theme.colors.c0};
   }
 
   a {

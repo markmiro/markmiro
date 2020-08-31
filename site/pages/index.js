@@ -38,7 +38,7 @@ export default function Index() {
           <MyPortrait width="100px" />
           <Vr
             css={css`
-              border-left: 1px solid ${theme.colors.neutral.darkest};
+              border-left: 1px solid ${theme.colors.c8};
             `}
           />
           <div
