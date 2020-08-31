@@ -5,12 +5,6 @@ const { execFileSync, exec } = require('child_process')
 
 const printBuildSize = require('./print-build-size')
 
-console.log(process.cwd())
-exec('pwd', { cwd: __dirname }, (err, stdout) => {
-  if (err) console.error(err)
-  console.log(stdout)
-})
-
 // Remove build dir and re-create it
 execFileSync('./reset.sh')
 

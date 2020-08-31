@@ -2,9 +2,11 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First install `ffmpeg`.
+First install `ffmpeg`
 
-Then, run `node convert-videos.js` to create videos.
+Then do `yarn install`
+
+Then do `yarn prebuilds`
 
 Then, run the development server:
 

@@ -57,7 +57,7 @@ function Experiment({ heading, slug, href }) {
       `}
     >
       <Card as={VStack} space={2}>
-        <Img src={`/prebuild/videos/${slug}.gif`} />
+        <Img src={`/preprebuild/videos/${slug}.gif`} />
         <FakeA>{heading}</FakeA>
       </Card>
     </a>

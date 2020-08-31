@@ -3,10 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "postinstall": "cd videos && yarn install",
+    "postinstall": "cd ../videos && yarn install",
+    "prebuilds": "yarn preprebuild && yarn prebuild",
     "preprebuild": "node preprebuild.js",
     "prebuild": "node prebuild.js",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "deploy": "vercel deploy",
