@@ -41,8 +41,8 @@ export default function Page({ title, children }) {
           <div css={contentInner}>
             <div
               css={css`
-                margin-top: -5; /* Visual adjustment to align with top of nav */
-                margin-bottom: -3; /* Visual adjustment so bottom space also looks more even */
+                margin-top: -6px; /* Visual adjustment to align with top of nav */
+                margin-bottom: -6px; /* Visual adjustment so bottom space also looks more even */
                 opacity: 0.1;
                 letter-spacing: -2px;
               `}
@@ -54,6 +54,8 @@ export default function Page({ title, children }) {
           </div>
         </section>
       </div>
+      {/* Spacer below */}
+      <Spacer size={7} />
       <footer style={{ padding: theme.space[4], textAlign: 'right' }}>
         <Button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
           Scroll to Top

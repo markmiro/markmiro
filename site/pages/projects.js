@@ -58,15 +58,13 @@ const Project = ({ href, heading, slug, children }) => (
 export default function Projects() {
   return (
     <Page title="Projects">
-      <VStack space={7}>
+      <VStack space={4}>
         {content.projects.map(({ href, heading, slug, children }) => (
           <Project href={href} heading={heading} slug={slug}>
             {children}
           </Project>
         ))}
       </VStack>
-      {/* Spacer below */}
-      <Spacer size={7} />
     </Page>
   )
 }
