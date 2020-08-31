@@ -1,13 +1,13 @@
 import Head from 'next/head'
 import styled from '@emotion/styled'
 
+import content from '../components/_siteContent'
 import theme from '../components/theme'
 import NavInner from '../components/NavInner'
 import Vr from '../components/Vr'
 import { HStack } from '../components/Stack'
 import MyPortrait from '../components/MyPortrait'
-import updated from '../prebuild/date-updated.json'
-import content from '../components/_siteContent'
+import Footer from '../components/Footer'
 
 const ContentContainer = styled.div`
   flex-shrink: 0;
@@ -19,16 +19,7 @@ const ContentContainer = styled.div`
   padding-bottom: ${theme.pagePadding};
 `
 
-const Footer = styled.footer`
-  border-top: 1px solid ${theme.colors.neutral.light};
-  padding: ${theme.space[1]};
-  text-align: center;
-  font-weight: ${theme.fontWeights[0]};
-  font-size: ${theme.fontSizes[-1]};
-  color: ${theme.colors.neutral.dark};
-`
-
-export default function Home() {
+export default function Index() {
   return (
     <div>
       <Head>
@@ -52,7 +43,7 @@ export default function Home() {
           </div>
         </HStack>
       </ContentContainer>
-      <Footer>Last updated {new Date(updated).toLocaleString()}</Footer>
+      <Footer />
     </div>
   )
 }

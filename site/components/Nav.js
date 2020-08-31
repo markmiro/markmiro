@@ -1,7 +1,7 @@
+import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import { useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
-import styled from '@emotion/styled'
 
 import theme from './theme'
 import Button from './Button'

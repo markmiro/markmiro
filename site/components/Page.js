@@ -5,7 +5,8 @@ import theme from './theme'
 import Nav from './Nav'
 import Spacer from './Spacer'
 import Heading from './Heading'
-import Button from './Button'
+import Footer from './Footer'
+import Vr from './Vr'
 
 const page = css`
   display: flex;
@@ -37,30 +38,25 @@ export default function Page({ title, children }) {
           </title>
         </Head>
         <Nav />
+        <Vr />
         <section css={content}>
           <div css={contentInner}>
             <div
               css={css`
-                margin-top: -6px; /* Visual adjustment to align with top of nav */
-                margin-bottom: -6px; /* Visual adjustment so bottom space also looks more even */
-                opacity: 0.1;
-                letter-spacing: -2px;
+                margin-top: -3px; /* Visual adjustment to align with top of nav */
+                margin-bottom: -3px; /* Visual adjustment so bottom space also looks more even */
+                letter-spacing: ${theme.letterSpacings[-1]};
               `}
             >
               <Heading>{title}</Heading>
             </div>
             <Spacer size={5} />
             {children}
+            <Spacer size={9} />
           </div>
         </section>
       </div>
-      {/* Spacer below */}
-      <Spacer size={7} />
-      <footer style={{ padding: theme.space[4], textAlign: 'right' }}>
-        <Button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-          Scroll to Top
-        </Button>
-      </footer>
+      <Footer />
     </>
   )
 }

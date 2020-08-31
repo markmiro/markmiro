@@ -70,7 +70,7 @@ export default function Experiments() {
     <Page title="Experiments">
       <Grid>
         {content.experiments.map(({ href, heading, slug }) => (
-          <Experiment href={href} heading={heading} slug={slug} />
+          <Experiment key={slug} href={href} heading={heading} slug={slug} />
         ))}
       </Grid>
     </Page>

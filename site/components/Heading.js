@@ -16,7 +16,7 @@ export function Section({ children }) {
 
 const HeadingThing = styled.header`
   font-weight: ${theme.fontWeights[2]};
-  font-size: ${(props) => theme.fontSizes[props.index - 2]};
+  font-size: ${(props) => theme.fontSizes[props.index - 1]};
 
   @media ${theme.mediaQueries.mobileAndAbove} {
     font-size: ${(props) => theme.fontSizes[props.index]};
@@ -26,15 +26,15 @@ const HeadingThing = styled.header`
 function Heading({ children, ...props }) {
   const headingSize = useContext(HeadingSizeContext)
 
-  const index = 6 - headingSize
+  const index = 4 - headingSize
 
   if (index === 0) {
     return <Overline {...props}>{children}</Overline>
   }
 
-  if (index < 0) {
-    throw new Error("Can't make a heading this small")
-  }
+  // if (index < 0) {
+  //   throw new Error("Can't make a heading this small")
+  // }
 
   return (
     <HeadingThing as={`h${headingSize}`} index={index} {...props}>

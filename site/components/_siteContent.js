@@ -14,10 +14,10 @@ const content = {
     // { href: '/posts', children: 'Posts' },
   ],
   socialLinks: [
-    { href: 'https://codepen.io/markmiro', children: 'CodePen' },
     { href: 'https://codesandbox.io/u/markmiro', children: 'CodeSandBox' },
-    { href: 'https://twitter.com/markmiro', children: 'Twitter' },
+    { href: 'https://codepen.io/markmiro', children: 'CodePen' },
     { href: 'https://github.com/markmiro', children: 'GitHub' },
+    { href: 'https://twitter.com/markmiro', children: 'Twitter' },
   ],
   projects: [
     {

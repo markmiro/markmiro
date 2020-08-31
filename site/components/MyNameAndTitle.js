@@ -4,19 +4,19 @@ import Link from 'next/link'
 import content from './_siteContent'
 
 const Title = styled.div`
-  letter-spacing: -0.8px;
-  font-size: ${theme.fontSizes[3]};
-  font-weight: ${theme.fontWeights[1]};
+  font-size: ${theme.fontSizes[2]};
+  font-weight: ${theme.fontWeights[2]};
 `
 
 const Subtitle = styled.small`
+  line-height: ${theme.lineHeights[0]};
   font-size: ${theme.fontSizes[0]};
   display: block;
 `
 
 const MyNameAndTitle = () => (
   <Link href="/" passHref>
-    <a style={{ color: 'inherit', lineHeight: 1 }}>
+    <a style={{ color: 'inherit' }}>
       <h1>
         <Title>{content.siteName}</Title>
         <Subtitle>{content.jobTitle}</Subtitle>

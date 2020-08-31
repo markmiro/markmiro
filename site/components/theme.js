@@ -14,6 +14,7 @@ const space = [
   round(ms(6, 8)) + 'px',
   round(ms(7, 8)) + 'px',
   round(ms(8, 8)) + 'px',
+  round(ms(9, 8)) + 'px',
 ]
 
 const breakpoints = {
@@ -42,11 +43,15 @@ export default {
   measure: {
     '0': `calc(${fontSizes[0]} * 30)`,
     '1': `calc(${fontSizes[0]} * 40)`,
-    navColumnText: `calc(${fontSizes[0]} * 12)`,
+    navColumnText: `calc(${fontSizes[0]} * 13)`,
   },
   fontSizes,
   space,
-  letterSpacings: [0, '0.07em'],
+  letterSpacings: {
+    '-1': '-0.03em',
+    0: 0,
+    1: '0.07em',
+  },
   lineHeights: ['1.3'],
   fontWeights: ['300', '400', '600'],
   breakpoints,

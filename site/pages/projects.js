@@ -6,7 +6,6 @@ import { Section } from '../components/Heading'
 import { VStack } from '../components/Stack'
 import theme from '../components/theme'
 import P from '../components/P'
-import Spacer from '../components/Spacer'
 import Card from '../components/Card'
 import Button from '../components/Button'
 import content from '../components/_siteContent'
@@ -60,7 +59,7 @@ export default function Projects() {
     <Page title="Projects">
       <VStack space={4}>
         {content.projects.map(({ href, heading, slug, children }) => (
-          <Project href={href} heading={heading} slug={slug}>
+          <Project key={slug} href={href} heading={heading} slug={slug}>
             {children}
           </Project>
         ))}
