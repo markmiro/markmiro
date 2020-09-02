@@ -3,11 +3,11 @@ import theme from './theme'
 import Link from 'next/link'
 import content from './_siteContent'
 
-const Title = styled.div`
+const Title = styled.h1`
   font-size: ${theme.fontSizes[2]};
 `
 
-const Subtitle = styled.small`
+const Subtitle = styled.div`
   line-height: ${theme.lineHeights[0]};
   font-size: ${theme.fontSizes[0]};
   display: block;
@@ -16,10 +16,10 @@ const Subtitle = styled.small`
 const MyNameAndTitle = () => (
   <Link href="/" passHref>
     <a style={{ color: 'inherit' }}>
-      <h1>
+      <heading>
         <Title>{content.siteName}</Title>
         <Subtitle>{content.jobTitle}</Subtitle>
-      </h1>
+      </heading>
     </a>
   </Link>
 )

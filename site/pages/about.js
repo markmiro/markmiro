@@ -5,6 +5,7 @@ import { Section } from '../components/Heading'
 import Hr from '../components/Hr'
 import MyPortrait from '../components/MyPortrait'
 import A from '../components/A'
+import content from '../components/_siteContent'
 
 export default function About() {
   return (
@@ -43,8 +44,7 @@ export default function About() {
             lineHeight: theme.lineHeights[0],
           }}
         >
-          I'm a UI Engineer with a love for React, design systems, and user
-          research.
+          {content.siteDescription}
         </div>
       </VStack>
     </Page>

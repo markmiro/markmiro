@@ -6,6 +6,9 @@
 const content = {
   siteName: 'Mark Miro',
   jobTitle: 'UI Engineer',
+  siteDescription:
+    "I'm a UI Engineer with a love for React, design systems, and user research.",
+  siteImage: '/figma-export/meta-tag-image.jpg',
   navLinks: [
     // { href: '/', children: 'Home' },
     { href: '/about', children: 'About' },

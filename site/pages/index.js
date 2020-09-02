@@ -1,14 +1,14 @@
-import Head from 'next/head'
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 
-import content from '../components/_siteContent'
 import theme from '../components/theme'
 import NavInner from '../components/NavInner'
 import Vr from '../components/Vr'
 import { HStack } from '../components/Stack'
 import MyPortrait from '../components/MyPortrait'
 import Footer from '../components/Footer'
+import Head2 from '../components/Head2'
+import MetaTags from '../components/MetaTags'
 
 const ContentContainer = styled.div`
   flex-shrink: 0;
@@ -23,16 +23,9 @@ const ContentContainer = styled.div`
 export default function Index() {
   return (
     <div>
-      <Head>
-        <title>{content.siteName}</title>
-        {/*
-          Generated with: https://favicon.io
-          Font size: 88
-          Font: Montserrat
-        */}
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/favicon.png" />
-      </Head>
+      <Head2>
+        <MetaTags />
+      </Head2>
       <ContentContainer>
         <HStack space={2}>
           <MyPortrait width="100px" />

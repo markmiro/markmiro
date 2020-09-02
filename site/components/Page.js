@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import { css } from '@emotion/core'
 
 import theme from './theme'
@@ -8,6 +7,7 @@ import Heading from './Heading'
 import Footer from './Footer'
 import Vr from './Vr'
 import content from './_siteContent'
+import Head2 from './Head2'
 
 const page = css`
   display: flex;
@@ -35,11 +35,7 @@ export default function Page({ title, children }) {
   return (
     <>
       <div css={page}>
-        <Head>
-          <title>
-            {title} | {content.siteName}
-          </title>
-        </Head>
+        <Head2 title={title} />
         <Nav />
         <Vr />
         <section css={contentCss}>
