@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "postinstall": "cd ../videos && yarn install",
     "prebuilds": "yarn preprebuild && yarn prebuild",
     "preprebuild": "node preprebuild.js",
     "prebuild": "node prebuild.js",

@@ -4,7 +4,12 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 First install `ffmpeg`
 
-Then do `yarn install`
+Then do
+
+```
+yarn install
+cd ../videos && yarn install
+```
 
 Then do `yarn prebuilds`
 
