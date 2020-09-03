@@ -1,4 +1,4 @@
-// Code stolen from: https://nextjs.org/docs/api-reference/next/router#userouter
+// Code modified from: https://nextjs.org/docs/api-reference/next/router#userouter
 import { useRouter } from 'next/router'
 import theme from './theme'
 import A from './A'
@@ -6,8 +6,10 @@ import A from './A'
 function ActiveLink({ children, href }) {
   const router = useRouter()
 
+  const isActive = router.asPath.startsWith(href)
+
   const style = {
-    color: router.pathname === href ? theme.colors.red : '',
+    color: isActive ? theme.colors.red : '',
   }
 
   const handleClick = (e) => {
