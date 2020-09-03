@@ -16,10 +16,10 @@ const Subtitle = styled.div`
 const MyNameAndTitle = () => (
   <Link href="/" passHref>
     <a style={{ color: 'inherit' }}>
-      <heading>
+      <header>
         <Title>{content.siteName}</Title>
         <Subtitle>{content.jobTitle}</Subtitle>
-      </heading>
+      </header>
     </a>
   </Link>
 )
