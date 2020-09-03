@@ -31,7 +31,8 @@ export default function Post(post) {
 
   return (
     <Page title={post.slug}>
-      <Json json={post} />
+        <Json json={post} />
+        <pre>{post.fileContents}</pre>
     </Page>
   )
 }
