@@ -40,6 +40,7 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-## Using Emotion
+## Based on these Next.js Examples
 
-See: https://github.com/vercel/next.js/tree/master/examples/with-emotion
+- [blog-starter](https://github.com/vercel/next.js/tree/aed8b3752999ad08935c6e38880091da3b69cc2b/examples/blog-starter)
+- [with-emotion](https://github.com/vercel/next.js/tree/master/examples/with-emotion)
