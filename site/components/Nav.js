@@ -6,55 +6,64 @@ import { useMediaQuery } from 'react-responsive'
 import theme from './theme'
 import Button from './Button'
 import NavInner from './NavInner'
+import Spacer from './Spacer'
 
-const wrapper = css`
-  padding: ${theme.pagePadding};
-  min-width: ${theme.measure.navColumnText};
-`
+function DesktopNav() {
+  return (
+    <div
+      css={css`
+        padding: ${theme.pagePadding};
+        min-width: ${theme.measure.navColumnText};
 
-const hideMobile = css`
-  display: none;
-  height: 0;
+        position: sticky;
+        top: 0;
 
-  @media ${theme.mediaQueries.mobileAndAbove} {
-    display: block;
-    height: auto;
+        /* If window height is too small, just want to scroll nav, not the whole page */
+        max-height: 100vh;
+        overflow: scroll; /* unlikely, but if window height too small we want to scroll */
 
-    position: sticky;
-    top: 0;
+        display: none;
+        @media ${theme.mediaQueries.mobileAndAbove} {
+          display: block;
+        }
+      `}
+    >
+      <NavInner />
+    </div>
+  )
+}
 
-    /* If window height is too small, just want to scroll nav, not the whole page */
-    max-height: 100vh;
-    overflow: scroll;
-  }
-`
+function MobileNav() {
+  const [shouldShowOnMobile, setShouldShowOnMobile] = useState(false)
 
-const showMobile = css`
-  display: block;
-  height: auto;
-`
-
-const MobileNav = styled.nav`
-  padding-top: ${theme.pagePadding};
-  padding-left: ${theme.pagePadding};
-  padding-right: ${theme.pagePadding};
-  /* Not doing bottom padding to avoid doubling up on spacing */
-`
+  return (
+    <div
+      css={css`
+        padding: ${theme.pagePadding};
+        width: 100%; /* because parent flexbox has center layout */
+        border-bottom: 1px solid ${theme.colors.c2};
+        display: block;
+        @media ${theme.mediaQueries.mobileAndAbove} {
+          display: none;
+        }
+      `}
+    >
+      <Button onClick={() => setShouldShowOnMobile((s) => !s)}>Menu</Button>
+      <div style={{ display: shouldShowOnMobile ? 'block' : 'none' }}>
+        <Spacer size={4} />
+        <NavInner />
+      </div>
+    </div>
+  )
+}
 
 export default function Nav() {
-  const [navMobileShow, setNavMobileShow] = useState(false)
   const isMobile = useMediaQuery({ query: theme.mediaQueries.mobileAndBelow })
 
   return (
     <>
-      {isMobile && (
-        <MobileNav>
-          <Button onClick={() => setNavMobileShow((s) => !s)}>Menu</Button>
-        </MobileNav>
-      )}
-      <div css={[wrapper, hideMobile, navMobileShow && showMobile]}>
-        <NavInner />
-      </div>
+      <MobileNav />
+      <DesktopNav />
     </>
   )
 }
