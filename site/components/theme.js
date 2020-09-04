@@ -6,16 +6,16 @@ const ms = modularScale
 const round = (n) => Math.round(n * 100) / 100
 
 const space = [
-  round(ms(0, 8)) + 'px',
-  round(ms(1, 8)) + 'px',
-  round(ms(2, 8)) + 'px',
-  round(ms(3, 8)) + 'px',
-  round(ms(4, 8)) + 'px',
-  round(ms(5, 8)) + 'px',
-  round(ms(6, 8)) + 'px',
-  round(ms(7, 8)) + 'px',
-  round(ms(8, 8)) + 'px',
-  round(ms(9, 8)) + 'px',
+  round(ms(0, 0.5)) + 'em',
+  round(ms(1, 0.5)) + 'em',
+  round(ms(2, 0.5)) + 'em',
+  round(ms(3, 0.5)) + 'em',
+  round(ms(4, 0.5)) + 'em',
+  round(ms(5, 0.5)) + 'em',
+  round(ms(6, 0.5)) + 'em',
+  round(ms(7, 0.5)) + 'em',
+  round(ms(8, 0.5)) + 'em',
+  round(ms(9, 0.5)) + 'em',
 ]
 
 const fontSizes = {
@@ -45,7 +45,7 @@ The structure of colors from c0 to c8
 */
 export const colorsCss = css`
   :root {
-    --blue: ${setLightness(0.5, '#1b3daa')};
+    --blue: ${setLightness(0.5, '#2755bf')};
     --red: ${setLightness(0.5, '#f34228')};
 
     --c0: hsl(0deg, 0%, 100%);
@@ -56,7 +56,7 @@ export const colorsCss = css`
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --blue: ${setLightness(0.8, '#1b3daa')};
+      --blue: ${setLightness(0.8, '#2755bf')};
       --red: ${setLightness(0.8, '#f34228')};
 
       --c0: hsl(0deg, 0%, 0%);
@@ -86,8 +86,8 @@ export default {
     0: 0,
     1: '0.07em',
   },
-  lineHeights: ['1.3'],
-  fontWeights: ['300', '400', '600'],
+  lineHeights: ['1.43'],
+  fontWeights: ['300', '400', '700'],
   mediaQueries: {
     // Using this format to work with `react-responsive` package
     // EX: useMediaQuery({ query: '(min-device-width: 1824px)' })

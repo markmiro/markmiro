@@ -35,7 +35,7 @@ export default function Index() {
             `}
           />
           <div
-            style={{ marginTop: -6 /* Minor adjustment to visually align */ }}
+            style={{ marginTop: -5 /* Minor adjustment to visually align */ }}
           >
             <NavInner />
           </div>
