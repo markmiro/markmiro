@@ -57,13 +57,7 @@ function Experiment({ heading, slug, href }) {
         color: inherit;
       `}
     >
-      <Card
-        as={VStack}
-        space={2}
-        css={css`
-          max-width: 20em;
-        `}
-      >
+      <Card as={VStack} space={2}>
         <Img src={`/preprebuild/videos/${slug}.gif`} />
         <FakeA>{heading}</FakeA>
       </Card>

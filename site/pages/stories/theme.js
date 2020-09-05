@@ -1,5 +1,7 @@
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
+import { ellipsis } from 'polished'
+
 import Spacer from '../../components/Spacer'
 import theme from '../../components/theme'
 import Json from '../../components/Json'
@@ -50,9 +52,11 @@ const TextSize = ({ size }) => (
     <div
       css={css`
         font-size: ${theme.fontSizes[size]};
+        line-height: ${theme.lineHeights[0]};
       `}
+      style={ellipsis()}
     >
-      Tt
+      The quick brown fox jumped over the lazy fox.
     </div>
   </div>
 )
@@ -116,20 +120,19 @@ const Theme = () => (
 
       <Section>
         <CodeHeading>theme.fontSizes</CodeHeading>
-        <HStack>
+        <VStack>
           {Object.keys(theme.fontSizes)
             .sort((a, b) => parseInt(a) - parseInt(b))
             .map((sizeKey) => (
               <TextSize key={sizeKey} size={sizeKey} />
             ))}
-        </HStack>
+        </VStack>
+      </Section>
+      <Section>
+        <Heading>Settings</Heading>
+        <Json json={theme} />
       </Section>
     </VStack>
-
-    <Section>
-      <Heading>Settings</Heading>
-      <Json json={theme} />
-    </Section>
   </Container>
 )
 

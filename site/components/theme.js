@@ -5,17 +5,59 @@ const ms = modularScale
 
 const round = (n) => Math.round(n * 100) / 100
 
+export const spaceCss = css`
+  :root {
+    --s0: ${round(ms(0, 0.65))}em;
+    --s1: ${round(ms(1, 0.65))}em;
+    --s2: ${round(ms(2, 0.65))}em;
+    --s3: ${round(ms(3, 0.65))}em;
+    --s4: ${round(ms(4, 0.65))}em;
+    --s5: ${round(ms(5, 0.65))}em;
+    --s6: ${round(ms(6, 0.65))}em;
+    --s7: ${round(ms(7, 0.65))}em;
+    --s8: ${round(ms(8, 0.65))}em;
+    --s9: ${round(ms(9, 0.65))}em;
+  }
+  @media (max-width: ${900}px) {
+    :root {
+      --s0: ${round(ms(0, 0.45))}em;
+      --s1: ${round(ms(1, 0.45))}em;
+      --s2: ${round(ms(2, 0.45))}em;
+      --s3: ${round(ms(3, 0.45))}em;
+      --s4: ${round(ms(4, 0.45))}em;
+      --s5: ${round(ms(5, 0.45))}em;
+      --s6: ${round(ms(6, 0.45))}em;
+      --s7: ${round(ms(7, 0.45))}em;
+      --s8: ${round(ms(8, 0.45))}em;
+      --s9: ${round(ms(9, 0.45))}em;
+    }
+  }
+`
+
+// const space = [
+//   round(ms(0, 0.5)) + 'em',
+//   round(ms(1, 0.5)) + 'em',
+//   round(ms(2, 0.5)) + 'em',
+//   round(ms(3, 0.5)) + 'em',
+//   round(ms(4, 0.5)) + 'em',
+//   round(ms(5, 0.5)) + 'em',
+//   round(ms(6, 0.5)) + 'em',
+//   round(ms(7, 0.5)) + 'em',
+//   round(ms(8, 0.5)) + 'em',
+//   round(ms(9, 0.5)) + 'em',
+// ]
+
 const space = [
-  round(ms(0, 0.5)) + 'em',
-  round(ms(1, 0.5)) + 'em',
-  round(ms(2, 0.5)) + 'em',
-  round(ms(3, 0.5)) + 'em',
-  round(ms(4, 0.5)) + 'em',
-  round(ms(5, 0.5)) + 'em',
-  round(ms(6, 0.5)) + 'em',
-  round(ms(7, 0.5)) + 'em',
-  round(ms(8, 0.5)) + 'em',
-  round(ms(9, 0.5)) + 'em',
+  'var(--s0)',
+  'var(--s1)',
+  'var(--s2)',
+  'var(--s3)',
+  'var(--s4)',
+  'var(--s5)',
+  'var(--s6)',
+  'var(--s7)',
+  'var(--s8)',
+  'var(--s9)',
 ]
 
 const fontSizes = {
@@ -28,7 +70,6 @@ const fontSizes = {
   '4': round(ms(4, 1)) + 'em',
   '5': round(ms(5, 1)) + 'em',
   '6': round(ms(6, 1)) + 'em',
-  '7': round(ms(7, 1)) + 'em',
 }
 
 /*
@@ -73,11 +114,12 @@ export default {
   fonts: {
     body:
       "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, sans-serif",
+    mono: '"Menlo", "Consolas", monospace',
   },
   measure: {
     '0': `calc(${fontSizes[0]} * 30)`,
     '1': `calc(${fontSizes[0]} * 40)`,
-    navColumnText: `calc(${fontSizes[0]} * 13)`,
+    navColumnText: `calc(${fontSizes[0]} * 14)`,
   },
   fontSizes,
   space,

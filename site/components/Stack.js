@@ -7,10 +7,10 @@ export const VStack = styled.div`
   flex-direction: column;
 
   & > * {
-    margin-bottom: ${(props) => theme.space[props.space || 0]};
+    margin-top: ${(props) => theme.space[props.space || 0]};
   }
-  & > *:last-child {
-    margin-bottom: 0;
+  & > *:first-child {
+    margin-top: 0;
   }
 `
 
@@ -19,9 +19,9 @@ export const HStack = styled.div`
   flex-direction: row;
 
   & > * {
-    margin-right: ${(props) => theme.space[props.space || 0]};
+    margin-left: ${(props) => theme.space[props.space || 0]};
   }
-  & > *:last-child {
-    margin-right: 0;
+  & > *:first-child {
+    margin-left: 0;
   }
 `

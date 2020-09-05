@@ -19,7 +19,7 @@ const page = css`
 
 const contentCss = css`
   width: 100%;
-  padding: ${theme.pagePadding};
+  padding: 0 ${theme.pagePadding};
   display: flex;
   justify-content: center;
 `
@@ -38,6 +38,7 @@ export default function Page({ title, children }) {
         <Vr />
         <section css={contentCss}>
           <div css={contentInnerCss}>
+            <Spacer size={7} />
             <div
               css={css`
                 margin-top: -1.5px; /* Visual adjustment to align with top of nav */
@@ -46,7 +47,7 @@ export default function Page({ title, children }) {
             >
               <Heading>{title}</Heading>
             </div>
-            <Spacer size={4} />
+            <Spacer size={7} />
             {children}
             <Spacer size={9} />
           </div>
