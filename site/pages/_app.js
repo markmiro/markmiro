@@ -6,6 +6,7 @@ import resetCss from 'reset-css/reset.css'
 import { MDXProvider } from '@mdx-js/react'
 
 import theme, { colorsCss, spaceCss } from '../components/theme'
+import mdxComponents from '../components/mdxComponents'
 
 const globalStyles = css`
   ${colorsCss}
@@ -54,7 +55,7 @@ export default class App extends NextApp {
     return (
       <CacheProvider value={cache}>
         <Global styles={globalStyles} />
-        <MDXProvider>
+        <MDXProvider components={mdxComponents}>
           <Component {...pageProps} />
         </MDXProvider>
       </CacheProvider>

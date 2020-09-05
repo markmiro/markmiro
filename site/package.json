@@ -17,6 +17,7 @@
     "@emotion/core": "10.0.35",
     "@emotion/styled": "10.0.27",
     "@mdx-js/loader": "1.6.16",
+    "@mdx-js/mdx": "1.6.16",
     "@mdx-js/react": "1.6.16",
     "@next/mdx": "9.5.3",
     "@zeit/next-css": "1.0.1",
@@ -24,10 +25,18 @@
     "emotion-server": "10.0.27",
     "next": "9.5.2",
     "polished": "3.6.5",
+    "prism-react-renderer": "1.1.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-responsive": "8.1.0",
-    "reset-css": "5.0.1"
+    "reset-css": "5.0.1",
+    "remark": "12.0.1",
+    "remark-frontmatter": "2.0.0",
+    "unist-util-find": "1.0.1",
+    "unist-util-remove": "2.0.0",
+    "unist-util-visit": "2.0.3",
+    "vfile": "4.2.0",
+    "yaml": "1.10.0"
   },
   "devDependencies": {
     "human-format": "0.11.0",
