@@ -1,0 +1,289 @@
+export const title = 'Styling in React'
+
+<!-- # Styling in React -->
+
+Vjeux laid out the [problems](https://blog.vjeux.com/2014/javascript/react-css-in-js-nationjs.html) that any styling solution should solve, and a solution that Facebook used. A thousand flowers bloomed and now we have many ways to style in React. Each of these approaches comes with various tradeoffs for the developer experience.
+
+If you’re looking for the most popular solution: styled-components is your winner. If you’re looking for the best solution, then read on. That’s what I was trying to figure out as I wrote this. There are lots of libraries out there.
+
+This is a long post so I broke it down into several sections:
+
+- **CSS and JS in different files**
+- **CSS and JS in the same file**
+- **CSS directly in JSX**
+- **What should you pick?**
+- **Mix and match?**
+
+At a high level, you can group the libraries by:
+
+- Location of styles
+- Syntax of styling
+- Build system considerations
+
+There are 3 different locations where styles can be:
+
+- Styles and JSX in different files
+- Styles and JSX in the same file
+- Styles directly in JSX
+
+There are also different ways to write styles:
+
+- Styles written in CSS (as you’d expect)
+- Styles written in [object literal syntax](https://codesandbox.io/s/react-button-theme-ui-8mr56)
+- Functional CSS / design-systems-oriented styling . You don’t write styles directly. You abstract some of it away
+
+Another consideration is how a library will fit into your build system:
+
+- Do you use create-react-app? Do you want to avoid ejecting?
+- Do you use Next.js?
+- Are you using Webpack directly? If so, what’s your threshold for complexity?
+- Are you using TypeScript?
+
+## CSS and JS in different files
+
+Most likely you’d use this approach if you’re very comfortable with maintaining CSS with Sass or some other CSS preprocessor. Maybe you use the [BEM](http://getbem.com/introduction/) methodology.
+
+### Webpack [css-loader](https://github.com/webpack-contrib/css-loader)
+
+With this Webpack plugin, you’re making it possible for JS files to import CSS files. It lets you load CSS with your JS, which lets you avoid loading all the CSS at once.
+
+### [CSS Modules](https://github.com/css-modules/css-modules)
+
+CSS Modules takes things a step further, and css-loader has an option to enable it. With CSS Modules, you get a bunch of new features. The main feature is classes can be imported as variables.
+
+```css
+/* style.css */
+
+.button {
+  color: white;
+  background-color: black;
+}
+```
+
+And import the styles like so:
+
+```jsx
+import React from 'react'
+import styles from './style.css'
+
+export default (props) => (
+  <button className={styles.button}>{props.children}</button>
+)
+```
+
+[Edit on CodeSandbox](https://codesandbox.io/s/react-button-css-modules-g2ici)
+
+CSS and HTML is kept separate (which you might prefer). You don’t risk having unused CSS build up as you’d see if you were using Sass.
+
+### CSS and JS in the same file
+
+The idea with this approach is sometimes (or often), you’ll want to keep CSS local to a given JS file. With React you’re already co-locating markup and JS. Why not add CSS into the mix?
+
+There are lots of libraries for this approach. Libraries differ on whether styles are coupled with components, or kept separate.
+
+### [Aphrodite](https://github.com/Khan/aphrodite): styles are written as JS object literals
+
+```jsx
+import React, { Component } from 'react'
+import { StyleSheet, css } from 'aphrodite'
+
+const styles = StyleSheet.create({
+  button: {
+    backgroundColor: 'black',
+    color: 'white',
+  },
+})
+
+const Button = (props) => (
+  <button className={css(styles.button)}>{props.children}</button>
+)
+
+export default Button
+```
+
+[Edit on CodeSandbox](https://codesandbox.io/s/react-button-aphrodite-9kgxd)
+
+Aphrodite is like CSS Modules in that you rely on a `styles` object and then use it wherever you want to add CSS to an HTML element. However, the difference is that the CSS and JS can be in same file. It’s encouraged!
+
+### [ReactCSS](https://github.com/casesandberg/reactcss) and others: like Aphrodite, but a different syntax
+
+I’m not going to show examples of this one, but if you’re considering Aphrodite, consider this one too.
+
+### [styled-components](https://www.styled-components.com/): a component API for writing CSS
+
+```jsx
+import React from 'react'
+import styled from 'styled-components'
+
+const Button = styled.a`
+  background-color: black;
+  color: white;
+`
+
+export default Button
+```
+
+[Edit on CodeSandbox](https://codesandbox.io/s/react-button-styled-components-y87lb)
+
+We get to write CSS in CSS! This is great, but you can also have locally scoped styles. However, you can’t have locally scoped styles that aren’t tied to a component. If that’s what you want, maybe [Emotion](https://emotion.sh/docs/introduction) is for you.
+
+### [Emotion](https://emotion.sh/docs/introduction): choose your own adventure, but write styles in CSS
+
+You can use it in a library-agnostic way or you can use it as you would use Styled Components. Either way, you get to write styles in CSS.
+
+[Example on CodeSandbox](https://codesandbox.io/s/react-button-emotion-i1m0d)
+
+### [Linaria](https://github.com/callstack/linaria): like Emotion, but faster
+
+It’s like Emotion. It has both a component API for writing styles and one that gives you a style object. However, beware of [trade offs](https://github.com/callstack/linaria#trade-offs) made for speed.
+
+## CSS directly in JSX
+
+This approach is the most wild. This is for people who don’t just want their CSS scoped in the same file as their components. People who choose this approach want their styles to not escape the bounds of the components they’re meant for.
+
+### Just use React
+
+React supports styles in your markup out-of-the-box, oddly enough. If you want to style an element, look no further:
+
+```jsx
+import React from 'react'
+
+export default (props) => (
+  <button
+    style={{
+      background: 'black',
+      color: 'white',
+    }}
+  >
+    {props.children}
+  </button>
+)
+```
+
+[Edit on CodeSandBox](https://codesandbox.io/s/react-button-object-literal-styles-x2gxs)
+
+The downside is sharing styles is tricky, and it’s not performant. Also, how do you add hover styles? React doesn’t have an answer for you. Maybe you should use a library after all :(
+
+### [styled-jsx](https://github.com/zeit/styled-jsx)
+
+The idea is to let you create `style` tags scoped to a component like this:
+
+```jsx
+import React from 'react'
+
+export default (props) => (
+  <button>
+    {props.children}
+    <style jsx>{`
+      button {
+        background: black;
+        color: white;
+      }
+    `}</style>
+  </button>
+)
+```
+
+[Edit on CodeSandBox](https://codesandbox.io/s/react-button-styled-jsx-using-next-83cmz) (Next.js)
+
+[Edit on CodeSandBox](https://codesandbox.io/s/react-button-styled-jsx-kji30) (create-react-app, without support for styles in JSX)
+
+This library makes use of a babel plugin to make the above syntax work.
+
+### [Tachyons](https://tachyons.io/)
+
+In your HTML:
+
+```html
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"
+/>
+```
+
+In your JS:
+
+```jsx
+import React from 'react'
+
+export default (props) => (
+  <button className="bg-black white">{props.children}</button>
+)
+```
+
+[Edit on CodeSandbox](https://codesandbox.io/s/react-button-tachyons-5kcjn)
+
+This is a CSS library, so why would I include it when discussing styling in React? With Tachyons you don’t have to write almost any CSS, so you can punt on the points discussed in the [presentation by vjeux](https://blog.vjeux.com/2014/javascript/react-css-in-js-nationjs.html).
+
+One downside is your markup can get really hairy. Another is that if you do need lots of custom CSS, you either need to also add another library like Styled Components or just write global CSS.
+
+Use Tachyons if you’re prototyping and don’t care about having a unique brand or feel.
+
+### [Tailwind](https://tailwindcss.com/)
+
+Use Tailwind if you want customization. Tailwind is also more verbose than Tachyons.
+
+[See in CodeSandbox](https://codesandbox.io/s/react-button-tailwind-b8lyc)
+
+## Limited CSS analogues in JSX
+
+### [Theme UI](https://theme-ui.com/)
+
+This is like putting CSS directly in JSX, except it’s far more structured. Here’s an example:
+
+```jsx
+/** @jsx jsx */
+
+export default (props) => (
+  <button
+    sx={{
+      bg: 'primary',
+      color: 'background',
+    }}
+  >
+    Hello
+  </button>
+)
+```
+
+[Edit on CodeSandbox](https://codesandbox.io/s/react-button-theme-ui-8mr56)
+
+You can think of Theme UI as React inline styles + constraints. The `/* @jsx jsx */` part is important, and you can [read more about it](https://theme-ui.com/guides/jsx-pragma) if you’re curious.
+
+With this approach you limit the CSS you’re allowed to write. With Styled Components you would create a component and you could set it’s color to anything. Here, the API lets you only choose colors predefined in [your theme](https://theme-ui.com/theming).
+
+If you’re curious how this works, take a look at their [Getting Started](https://theme-ui.com/getting-started) page.
+
+## What should you pick?
+
+The React team doesn’t have an opinion on the various approaches to styling, and for good reason. Styling UIs isn’t exactly a solved problem. If you want to punt, that’s ok. You can follow their [recommendation](https://reactjs.org/docs/faq-styling.html#what-is-css-in-js).
+
+However, if you know you can benefit from a little CSS in JS but can’t decide based on the above discussion, here’s a way to break down the problem:
+
+- **Where are your team’s strengths?** Are you great at CSS, but not JS? Are you great at JS but not CSS. Are you great at both? Are there big differences in CSS skill level across your team?
+- **Design constraints.** Do your designs follow a design system? How likely will you bend the rules? How pixel-perfect do you wanna get? Theming? Dark mode? White-labeling?
+- **How is it going to affect the process of developing components?** CSS in separate files may mean you will have a folder for each component. CSS in JSX, on the other hand, can make your components look really ugly by mixing HTML, JS, and styling.
+- **How is this going to affect the APIs of components you create?** Ideally, each component you create will only expose the props you need. You don’t want to expose options that either don’t make sense for the component, or don’t fit with your design system. However, less options means you’ll probably reach for an escape hatch more often. A high quality escape hatch might be indispensable.
+- **[Technical constraints](http://michelebertoli.github.io/css-in-js/).** Will it work with server-side rendering Performance? Vendor prefixing? Are you ok with having a CSS parser running (as is the case with using many CSS in JS libraries)?
+
+If you’re a CSS veteran and you want to play it safe: css-loader is the way to go. You know how CSS can bite you, and you’ve developed strong habits to avoid common mistakes. The other approaches to styling in React are meant to solve real problems, but if an approach like [BEM](http://getbem.com/naming/) will work for your project, css-loader will be just fine. If you’re a tad bit adventurous I’d suggest CSS Modules.
+
+If you’re a NodeJS veteran, or a non-CSS person generally, I really think it’s worth finding ways to punt on deciding how you want to write styles in React. CSS is annoying in ways you’ve only begun to appreciate.
+
+- **If you have time:** Get good at CSS. I mean really understand CSS specificity, how the box model works, flexbox and other display modes, z-index, breakpoints, the different units, margin and padding…
+- **If you’re in a rush**: Use a component library like [Material UI](https://material-ui.com/), [Ant Design](https://ant.design/docs/react/introduce), or [Grommet](https://v2.grommet.io/). Once you’re familiar with what a good API looks like you have a much higher chance of success when creating your own components.
+
+## Mix and match?
+
+Choosing one approach may not always work for 100% of all the styles you’ll write. The more constrained your approach, the more you’ll need an escape hatch. Using React inline styles is convenient for not requiring a library, but you don’t get pseudo selectors.
+
+Some mixes I’ve used real projects:
+
+- **Bootstrap + object literal syntax** (for isolated component-level tweaks). This works, but if a component needs pseudo selectors for any reason, you’re left with using global styles
+- **CSS Modules + Tachyons-inspired library + component library**. This had a lot going for it. I grew to like the tachyons-based approach. However, there were lots of ways to do the same thing; it didn’t feel like writing real CSS. I felt like I was learning an unnecessarily large homebrewed language for little benefit. This wouldn’t have been a viable solution without good docs
+- **Tachyons + object literal syntax**. This has the same limitations as above, but for personal projects it’s extremely productive. However, you gotta watch out if you’re going to be overriding Tachyons styles, or dynamically adding and removing classes. CSS declaration order matters
+- **Tachyons + styled-components**. \*\*\*\*This solves the problem of needing global CSS. styled-components feels a little heavy-handed as an escape hatch for Tachyons
+
+## The future
+
+There is room for more ideas in CSS. For example, check out [this nano-css example](https://github.com/streamich/nano-css/blob/master/docs/tachyons.md). It’s Tachyons plus the possibility of tree shaking. I personally think functional CSS and design systems are the future. But if that’s the future, who wants to learn a custom “language” for styling every time they jump into a project? Theme UI is one way to standardize, but I’m thinking we really should be building visual stuff visually. It’s much easier to pick see a list of options for styles you can apply and add those. [Modulz](https://www.modulz.app/) is one company trying to do that. Plain CSS could end up being an escape hatch for experts the way that **[React.findDOMNode()](https://reactjs.org/docs/react-dom.html#finddomnode)** is used today.

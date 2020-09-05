@@ -3,6 +3,7 @@ import { CacheProvider, Global, css } from '@emotion/core'
 // Use only { cache } from 'emotion'. Don't use { css }.
 import { cache } from 'emotion'
 import resetCss from 'reset-css/reset.css'
+import { MDXProvider } from '@mdx-js/react'
 
 import theme, { colorsCss, spaceCss } from '../components/theme'
 import MaybeSubscribedBanner from '../components/MaybeSubscribedBanner'
@@ -65,7 +66,9 @@ export default class App extends NextApp {
       <CacheProvider value={cache}>
         <Global styles={globalStyles} />
         <MaybeSubscribedBanner />
-        <Component {...pageProps} />
+        <MDXProvider>
+          <Component {...pageProps} />
+        </MDXProvider>
       </CacheProvider>
     )
   }
