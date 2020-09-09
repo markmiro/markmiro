@@ -17,6 +17,7 @@ export function Section({ children }) {
 const HeadingThing = styled.header`
   font-weight: ${theme.fontWeights[2]};
   font-size: ${(props) => theme.fontSizes[props.index]};
+  line-height: ${theme.lineHeights.heading};
 `
 
 function Heading({ children, ...props }) {

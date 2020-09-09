@@ -1,6 +1,8 @@
 import { modularScale, setLightness } from 'polished'
 import { css } from '@emotion/core'
 
+const MOBILE_SMALL = 800
+
 const ms = modularScale
 
 const round = (n) => Math.round(n * 100) / 100
@@ -18,7 +20,7 @@ export const spaceCss = css`
     --s8: ${round(ms(8, 0.65))}em;
     --s9: ${round(ms(9, 0.65))}em;
   }
-  @media (max-width: ${900}px) {
+  @media (max-width: ${MOBILE_SMALL}px) {
     :root {
       --s0: ${round(ms(0, 0.45))}em;
       --s1: ${round(ms(1, 0.45))}em;
@@ -118,7 +120,7 @@ export default {
   },
   measure: {
     '0': `calc(${fontSizes[0]} * 30)`,
-    '1': `calc(${fontSizes[0]} * 40)`,
+    '1': `calc(${fontSizes[0]} * 39)`,
     navColumnText: `calc(${fontSizes[0]} * 14)`,
   },
   fontSizes,
@@ -128,13 +130,19 @@ export default {
     0: 0,
     1: '0.07em',
   },
-  lineHeights: ['1.43'],
+  lineHeights: {
+    heading: 1.2,
+    p: 1.5,
+    0: 1.43,
+  },
   fontWeights: ['300', '400', '700'],
   mediaQueries: {
     // Using this format to work with `react-responsive` package
     // EX: useMediaQuery({ query: '(min-device-width: 1824px)' })
-    mobileAndBelow: `(max-width: ${900}px)`,
-    mobileAndAbove: `(min-width: ${900 + 1}px)`,
+    mobileSmallAndBelow: `(max-width: ${MOBILE_SMALL}px)`,
+    mobileSmallAndAbove: `(min-width: ${MOBILE_SMALL + 1}px)`,
+    mobileAndBelow: `(max-width: ${1200}px)`,
+    mobileAndAbove: `(min-width: ${1200 + 1}px)`,
     experiments: {
       mobileAndBelow: `(max-width: ${550}px)`,
       mobileAndAbove: `(min-width: ${550 + 1}px)`,
