@@ -31,7 +31,7 @@ const globalStyles = css`
     color: ${theme.colors.c8};
     background: ${theme.colors.c0};
     font-size: 16px; /* The base font size everything else is based on */
-    @media ${theme.mediaQueries.mobileAndAbove} {
+    @media ${theme.mediaQueries.mobileSmallAndAbove} {
       font-size: 18px; /* The base font size everything else is based on */
     }
   }

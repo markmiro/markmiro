@@ -9,7 +9,7 @@ function extractTitle() {
   }
 }
 
-export default function getMdxTitle(fileContents) {
+function getMdxTitle(fileContents) {
   const mdxCompiler = createCompiler({
     remarkPlugins: [extractTitle],
   })
@@ -17,5 +17,12 @@ export default function getMdxTitle(fileContents) {
   const file = vfile(fileContents)
   const processedFile = mdxCompiler.processSync(file)
   const title = processedFile.data.title
+
+  console.log(processedFile.contents)
+
   return title
+}
+
+module.exports = {
+  getMdxTitle,
 }

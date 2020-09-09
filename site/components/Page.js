@@ -22,6 +22,7 @@ const contentCss = css`
   padding: 0 ${theme.pagePadding};
   display: flex;
   justify-content: center;
+  overflow: hidden;
 `
 
 const contentInnerCss = css`

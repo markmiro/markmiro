@@ -17,6 +17,16 @@ const withMDX = require('@next/mdx')({
   // },
 })
 
-module.exports = withMDX({
-  pageExtensions: ['js', 'jsx', 'mdx'],
+const withReactSvg = require('next-react-svg')
+const path = require('path')
+
+module.exports = withReactSvg({
+  include: path.resolve(__dirname, 'src/assets/svg'),
+  webpack(config, options) {
+    return config
+  },
 })
+
+// module.exports = withReactSvg(withMDX({
+//   pageExtensions: ['js', 'jsx', 'mdx'],
+// })
