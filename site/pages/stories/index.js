@@ -1,6 +1,8 @@
+import Heading, { Section, HeadingSizeContext } from '../../components/Heading'
+
 import Headings from './headings'
 import Theme from './theme'
-import Heading, { Section, HeadingSizeContext } from '../../components/Heading'
+import Svg from './svg'
 
 const Headed = ({ title, children }) => (
   <Section>
@@ -16,6 +18,9 @@ export default function Stories() {
         <HeadingSizeContext.Provider value={0}>
           <Headings />
         </HeadingSizeContext.Provider>
+      </Headed>
+      <Headed title="<SVG />">
+        <Svg />
       </Headed>
       <Headed title="<Theme />">
         <Theme />
