@@ -13,6 +13,7 @@
     "deploy:prod": "vercel deploy --prod"
   },
   "dependencies": {
+    "@babel/core": "7.11.6",
     "@emotion/babel-preset-css-prop": "10.0.27",
     "@emotion/core": "10.0.35",
     "@emotion/styled": "10.0.27",
