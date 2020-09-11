@@ -1,4 +1,3 @@
-import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 import { useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
@@ -57,13 +56,11 @@ function MobileNav() {
   )
 }
 
-export default function Nav() {
-  const isMobile = useMediaQuery({ query: theme.mediaQueries.mobileAndBelow })
+const Nav = () => (
+  <>
+    <MobileNav />
+    <DesktopNav />
+  </>
+)
 
-  return (
-    <>
-      <MobileNav />
-      <DesktopNav />
-    </>
-  )
-}
+export default Nav

@@ -28,7 +28,7 @@ export default function Index() {
       </Head2>
       <ContentContainer>
         <HStack space={2}>
-          <MyPortrait width="100px" />
+          <MyPortrait width="6em" />
           <Vr
             css={css`
               border-left: 1px solid ${theme.colors.c8};

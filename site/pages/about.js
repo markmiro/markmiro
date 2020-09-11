@@ -12,12 +12,13 @@ export default function About() {
     <Page title="About">
       <VStack space={3}>
         <HStack space={3} style={{ alignItems: 'flex-start' }}>
-          <MyPortrait width={150} />
+          <MyPortrait width="10em" />
           <VStack style={{ alignItems: 'start' }}>
             <Section>
               <div
                 style={{
-                  height: 35 /* to align with the dark/light separation line in the background of markmiro-portrait.jpg */,
+                  height:
+                    '2.3em' /* to align with the dark/light separation line in the background of markmiro-portrait.jpg */,
                 }}
               />
               <div>
