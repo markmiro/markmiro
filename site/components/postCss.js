@@ -14,7 +14,8 @@ const spacingCss = css`
     margin-bottom: 0;
   }
 
-  & > * {
+  & > *,
+  p {
     margin-top: ${theme.space[3]};
   }
 
@@ -213,6 +214,40 @@ const miscElementsCss = css`
   }
 `
 
+const formElementsCss = css`
+  button,
+  textarea,
+  input,
+  select {
+    font-size: inherit;
+    font-family: inherit;
+    margin: 0;
+    border: 1px solid currentColor;
+    background-color: transparent;
+    color: inherit;
+    border-radius: 0;
+    &:disabled {
+      opacity: 0.6;
+    }
+  }
+
+  label,
+  textarea {
+    display: block;
+  }
+
+  input:not(:matches([type='radio'], [type='checkbox'])),
+  textarea,
+  select,
+  button {
+    width: 100%;
+  }
+
+  input::placeholder {
+    color: ${theme.colors.c6};
+  }
+`
+
 const postCss = css`
   line-height: ${theme.lineHeights[0]};
   ${spacingCss}
@@ -220,6 +255,7 @@ const postCss = css`
   ${listsCss}
   ${tableCss}
   ${miscElementsCss}
+  ${formElementsCss}
 `
 
 export default postCss
