@@ -337,6 +337,100 @@ var fun = function lang(l) {
       <code>The final element.{'\n'}</code>
     </pre>
     <hr />
+    {/* Form elements from https://getbootstrap.com/docs/4.0/content/reboot/ */}
+    <form>
+      <fieldset>
+        <legend>Example legend</legend>
+        <p>
+          <label htmlFor="input">Example input</label>
+          <input type="text" id="input" placeholder="Example input" />
+        </p>
+        <p>
+          <label htmlFor="select">Example select</label>
+          <select id="select">
+            <option value>Choose...</option>
+            <optgroup label="Option group 1">
+              <option value>Option 1</option>
+              <option value>Option 2</option>
+              <option value>Option 3</option>
+            </optgroup>
+            <optgroup label="Option group 2">
+              <option value>Option 4</option>
+              <option value>Option 5</option>
+              <option value>Option 6</option>
+            </optgroup>
+          </select>
+        </p>
+        <p>
+          <label>
+            <input type="checkbox" defaultValue />
+            Check this checkbox
+          </label>
+        </p>
+        <p>
+          <label>
+            <input
+              type="radio"
+              name="optionsRadios"
+              id="optionsRadios1"
+              defaultValue="option1"
+              defaultChecked
+            />
+            Option one is this and that
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="optionsRadios"
+              id="optionsRadios2"
+              defaultValue="option2"
+            />
+            Option two is something else that's also super long to demonstrate
+            the wrapping of these fancy form controls.
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="optionsRadios"
+              id="optionsRadios3"
+              defaultValue="option3"
+              disabled
+            />
+            Option three is disabled
+          </label>
+        </p>
+        <p>
+          <label htmlFor="textarea">Example textarea</label>
+          <textarea id="textarea" rows={3} defaultValue={''} />
+        </p>
+        <p>
+          <label htmlFor="date">Example date</label>
+          <input type="date" id="date" />
+        </p>
+        <p>
+          <label htmlFor="time">Example time</label>
+          <input type="time" id="time" />
+        </p>
+        <p>
+          <label htmlFor="output">Example output</label>
+          <output name="result" id="output">
+            100
+          </output>
+        </p>
+        <p>
+          <button type="submit">Button submit</button>
+          <input type="submit" defaultValue="Input submit button" />
+          <input type="button" defaultValue="Input button" />
+        </p>
+        <p>
+          <button type="submit" disabled>
+            Button submit
+          </button>
+          <input type="submit" defaultValue="Input submit button" disabled />
+          <input type="button" defaultValue="Input button" disabled />
+        </p>
+      </fieldset>
+    </form>
   </>
 )
 
