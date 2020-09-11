@@ -89,6 +89,7 @@ The structure of colors from c0 to c8
 */
 export const colorsCss = css`
   :root {
+    --highlight: #ffff7066;
     --blue: ${setLightness(0.5, '#2755bf')};
     --red: ${setLightness(0.5, '#f34228')};
 
@@ -154,6 +155,7 @@ export default {
   colors: {
     blue: 'var(--blue)',
     red: 'var(--red)',
+    highlight: 'var(--highlight)',
     c0: 'var(--c0)',
     c1: 'var(--c1)',
     c2: 'var(--c2)',
