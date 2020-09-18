@@ -49,9 +49,14 @@ export default function Posts({ posts }) {
       <div>
         <VStack space={3}>
           <Post
-            href="/posts/first-post"
-            title="Reprehenderit est cillum duis ut dolore."
-            subTitle="Mollit officia cupidatat adipisicing voluptate duis elit id officia ad excepteur et. Eiusmod laborum nisi voluptate ea ipsum enim ut anim dolore. Pariatur officia laboris ut ad esse ea in magna qui Lorem."
+            href="/posts/touchbar"
+            title="Why did Apple invent the TouchBar?"
+            subTitle="            The TouchBar is a rare gimmick for Apple. After 4 years, I think
+            it's fair consider it a failure, but still the question remains.
+            Why? The more I thought about this question the more I began to see
+            why Apple might have 1) chosen the keyboard as a locus of innovation
+            in the 2016 MacBook Pro, and 2) decided the TouchBar was chosen as a
+            solution."
           ></Post>
           <Hr />
           <Post
