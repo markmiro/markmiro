@@ -25,13 +25,20 @@ const globalStyles = css`
   body {
     padding: 0;
     margin: 0;
-    font-family: ${theme.fonts.body};
-    color: ${theme.colors.c8};
-    background: ${theme.colors.c0};
+
     font-size: 16px; /* The base font size everything else is based on */
     @media ${theme.mediaQueries.mobileSmallAndAbove} {
       font-size: 18px; /* The base font size everything else is based on */
     }
+    @media (min-width: 1500px) {
+      font-size: 20px; /* The base font size everything else is based on */
+    }
+    font-family: ${theme.fonts.body};
+    color: ${theme.colors.c8};
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+
+    background: ${theme.colors.c0};
   }
 
   hr {

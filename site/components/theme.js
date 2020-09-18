@@ -63,6 +63,7 @@ const space = [
 ]
 
 const fontSizes = {
+  '-3': round(ms(-3, 1)) + 'em',
   '-2': round(ms(-2, 1)) + 'em',
   '-1': round(ms(-1, 1)) + 'em',
   '0': round(ms(0, 1)) + 'em',
@@ -92,6 +93,7 @@ export const colorsCss = css`
     --red: ${setLightness(0.5, '#f34228')};
 
     --c0: hsl(0deg, 0%, 100%);
+    --c1: hsl(0deg, 0%, 95%);
     --c2: hsl(0deg, 0%, 90%); /* start */
     --c4: hsl(0deg, 0%, 80%); /* 10% diff */
     --c6: hsl(0deg, 0%, 60%); /* 20% diff */
@@ -103,6 +105,7 @@ export const colorsCss = css`
       --red: ${setLightness(0.8, '#f34228')};
 
       --c0: hsl(0deg, 0%, 0%);
+      --c1: hsl(0deg, 0%, 15%);
       --c2: hsl(0deg, 0%, 30%); /* start */
       --c4: hsl(0deg, 0%, 40%); /* 10% diff */
       --c6: hsl(0deg, 0%, 60%); /* 20% diff */
@@ -133,7 +136,7 @@ export default {
   lineHeights: {
     heading: 1.2,
     p: 1.5,
-    0: 1.43,
+    0: 1.45,
   },
   fontWeights: ['300', '400', '700'],
   mediaQueries: {
@@ -152,6 +155,7 @@ export default {
     blue: 'var(--blue)',
     red: 'var(--red)',
     c0: 'var(--c0)',
+    c1: 'var(--c1)',
     c2: 'var(--c2)',
     c4: 'var(--c4)',
     c6: 'var(--c6)',
