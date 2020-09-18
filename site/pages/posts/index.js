@@ -35,7 +35,7 @@ export function getStaticProps() {
     .filter(allExceptThisFile)
 
   const posts = fileNames.map((fileName) => {
-    const slug = fileName.replace(/\.mdx$/, '') // Remove '.mdx' extension
+    const slug = fileName.replace(/\.[a-z]+$/, '') // Remove '.mdx' extension
     const fileContents = fs.readFileSync(
       path.join(process.cwd(), '/pages/posts', fileName),
       'utf-8'

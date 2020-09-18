@@ -7,6 +7,7 @@ import { MDXProvider } from '@mdx-js/react'
 
 import theme, { colorsCss, spaceCss } from '../components/theme'
 import MaybeSubscribedBanner from '../components/MaybeSubscribedBanner'
+import mdxComponents from '../components/mdxComponents'
 
 const globalStyles = css`
   ${colorsCss}
@@ -66,7 +67,7 @@ export default class App extends NextApp {
       <CacheProvider value={cache}>
         <Global styles={globalStyles} />
         <MaybeSubscribedBanner />
-        <MDXProvider>
+        <MDXProvider components={mdxComponents}>
           <Component {...pageProps} />
         </MDXProvider>
       </CacheProvider>

@@ -14,6 +14,10 @@ const Headed = ({ title, children }) => (
 export default function Stories() {
   return (
     <>
+      <ul>
+        <li>Test</li>
+        <li>Test</li>
+      </ul>
       <Headed title="<Headings />">
         <HeadingSizeContext.Provider value={0}>
           <Headings />
