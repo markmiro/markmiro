@@ -11,6 +11,7 @@ const Button = styled.button`
 
   color: inherit;
   font-family: ${theme.fonts.body};
+  font-size: 100%;
 
   &:active {
     color: inherit;

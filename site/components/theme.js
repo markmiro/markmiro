@@ -91,6 +91,7 @@ export const colorsCss = css`
   :root {
     --highlight: #ffff7066;
     --blue: ${setLightness(0.5, '#2755bf')};
+    --green: ${setLightness(0.5, '#39a055')};
     --red: ${setLightness(0.5, '#f34228')};
 
     --c0: hsl(0deg, 0%, 100%);
@@ -103,6 +104,7 @@ export const colorsCss = css`
   @media (prefers-color-scheme: dark) {
     :root {
       --blue: ${setLightness(0.8, '#2755bf')};
+      --green: ${setLightness(0.5, '#39a055')};
       --red: ${setLightness(0.8, '#f34228')};
 
       --c0: hsl(0deg, 0%, 0%);
@@ -154,6 +156,7 @@ export default {
   },
   colors: {
     blue: 'var(--blue)',
+    green: 'var(--green)',
     red: 'var(--red)',
     highlight: 'var(--highlight)',
     c0: 'var(--c0)',

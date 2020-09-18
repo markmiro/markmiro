@@ -5,6 +5,7 @@ import { cache } from 'emotion'
 import resetCss from 'reset-css/reset.css'
 
 import theme, { colorsCss, spaceCss } from '../components/theme'
+import MaybeSubscribedBanner from '../components/MaybeSubscribedBanner'
 
 const globalStyles = css`
   ${colorsCss}
@@ -26,7 +27,10 @@ const globalStyles = css`
     padding: 0;
     margin: 0;
 
-    font-size: 16px; /* The base font size everything else is based on */
+    font-size: 13px; /* The base font size everything else is based on */
+    @media (min-width: 321px) {
+      font-size: 16px;
+    }
     @media ${theme.mediaQueries.mobileSmallAndAbove} {
       font-size: 18px; /* The base font size everything else is based on */
     }
@@ -60,6 +64,7 @@ export default class App extends NextApp {
     return (
       <CacheProvider value={cache}>
         <Global styles={globalStyles} />
+        <MaybeSubscribedBanner />
         <Component {...pageProps} />
       </CacheProvider>
     )

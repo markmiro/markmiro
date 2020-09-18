@@ -4,6 +4,7 @@ import styled from '@emotion/styled'
 import Page from '../../components/Page'
 import { VStack } from '../../components/Stack'
 import Spacer from '../../components/Spacer'
+import SubscribeForm from '../../components/SubscribeForm'
 import P from '../../components/P'
 import Heading, { Section } from '../../components/Heading'
 import Hr from '../../components/Hr'
@@ -73,6 +74,8 @@ export default function Posts({ posts }) {
           <Hr />
         </VStack>
       </div>
+      <Spacer size={7} />
+      <SubscribeForm />
     </Page>
   )
 }
