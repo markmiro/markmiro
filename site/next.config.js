@@ -1,5 +1,8 @@
 const withReactSvg = require('next-react-svg')
+const detectFrontmatter = require('remark-frontmatter')
 const path = require('path')
+
+const extractFrontmatter = require('./lib/extractMdxFrontmatter')
 
 // module.exports = withReactSvg({
 //   include: path.resolve(__dirname, 'assets/svg'),
@@ -20,7 +23,7 @@ function removeMdxTitle() {
 const withMDX = require('@next/mdx')({
   extension: /\.mdx?$/,
   options: {
-    remarkPlugins: [removeMdxTitle],
+    remarkPlugins: [detectFrontmatter, extractFrontmatter],
   },
 })
 
