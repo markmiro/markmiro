@@ -11,8 +11,9 @@ import P from "../../components/P"
 import Heading, { Section } from "../../components/Heading"
 import Hr from "../../components/Hr"
 import Json from "../../components/Json"
+import theme from "../../components/theme"
 
-const Post = ({ href, title, description, timestamp }) => (
+const Post = ({ href, title, description }) => (
   <Section>
     <Section>
       <Link
