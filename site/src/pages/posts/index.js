@@ -1,5 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
+import { graphql } from "gatsby"
+import { css } from "@emotion/core"
 
 import Page from "../../components/Page"
 import { VStack } from "../../components/Stack"
@@ -8,7 +10,7 @@ import SubscribeForm from "../../components/SubscribeForm"
 import P from "../../components/P"
 import Heading, { Section } from "../../components/Heading"
 import Hr from "../../components/Hr"
-import { css } from "@emotion/core"
+import Json from "../../components/Json"
 
 const Post = ({ href, title, description, timestamp }) => (
   <Section>
@@ -31,36 +33,41 @@ const Post = ({ href, title, description, timestamp }) => (
         Read →
       </Link>
     </Section>
+    <Hr />
   </Section>
 )
 
-export default function Posts() {
+export default function Posts({ data }) {
   return (
     <Page title="Posts">
-      <div>
-        <VStack space={3}>
+      <VStack space={3}>
+        {/* <Json json={data} /> */}
+        {data.allMdx.nodes.map(({ id, slug, frontmatter, excerpt }) => (
           <Post
-            href="/posts/touchbar"
-            title="Why did Apple invent the TouchBar?"
-            description="The TouchBar is a rare gimmick for Apple. After 4 years, I think it's fair consider it a failure, but still the question remains. Why? The more I thought about this question the more I began to see why Apple might have 1) chosen the keyboard as a locus of innovation in the 2016 MacBook Pro, and 2) decided the TouchBar was chosen as a solution."
+            key={id}
+            href={"/" + slug}
+            title={frontmatter.title}
+            description={excerpt}
           />
-          <Hr />
-          <Post
-            href="/posts/second-post"
-            title="Occaecat occaecat qui elit adipisicing"
-            description="Deserunt voluptate reprehenderit voluptate mollit anim ipsum quis veniam commodo tempor amet ullamco ullamco. Laboris ad labore laboris id quis veniam velit id. Excepteur sit enim nostrud aliquip aliquip. Id ea enim consectetur occaecat ad Lorem proident deserunt Lorem laboris qui est in do. Labore sunt dolore amet qui duis. Occaecat irure aliqua aliqua officia commodo magna aliqua deserunt sit minim."
-          />
-          <Hr />
-          <Post
-            href="/posts/second-post"
-            title="Commodo exercitation laborum elit ipsum ad"
-            description="Id voluptate excepteur quis est in duis qui velit tempor et. Id est in eiusmod mollit ea mollit aliqua. Anim laborum in consectetur quis dolor. Adipisicing consequat esse et duis aute est dolor sunt aliquip. Amet aute nostrud Lorem sint. Sint nostrud tempor dolor reprehenderit."
-          />
-          <Hr />
-        </VStack>
-      </div>
+        ))}
+      </VStack>
       <Spacer size={7} />
       <SubscribeForm />
     </Page>
   )
 }
+
+export const query = graphql`
+  {
+    allMdx {
+      nodes {
+        id
+        slug
+        frontmatter {
+          title
+        }
+        excerpt(pruneLength: 500, truncate: false)
+      }
+    }
+  }
+`
