@@ -15,7 +15,7 @@ const Subtitle = styled.h2`
 `
 
 const MyNameAndTitle = () => (
-  <Link to="/" style={{ color: "inherit" }}>
+  <Link to="/">
     <hgroup>
       <Title>{content.siteName}</Title>
       <Subtitle>{content.jobTitle}</Subtitle>

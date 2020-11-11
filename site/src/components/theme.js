@@ -9,30 +9,16 @@ const round = n => Math.round(n * 100) / 100
 
 export const spaceCss = css`
   :root {
-    --s0: ${round(ms(0, 0.65))}em;
-    --s1: ${round(ms(1, 0.65))}em;
-    --s2: ${round(ms(2, 0.65))}em;
-    --s3: ${round(ms(3, 0.65))}em;
-    --s4: ${round(ms(4, 0.65))}em;
-    --s5: ${round(ms(5, 0.65))}em;
-    --s6: ${round(ms(6, 0.65))}em;
-    --s7: ${round(ms(7, 0.65))}em;
-    --s8: ${round(ms(8, 0.65))}em;
-    --s9: ${round(ms(9, 0.65))}em;
-  }
-  @media (max-width: ${MOBILE_SMALL}px) {
-    :root {
-      --s0: ${round(ms(0, 0.45))}em;
-      --s1: ${round(ms(1, 0.45))}em;
-      --s2: ${round(ms(2, 0.45))}em;
-      --s3: ${round(ms(3, 0.45))}em;
-      --s4: ${round(ms(4, 0.45))}em;
-      --s5: ${round(ms(5, 0.45))}em;
-      --s6: ${round(ms(6, 0.45))}em;
-      --s7: ${round(ms(7, 0.45))}em;
-      --s8: ${round(ms(8, 0.45))}em;
-      --s9: ${round(ms(9, 0.45))}em;
-    }
+    --s0: ${round(ms(0, 0.4))}em;
+    --s1: ${round(ms(1, 0.4))}em;
+    --s2: ${round(ms(2, 0.4))}em;
+    --s3: ${round(ms(3, 0.4))}em;
+    --s4: ${round(ms(4, 0.4))}em;
+    --s5: ${round(ms(5, 0.4))}em;
+    --s6: ${round(ms(6, 0.4))}em;
+    --s7: ${round(ms(7, 0.4))}em;
+    --s8: ${round(ms(8, 0.4))}em;
+    --s9: ${round(ms(9, 0.4))}em;
   }
 `
 
@@ -90,29 +76,29 @@ The structure of colors from c0 to c8
 export const colorsCss = css`
   :root {
     --highlight: #ffff7066;
-    --blue: ${setLightness(0.5, "#2755bf")};
-    --green: ${setLightness(0.5, "#39a055")};
+    --blue: ${setLightness(0.4, "#2755bf")};
+    --green: ${setLightness(0.35, "#39a055")};
     --red: ${setLightness(0.5, "#f34228")};
 
     --c0: hsl(0deg, 0%, 100%);
     --c1: hsl(0deg, 0%, 95%);
-    --c2: hsl(0deg, 0%, 90%); /* start */
-    --c4: hsl(0deg, 0%, 80%); /* 10% diff */
-    --c6: hsl(0deg, 0%, 60%); /* 20% diff */
-    --c8: hsl(0deg, 0%, 0%); /* 40% diff */
+    --c2: hsl(0deg, 0%, 90%);
+    --c4: hsl(0deg, 0%, 80%);
+    --c6: hsl(0deg, 0%, 60%);
+    --c8: hsl(0deg, 0%, 0%);
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --blue: ${setLightness(0.8, "#2755bf")};
-      --green: ${setLightness(0.5, "#39a055")};
+      --blue: ${setLightness(0.9, "#2755bf")};
+      --green: ${setLightness(0.7, "#39a055")};
       --red: ${setLightness(0.8, "#f34228")};
 
       --c0: hsl(0deg, 0%, 0%);
       --c1: hsl(0deg, 0%, 15%);
-      --c2: hsl(0deg, 0%, 30%); /* start */
-      --c4: hsl(0deg, 0%, 40%); /* 10% diff */
-      --c6: hsl(0deg, 0%, 60%); /* 20% diff */
-      --c8: hsl(0deg, 0%, 100%); /* 40% diff */
+      --c2: hsl(0deg, 0%, 30%);
+      --c4: hsl(0deg, 0%, 40%);
+      --c6: hsl(0deg, 0%, 60%);
+      --c8: hsl(0deg, 0%, 100%);
     }
   }
 `

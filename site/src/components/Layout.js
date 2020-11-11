@@ -51,7 +51,7 @@ const globalStyles = css`
   }
 
   a {
-    color: ${theme.colors.blue};
+    color: inherit;
     text-decoration: none;
   }
 `

@@ -2,10 +2,14 @@ import styled from "@emotion/styled"
 import theme from "./theme"
 
 const A = styled.a`
-  color: inherit;
-  text-decoration: none;
-  padding-bottom: 2px;
-  border-bottom: 0.5px solid ${theme.colors.c4};
+  color: ${theme.colors.c8};
+  text-decoration: underline;
+  text-decoration-color: ${theme.colors.c4};
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+  &:hover {
+    text-decoration-color: ${theme.colors.c8};
+  }
 `
 
 export default A

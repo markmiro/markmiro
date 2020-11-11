@@ -117,11 +117,12 @@ const tableCss = css`
 `
 
 const miscElementsCss = css`
-  a:hover {
-    text-decoration: underline;
-    text-decoration-color: ${theme.colors.blue};
+  a {
+    color: ${theme.colors.blue};
+    &:hover {
+      text-decoration-color: ${theme.colors.blue};
+    }
   }
-
   b,
   strong {
     font-weight: ${theme.fontWeights[2]};
