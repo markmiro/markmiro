@@ -3,7 +3,7 @@ import theme from "./theme"
 
 const biggestSpacing = 6
 const indent1 = 2
-const indent2 = 5
+const indent2 = 4
 
 const spacingCss = css`
   & > *:first-child {

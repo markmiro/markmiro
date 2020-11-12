@@ -23,9 +23,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
-        defaultLayouts: {
-          default: require.resolve("./src/components/PostLayout.js"),
-        },
+        remarkPlugins: [require("remark-slug")],
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
@@ -33,6 +31,13 @@ module.exports = {
               maxWidth: 590,
             },
           },
+          {
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              isIconAfterHeader: true,
+            },
+          },
+          `gatsby-remark-table-of-contents`,
         ],
       },
     },
@@ -42,8 +47,15 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `pages`,
-        path: `${__dirname}/src/pages/`,
+        name: `posts`,
+        path: `${__dirname}/src/posts/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `stories`,
+        path: `${__dirname}/src/pages/stories`,
       },
     },
   ],

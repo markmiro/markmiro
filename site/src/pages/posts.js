@@ -1,52 +1,42 @@
 import React from "react"
-import { Link } from "gatsby"
 import { graphql } from "gatsby"
 import { css } from "@emotion/core"
 
-import Page from "../../components/Page"
-import { VStack } from "../../components/Stack"
-import Spacer from "../../components/Spacer"
-import SubscribeForm from "../../components/SubscribeForm"
-import P from "../../components/P"
-import Heading, { Section } from "../../components/Heading"
-import Hr from "../../components/Hr"
-import Json from "../../components/Json"
-import theme from "../../components/theme"
+import Page from "../components/Page"
+import Link from "../components/Link"
+import { VStack } from "../components/Stack"
+import Spacer from "../components/Spacer"
+import SubscribeForm from "../components/SubscribeForm"
+import P from "../components/P"
+import Heading, { Section } from "../components/Heading"
+import Hr from "../components/Hr"
 
 const Post = ({ href, title, description }) => (
-  <Section>
+  <VStack space={3}>
     <Section>
-      <Link
-        to={href}
-        css={css`
-          align-self: flex-start;
-        `}
-      >
+      <Link to={href}>
         <Heading>{title}</Heading>
       </Link>
       <P>{description}</P>
-      <Link
-        to={href}
-        css={css`
-          align-self: flex-start;
-        `}
-      >
-        Read →
-      </Link>
+      <Link to={href}>Read →</Link>
     </Section>
-    <Hr />
-  </Section>
+  </VStack>
 )
 
 export default function Posts({ data }) {
   return (
     <Page title="Posts">
-      <VStack space={3}>
+      <VStack
+        space={7}
+        css={css`
+          align-items: flex-start;
+        `}
+      >
         {/* <Json json={data} /> */}
         {data.allMdx.nodes.map(({ id, slug, frontmatter, excerpt }) => (
           <Post
             key={id}
-            href={"/" + slug}
+            href={"/posts/" + slug}
             title={frontmatter.title}
             description={excerpt}
           />

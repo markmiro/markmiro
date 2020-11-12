@@ -4,10 +4,9 @@ import { useState } from "react"
 
 import theme from "./theme"
 import Button from "./Button"
-import NavInner from "./NavInner"
 import Spacer from "./Spacer"
 
-function DesktopNav() {
+function DesktopNav({ children }) {
   return (
     <div
       css={css`
@@ -27,12 +26,12 @@ function DesktopNav() {
         }
       `}
     >
-      <NavInner />
+      {children}
     </div>
   )
 }
 
-function MobileNav() {
+function MobileNav({ children }) {
   const [shouldShowOnMobile, setShouldShowOnMobile] = useState(false)
 
   return (
@@ -50,16 +49,16 @@ function MobileNav() {
       <Button onClick={() => setShouldShowOnMobile(s => !s)}>Menu</Button>
       <div style={{ display: shouldShowOnMobile ? "block" : "none" }}>
         <Spacer size={4} />
-        <NavInner />
+        {children}
       </div>
     </div>
   )
 }
 
-const Nav = () => (
+const Nav = ({ children }) => (
   <>
-    <MobileNav />
-    <DesktopNav />
+    <MobileNav>{children}</MobileNav>
+    <DesktopNav>{children}</DesktopNav>
   </>
 )
 

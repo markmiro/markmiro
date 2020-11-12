@@ -113,7 +113,7 @@ export default {
   measure: {
     0: `calc(${fontSizes[0]} * 30)`,
     1: `calc(${fontSizes[0]} * 39)`,
-    navColumnText: `calc(${fontSizes[0]} * 14)`,
+    navColumnText: `calc(${fontSizes[0]} * 16)`,
   },
   fontSizes,
   space,
