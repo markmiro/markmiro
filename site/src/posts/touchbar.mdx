@@ -2,7 +2,7 @@
 title: Why did Apple invent the TouchBar?
 ---
 
-import { css } from "@emotion/core"
+import theme from "../components/theme"
 import Caption, { Captioned } from "../components/Caption"
 import Page from "../components/Page"
 import Img from "../components/Img"
@@ -11,11 +11,10 @@ import MacBookPro2015Keyboard from "../images/MacBookPro2015Keyboard.svg"
 
 <MacBookPro2015Keyboard />
 
-The TouchBar is a rare gimmick for Apple. After 4 years, I think it's fair
-consider it a failure, but still the question remains. Why? The more I thought
-about this question the more I began to see why Apple might have 1) chosen the
-keyboard as a locus of innovation in the 2016 MacBook Pro, and 2) decided the
-TouchBar was chosen as a solution.
+4 years since the advent of the Apple TouchBar, it's still a gimmick. But why would Apple make it? The more I thought about this question the more I began to see why Apple...
+
+1. Chose the keyboard as a locus of innovation in the 2016 MacBook Pro.
+2. Decided the TouchBar was a good solution.
 
 ## What problem was Apple trying to solve?
 
@@ -75,10 +74,11 @@ an opportunity for innovation.
 
 <Img
   src="/posts/touchbar/touchbar-7.png"
-  css={css`
-    float: left;
-    width: 15em;
-  `}
+  style={{
+    float: "left",
+    marginRight: theme.space[2],
+    width: "15em",
+  }}
 />
 
 But why replace keys with a touchscreen? The TouchBar isn't the first time Apple
@@ -108,14 +108,19 @@ this sense, Apple's TouchBar is a reformulation of the classic function row.
 ---
 
 I think it's safe to conclude that Apple had good reasons to embark on
-reinventing the function row. They identified something I didn't know was a
+reinventing the function row. They identified something I didn't recognize as a
 problem. This is classic Apple. I think the problem is about how they decided
 to tackle the problem. When the iPhone was released, people thought they'd
 miss the physical keyboard (that the Blackberry had), but were delighted to be
 wrong. In this case, many people aren't excited about the new design. In 2020
 I'm still not in love with it.
 
-Some alternatives I can think of:
+## Solutions
 
-- Remove the function row entirely. When you press the fn key, allow an app to display a UI on
-- Replace the caps lock key with the esc key
+### 1. Bring back the old function keys
+
+They worked pretty well.
+
+### 2. Remove the function row entirely
+
+This is going to be a little complicated, so bear with me. The iPad Pro keyboard already does away with the funciton row. When you press the fn key, allow an app to display a UI on the screen similar to what happens when you press `CMD + TAB`. Put caps lock in this menu. Replace the `CAPS LOCK` key with `ESC`. The TouchId / power button can be put somewhere else on the laptop body.

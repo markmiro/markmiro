@@ -87,7 +87,7 @@ export const colorsCss = css`
     --c6: hsl(0deg, 0%, 60%);
     --c8: hsl(0deg, 0%, 0%);
   }
-  @media (prefers-color-scheme: dark) {
+  ${"" /* @media (prefers-color-scheme: dark) {
     :root {
       --blue: ${setLightness(0.9, "#2755bf")};
       --green: ${setLightness(0.7, "#39a055")};
@@ -100,7 +100,7 @@ export const colorsCss = css`
       --c6: hsl(0deg, 0%, 60%);
       --c8: hsl(0deg, 0%, 100%);
     }
-  }
+  } */}
 `
 
 // Based on: https://styled-system.com/theme-specification
