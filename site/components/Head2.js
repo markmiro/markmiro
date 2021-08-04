@@ -2,7 +2,7 @@ import Head from 'next/head'
 
 import content from './_siteContent'
 
-const Head2 = ({ title, children }) => (
+const Head2 = ({ title }) => (
   <Head>
     {title ? (
       <title>
@@ -18,7 +18,6 @@ const Head2 = ({ title, children }) => (
     */}
     <link rel="icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" href="/favicon.png" />
-    {children}
   </Head>
 )
 

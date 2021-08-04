@@ -23,9 +23,8 @@ const ContentContainer = styled.div`
 export default function Index() {
   return (
     <div>
-      <Head2>
-        <MetaTags />
-      </Head2>
+      <Head2 />
+      <MetaTags />
       <ContentContainer>
         <HStack space={2}>
           <MyPortrait width="6em" />

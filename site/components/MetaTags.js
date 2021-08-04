@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import content from './_siteContent'
 
 // TODO: consider breaking up into components MetaTitle, MetaDescription, MetaImage
@@ -8,7 +9,7 @@ const MetaTags = ({
   pageType = 'website' /* Can also be "article" */,
   image = content.siteImage,
 }) => (
-  <>
+  <Head>
     {/* Generated from https://metatags.io */}
     {/* ---- Primary Meta Tags ---- */}
     {/* <title>{title}</title> */}
@@ -29,7 +30,7 @@ const MetaTags = ({
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={image} />
-  </>
+  </Head>
 )
 
 export default MetaTags
