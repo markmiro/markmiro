@@ -1,3 +1,4 @@
+import React from 'react'
 // Code stolen from: https://nextjs.org/docs/api-reference/next/router#userouter
 import { useRouter } from 'next/router'
 import theme from './theme'

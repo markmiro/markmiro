@@ -1,5 +1,5 @@
 import { modularScale, setLightness } from 'polished'
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 
 const MOBILE_SMALL = 800
 

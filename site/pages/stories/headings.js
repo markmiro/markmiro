@@ -1,3 +1,4 @@
+import React from 'react'
 import Heading, { Section } from '../../components/Heading'
 import theme from '../../components/theme'
 import { VStack } from '../../components/Stack'

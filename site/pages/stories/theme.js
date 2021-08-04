@@ -1,5 +1,6 @@
+import React from 'react'
 import styled from '@emotion/styled'
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 import { ellipsis } from 'polished'
 
 import Spacer from '../../components/Spacer'

@@ -1,6 +1,6 @@
-import { css } from '@emotion/core'
+import React from 'react'
+import { css } from '@emotion/react'
 import { useState } from 'react'
-import { useMediaQuery } from 'react-responsive'
 
 import theme from './theme'
 import Button from './Button'

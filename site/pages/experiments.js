@@ -1,5 +1,6 @@
+import React from 'react'
 import styled from '@emotion/styled'
-import { css } from '@emotion/core'
+import { css } from '@emotion/react'
 
 import Page from '../components/Page'
 import theme from '../components/theme'

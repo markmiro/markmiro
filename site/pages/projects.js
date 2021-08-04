@@ -1,4 +1,5 @@
-import { css } from '@emotion/core'
+import React from 'react'
+import { css } from '@emotion/react'
 
 import Page from '../components/Page'
 import LoremParagraphs from '../components/LoremParagraphs'

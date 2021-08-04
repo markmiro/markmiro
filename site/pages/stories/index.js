@@ -1,3 +1,4 @@
+import React from 'react'
 import Headings from './headings'
 import Theme from './theme'
 import Heading, { Section, HeadingSizeContext } from '../../components/Heading'

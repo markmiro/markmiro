@@ -1,4 +1,5 @@
-import { css } from '@emotion/core'
+import React from 'react'
+import { css } from '@emotion/react'
 
 import theme from './theme'
 import Nav from './Nav'

@@ -1,3 +1,4 @@
+import React from 'react'
 import Page from '../components/Page'
 import { VStack, HStack } from '../components/Stack'
 import theme from '../components/theme'
