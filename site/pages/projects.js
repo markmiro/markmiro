@@ -22,6 +22,8 @@ const Project = ({ href, heading, slug, children }) => (
             css={css`
               width: 100%;
               display: block;
+              border: 1px solid ${theme.colors.c1};
+              // box-shadow: 0px 1px 2px #00000022, 0px 2px 5px #00000022;
             `}
           />
         )}

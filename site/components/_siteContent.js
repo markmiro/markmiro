@@ -24,6 +24,13 @@ const content = {
   ],
   projects: [
     {
+      href: 'https://hashdrop.me',
+      heading: 'hash💧',
+      slug: 'project-hashdrop',
+      children:
+        'Prove that you had a specific document at a specific time. Store your data in an open database. Uses IPFS for storage, and Ethereum for notarizing the data.',
+    },
+    {
       href: 'https://markmiro.github.io/huet',
       heading: 'Huet',
       slug: 'project-huet',
@@ -94,8 +101,7 @@ const content = {
       slug: 'minesweeper',
     },
     {
-      href:
-        'https://codesandbox.io/s/react-tree-reducer-example-redux-60r3p?file=/src/App.js',
+      href: 'https://codesandbox.io/s/react-tree-reducer-example-redux-60r3p?file=/src/App.js',
       heading: 'Performant Tree',
       slug: 'performant-tree',
     },
