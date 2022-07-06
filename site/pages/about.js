@@ -7,6 +7,12 @@ import Hr from '../components/Hr'
 import MyPortrait from '../components/MyPortrait'
 import A from '../components/A'
 import content from '../components/_siteContent'
+import {
+  FileIcon,
+  SewingPinFilledIcon,
+  EnvelopeClosedIcon,
+  SewingPinIcon,
+} from '@radix-ui/react-icons'
 
 export default function About() {
   return (
@@ -31,10 +37,14 @@ export default function About() {
                   nice-looking domain name)
                 </small>
               </div>
-              <A href="https://goo.gl/maps/pX9D3Wg7oFmHW3jW8">Sacramento, CA</A>
-              <A href="mailto:contact@markmiro.com">contact@markmiro.com</A>
+              <span>
+                <SewingPinIcon /> Sacramento, CA
+              </span>
+              <A href="mailto:contact@markmiro.com">
+                <EnvelopeClosedIcon /> contact@markmiro.com
+              </A>
               <A href="/Mark-Miro-Resume-Jan-02-2020.pdf" target="_blank">
-                PDF Resume
+                <FileIcon /> PDF Resume
               </A>
             </Section>
           </VStack>
