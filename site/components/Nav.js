@@ -1,6 +1,7 @@
 import React from 'react'
 import { css } from '@emotion/react'
 import { useState } from 'react'
+import { HamburgerMenuIcon } from '@radix-ui/react-icons'
 
 import theme from './theme'
 import Button from './Button'
@@ -47,7 +48,13 @@ function MobileNav() {
         }
       `}
     >
-      <Button onClick={() => setShouldShowOnMobile((s) => !s)}>Menu</Button>
+      <Button
+        onClick={() => setShouldShowOnMobile((s) => !s)}
+        style={{ display: 'flex', gap: '.5em' }}
+      >
+        <HamburgerMenuIcon />
+        Menu
+      </Button>
       <div style={{ display: shouldShowOnMobile ? 'block' : 'none' }}>
         <Spacer size={4} />
         <NavInner />
