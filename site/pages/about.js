@@ -1,18 +1,16 @@
-import React from 'react'
-import Page from '../components/Page'
-import { VStack, HStack } from '../components/Stack'
-import theme from '../components/theme'
+import {
+  EnvelopeClosedIcon,
+  FileIcon,
+  SewingPinIcon,
+} from '@radix-ui/react-icons'
+import A from '../components/A'
 import { Section } from '../components/Heading'
 import Hr from '../components/Hr'
 import MyPortrait from '../components/MyPortrait'
-import A from '../components/A'
+import Page from '../components/Page'
+import { HStack, VStack } from '../components/Stack'
+import theme from '../components/theme'
 import content from '../components/_siteContent'
-import {
-  FileIcon,
-  SewingPinFilledIcon,
-  EnvelopeClosedIcon,
-  SewingPinIcon,
-} from '@radix-ui/react-icons'
 
 export default function About() {
   return (
