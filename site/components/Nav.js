@@ -33,6 +33,21 @@ function DesktopNav() {
   )
 }
 
+const invisible = css`
+  opacity: 0;
+  transform: scaleY(0.8) translateY(-40px);
+  pointer-events: none;
+  height: 0;
+`
+
+const visible = css`
+  transition-property: transform, opacity, height;
+  transition-timing-function: ease-out;
+  transition-duration: 100ms;
+  opacity: 1;
+  transform: scaleY(1) translateY(0);
+`
+
 function MobileNav() {
   const [shouldShowOnMobile, setShouldShowOnMobile] = useState(false)
 
@@ -55,7 +70,7 @@ function MobileNav() {
         <HamburgerMenuIcon />
         Menu
       </Button>
-      <div style={{ display: shouldShowOnMobile ? 'block' : 'none' }}>
+      <div css={shouldShowOnMobile ? visible : invisible}>
         <Spacer size={4} />
         <NavInner />
       </div>
