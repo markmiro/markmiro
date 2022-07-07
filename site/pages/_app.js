@@ -1,9 +1,13 @@
+// Stolen from: https://github.com/vercel/next.js/blob/canary/examples/with-emotion-swc/pages/_app.js
 import React from 'react'
 import NextApp from 'next/app'
-import { Global, css } from '@emotion/react'
+import createCache from '@emotion/cache'
+import { CacheProvider, Global, css } from '@emotion/react'
 import resetCss from 'reset-css/reset.css'
 
 import theme, { colorsCss, spaceCss } from '../components/theme'
+
+const cache = createCache({ key: 'next' })
 
 const globalStyles = css`
   ${colorsCss}
@@ -57,10 +61,10 @@ export default class App extends NextApp {
   render() {
     const { Component, pageProps } = this.props
     return (
-      <>
+      <CacheProvider value={cache}>
         <Global styles={globalStyles} />
         <Component {...pageProps} />
-      </>
+      </CacheProvider>
     )
   }
 }
