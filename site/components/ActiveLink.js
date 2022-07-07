@@ -13,7 +13,7 @@ function ActiveLink({ children, href }) {
     setStyle({
       color: router.pathname === href ? theme.colors.red : '',
     })
-  }, [router])
+  }, [router, href])
 
   const handleClick = (e) => {
     e.preventDefault()

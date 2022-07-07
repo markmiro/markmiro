@@ -115,7 +115,7 @@ export const colorsCss = css`
 `
 
 // Based on: https://styled-system.com/theme-specification
-export default {
+const theme = {
   fonts: {
     body:
       "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, sans-serif",
@@ -163,3 +163,5 @@ export default {
   },
   pagePadding: space[4],
 }
+
+export default theme;

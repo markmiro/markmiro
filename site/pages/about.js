@@ -33,8 +33,8 @@ export default function About() {
                   Mark Miro
                 </div>
                 <small style={{ fontSize: theme.fontSizes[-1] }}>
-                  (legally, my last name is "Mironyuk", but I shortened for the
-                  nice-looking domain name)
+                  (legally, my last name is &ldquo;Mironyuk&rdquo;, but I
+                  shortened for the nice-looking domain name)
                 </small>
               </div>
               <span>
