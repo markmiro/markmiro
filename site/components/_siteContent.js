@@ -35,7 +35,7 @@ const content = {
       heading: 'Huet',
       slug: 'project-huet',
       children:
-        'Library for having the computer pick your exact hex color codes so you can say "I want this to be red" and have it look good (accesible).',
+        'Library for having the computer pick your exact hex color codes so you can say "I want this to be red" and have it look good (accessible).',
     },
     {
       href: 'https://markmiro.github.io/jpeg-text-degrader',
