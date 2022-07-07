@@ -5,7 +5,7 @@ const { execSync } = require('child_process')
 // CONVERT VIDEOS
 
 // Do conversion
-execSync('cd ../videos && yarn run convert-videos')
+execSync('cd ../videos && pnpm run convert-videos')
 
 // Remove prebuilt files and dirs
 fs.rmdirSync('./public/preprebuild', { recursive: true })
