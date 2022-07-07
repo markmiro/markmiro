@@ -6,7 +6,7 @@ const Head2 = ({ title }) => (
   <Head>
     {title ? (
       <title>
-        {title} | {content.siteName}
+        {title + ' | ' + content.siteName}
       </title>
     ) : (
       <title>{content.siteName}</title>
