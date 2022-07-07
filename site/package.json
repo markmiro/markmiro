@@ -10,7 +10,8 @@
     "build": "next build",
     "start": "next start",
     "deploy": "vercel deploy",
-    "deploy:prod": "vercel deploy --prod"
+    "deploy:prod": "vercel deploy --prod",
+    "analyze-bundle": "ANALYZE=true yarn build"
   },
   "dependencies": {
     "@babel/core": "^7.14.8",
@@ -20,12 +21,14 @@
     "@emotion/server": "^11.4.0",
     "@emotion/styled": "11.9.3",
     "@radix-ui/react-icons": "1.1.1",
+    "add": "2.0.6",
     "next": "12.2.0",
     "polished": "4.2.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "reset-css": "5.0.1",
-    "webpack": "^5.48.0"
+    "webpack": "^5.48.0",
+    "yarn": "1.22.19"
   },
   "devDependencies": {
     "eslint": "8.19.0",
@@ -33,6 +36,7 @@
     "human-format": "1.0.0",
     "nodejs-fs-utils": "1.2.6",
     "prettier": "2.7.1",
-    "vercel": "^26.0.0"
+    "vercel": "^26.0.0",
+    "@next/bundle-analyzer": "12.2.0"
   }
 }
