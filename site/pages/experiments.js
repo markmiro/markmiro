@@ -16,6 +16,7 @@ const Img = ({ src }) => (
       width: 100%;
       padding-bottom: 50%;
       position: relative;
+      background: ${theme.colors.c1};
     `}
   >
     <img
@@ -25,6 +26,7 @@ const Img = ({ src }) => (
         display: block;
       `}
       src={src}
+      loading="lazy"
     />
   </div>
 )

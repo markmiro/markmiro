@@ -16,16 +16,27 @@ const Project = ({ href, heading, slug, children }) => (
     <Card>
       <VStack space={2}>
         {slug && (
-          <img
-            src={`/figma-export/${slug}-1x.png`}
-            srcSet={`/figma-export/${slug}-2x.png 2x`}
+          <div
             css={css`
+              /* Make ratio 2:1 using padding-bottom */
               width: 100%;
-              display: block;
-              border: 1px solid ${theme.colors.c1};
-              // box-shadow: 0px 1px 2px #00000022, 0px 2px 5px #00000022;
+              padding-bottom: 50%;
+              position: relative;
+              background: ${theme.colors.c1};
             `}
-          />
+          >
+            <img
+              src={`/figma-export/${slug}-1x.png`}
+              srcSet={`/figma-export/${slug}-2x.png 2x`}
+              loading="lazy"
+              css={css`
+                position: absolute;
+                width: 100%;
+                border: 1px solid ${theme.colors.c1};
+                // box-shadow: 0px 1px 2px #00000022, 0px 2px 5px #00000022;
+              `}
+            />
+          </div>
         )}
         <div
           style={{
