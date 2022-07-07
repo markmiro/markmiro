@@ -1,3 +1,5 @@
+This isn't in a README.md file because this is a "special repo" and github will show the file in my profile.
+
 Website design:
 https://www.figma.com/file/Pk8kqAG5VR8hXn2Jd3PkL8/markmiro-site
 
