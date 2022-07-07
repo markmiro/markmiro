@@ -11,18 +11,16 @@ brew install ffmpeg
 Then do
 
 ```
-yarn install
-cd ../videos && yarn install
+pnpm install
+cd ../videos && pnpm install
 ```
 
-Then do `yarn prebuilds`
+Then do `pnpm prebuilds`
 
 Then, run the development server:
 
 ```bash
-npm run dev
-# or
-yarn dev
+pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.

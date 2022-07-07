@@ -2,12 +2,8 @@
   "name": "markmiro",
   "version": "0.1.0",
   "private": true,
-  "engines": {
-    "node": ">=16",
-    "pnpm": ">=7.5"
-  },
   "scripts": {
-    "prebuilds": "pnpm preprebuild && pnpm prebuild",
+    "prebuilds": "npm run preprebuild && npm run prebuild",
     "preprebuild": "node preprebuild.js",
     "prebuild": "node prebuild.js",
     "dev": "next dev",
@@ -15,7 +11,7 @@
     "start": "next start",
     "deploy": "vercel deploy",
     "deploy:prod": "vercel deploy --prod",
-    "analyze-bundle": "ANALYZE=true pnpm build"
+    "analyze-bundle": "ANALYZE=true npm build"
   },
   "dependencies": {
     "@emotion/css": "^11.1.3",

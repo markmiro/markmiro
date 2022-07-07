@@ -1,0 +1,34 @@
+lockfileVersion: 5.4
+
+specifiers:
+  human-format: 0.11.0
+  nodejs-fs-utils: 1.2.5
+  prettier: 2.0.5
+
+devDependencies:
+  human-format: 0.11.0
+  nodejs-fs-utils: 1.2.5
+  prettier: 2.0.5
+
+packages:
+
+  /human-format/0.11.0:
+    resolution: {integrity: sha512-g4UtoBnhfitCjkGjjiOlY8tkmArIcrstBa5adihxSJwSde1A7iQzvrNLB5ceX89FHXzYi9yTi04t3m82J/XIag==}
+    engines: {node: '>=4'}
+    dev: true
+
+  /module-require/1.4.5:
+    resolution: {integrity: sha512-ksEXPs62btutKsbJKph7rLhdu7A6JIIHXTqvr3uhOP1mViI8JeHkNzYHJnVlHVCaRCuHa7XMBnKmxc23YZGl6Q==}
+    dev: true
+
+  /nodejs-fs-utils/1.2.5:
+    resolution: {integrity: sha512-QuIFfHWaQJhjmUnGSCq+knKrYL2Q8HJUNAzRk8qoHK+g0oKzq57MdB4tODIknclKII0oAO0kO1lDt8yLyLhsAQ==}
+    dependencies:
+      module-require: 1.4.5
+    dev: true
+
+  /prettier/2.0.5:
+    resolution: {integrity: sha512-7PtVymN48hGcO4fGjybyBSIWDsLU4H4XlvOHfq91pz9kkGlonzwTfYkaIEwiRg/dAJF9YlbsduBAgtYLi+8cFg==}
+    engines: {node: '>=10.13.0'}
+    hasBin: true
+    dev: true
