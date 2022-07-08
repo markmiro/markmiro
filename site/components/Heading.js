@@ -14,7 +14,7 @@ export function Section({ children }) {
   )
 }
 
-const HeadingThing = styled.header`
+const HeadingThing = styled.div`
   font-weight: ${theme.fontWeights[2]};
   font-size: ${(props) => theme.fontSizes[props.index]};
   line-height: ${theme.lineHeights.heading};
@@ -26,7 +26,7 @@ function Heading({ children, ...props }) {
   const index = 4 - headingSize
 
   return (
-    <HeadingThing as={`h${headingSize}`} index={index} {...props}>
+    <HeadingThing as={`h${headingSize + 1}`} index={index} {...props}>
       {children}
     </HeadingThing>
   )
