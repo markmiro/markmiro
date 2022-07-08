@@ -1,10 +1,11 @@
-import styled from '@emotion/styled'
+import { useEffect, useState } from 'react'
 import { css } from '@emotion/react'
+import styled from '@emotion/styled'
 
 import updated from '../prebuild/date-updated.json'
-import theme from './theme'
-import Spacer from './Spacer'
 import Button from './Button'
+import Spacer from './Spacer'
+import theme from './theme'
 
 const FooterBox = styled.footer`
   display: flex;
@@ -16,20 +17,26 @@ const FooterBox = styled.footer`
   font-size: ${theme.fontSizes[-1]};
 `
 
-const Footer = () => (
-  <FooterBox>
-    <span
-      css={css`
-        color: ${theme.colors.c4};
-      `}
-    >
-      Updated {new Date(updated).toLocaleString()}
-    </span>
-    <Spacer size={1} />
-    <Button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-      Scroll to Top ⤴
-    </Button>
-  </FooterBox>
-)
+const Footer = () => {
+  const [dateString, setDateString] = useState('Loading...')
+
+  useEffect(() => setDateString(new Date(updated).toLocaleString()))
+
+  return (
+    <FooterBox>
+      <span
+        css={css`
+          color: ${theme.colors.c4};
+        `}
+      >
+        Updated {dateString}
+      </span>
+      <Spacer size={1} />
+      <Button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+        Scroll to Top ⤴
+      </Button>
+    </FooterBox>
+  )
+}
 
 export default Footer
