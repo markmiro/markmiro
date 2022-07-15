@@ -9,6 +9,7 @@ import MyNameAndTitle from './MyNameAndTitle'
 import { Overline } from './Heading'
 import { VStack } from './Stack'
 import A from './A'
+import { ExternalLinkIcon } from '@radix-ui/react-icons'
 
 const Container = styled.nav`
   display: flex;
@@ -20,11 +21,23 @@ const NavInner = () => (
     <MyNameAndTitle />
     <Spacer size={4} />
     <VStack style={{ alignItems: 'start' }}>
-      {content.navLinks.map(({ href, children }) => (
-        <ActiveLink key={href} href={href}>
-          {children}
-        </ActiveLink>
-      ))}
+      {content.navLinks.map(({ href, children }) =>
+        href.startsWith('https://') ? (
+          <Link key={href} href={href} passHref>
+            <A>
+              {children}{' '}
+              <ExternalLinkIcon
+                opacity={0.5}
+                style={{ transform: 'translateY(1px)' }}
+              />
+            </A>
+          </Link>
+        ) : (
+          <ActiveLink key={href} href={href}>
+            {children}
+          </ActiveLink>
+        )
+      )}
     </VStack>
     <Spacer size={4} />
     <Overline>Links</Overline>

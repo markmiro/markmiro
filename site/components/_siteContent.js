@@ -14,7 +14,10 @@ const content = {
     { href: '/about', children: 'About' },
     { href: '/projects', children: 'Projects' },
     { href: '/experiments', children: 'Experiments' },
-    // { href: '/posts', children: 'Posts' },
+    {
+      href: 'https://medium.com/@markmiro',
+      children: 'Posts',
+    },
   ],
   socialLinks: [
     { href: 'https://codesandbox.io/u/markmiro', children: 'CodeSandBox' },
