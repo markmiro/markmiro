@@ -7,6 +7,8 @@ import theme from './theme'
 import Button from './Button'
 import NavInner from './NavInner'
 import Spacer from './Spacer'
+import { opacify } from 'polished'
+import Hr from './Hr'
 
 function DesktopNav() {
   return (
@@ -39,7 +41,7 @@ function MobileNav() {
   const invisible = css`
     &:not(:focus-within) {
       opacity: 0;
-      transform: scaleY(0.8);
+      transform: translateX(-10em);
       pointer-events: none;
       height: 0;
     }
@@ -50,36 +52,64 @@ function MobileNav() {
     transition-timing-function: ease-out;
     transition-duration: 100ms;
     opacity: 1;
-    transform-origin: top;
-    transform: scaleY(1) translateY(0);
+    transform: translateX(0);
   `
 
   return (
     <div
       css={css`
-        padding: ${theme.pagePadding};
         width: 100%; /* because parent flexbox has center layout */
-        border-bottom: 1px solid ${theme.colors.c2};
         display: block;
+        position: fixed;
+        z-index: 1;
+        top: 0;
         @media ${theme.mediaQueries.mobileAndAbove} {
           display: none;
         }
       `}
     >
-      <Button
-        onClick={() => setShouldShowOnMobile((s) => !s)}
+      <div
         css={css`
-          display: flex;
-          align-items: center;
-          gap: ${theme.space[0]};
+          ${shouldShowOnMobile &&
+          css`
+            background: ${theme.colors.c0};
+            min-width: ${theme.measure.navColumnText};
+            border-right: 1px solid ${theme.colors.c8};
+            border-bottom: 1px solid ${theme.colors.c8};
+          `}
+          width: max-content;
+          padding: 0 ${theme.pagePadding};
         `}
       >
-        <IconMenu2 size={16} stroke={1} strokeLinejoin="miter" />
-        Menu
-      </Button>
-      <div css={shouldShowOnMobile ? visible : invisible}>
-        <Spacer size={4} />
-        <NavInner />
+        <Button
+          onClick={() => setShouldShowOnMobile((s) => !s)}
+          css={css`
+            background: ${theme.colors.c1};
+            color: ${theme.colors.c8};
+            border: none;
+            display: flex;
+            align-items: center;
+            gap: ${theme.space[0]};
+            :hover {
+              background: ${theme.colors.c8};
+              color: ${theme.colors.c0};
+            }
+          `}
+        >
+          <IconMenu2 size={16} stroke={1} strokeLinejoin="miter" />
+          Menu
+        </Button>
+
+        <div css={shouldShowOnMobile ? visible : invisible}>
+          <div
+            css={css`
+              padding: ${theme.pagePadding} 0;
+            `}
+          >
+            <NavInner />
+            <Spacer size={2} />
+          </div>
+        </div>
       </div>
     </div>
   )
