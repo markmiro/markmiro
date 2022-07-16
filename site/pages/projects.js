@@ -7,14 +7,27 @@ import { Section } from '../components/Heading'
 import { VStack } from '../components/Stack'
 import theme from '../components/theme'
 import P from '../components/P'
-import Card from '../components/Card'
-import Button from '../components/Button'
+import Card, { CardBody } from '../components/Card'
 import content from '../components/_siteContent'
+import { IconExternalLink } from '@tabler/icons'
+import A from '../components/A'
+import Spacer from '../components/Spacer'
+import { LinkBox, LinkOverlay } from '../components/LinkOverlay'
+
+const hoverClassName = 'hover-hint'
 
 const Project = ({ href, heading, slug, children }) => (
   <Section>
-    <Card>
-      <VStack space={2}>
+    <LinkBox>
+      <Card
+        css={css`
+          overflow: hidden;
+          :hover .${hoverClassName} {
+            background: ${theme.colors.c8};
+            color: ${theme.colors.c0};
+          }
+        `}
+      >
         {slug && (
           <div
             css={css`
@@ -32,39 +45,78 @@ const Project = ({ href, heading, slug, children }) => (
               css={css`
                 position: absolute;
                 width: 100%;
-                border: 1px solid ${theme.colors.c1};
+                border-bottom: 1px solid ${theme.colors.c1};
                 // box-shadow: 0px 1px 2px #00000022, 0px 2px 5px #00000022;
               `}
             />
           </div>
         )}
-        <div
-          style={{
-            fontWeight: theme.fontWeights[2],
-          }}
-        >
-          {heading}
-        </div>
-        {<P>{children}</P> || <LoremParagraphs count={1} />}
+        <CardBody>
+          <Spacer size={1} />
+          <LinkOverlay
+            href={href}
+            css={css`
+              font-weight: ${theme.fontWeights[2]};
+              text-decoration: none;
+              color: inherit;
+              display: inline-flex;
+              align-items: center;
+              justify-content: space-between;
+              gap: ${theme.gap[2]};
+              svg {
+                opacity: 0;
+              }
+              :hover svg {
+                opacity: 1;
+              }
+            `}
+          >
+            {heading}
+          </LinkOverlay>
+          <Spacer size={0} />
+          {(
+            <P
+              style={{
+                maxWidth: theme.measure[0],
+              }}
+            >
+              {children}
+            </P>
+          ) || <LoremParagraphs count={1} />}
+        </CardBody>
         {href && (
           <div
             css={css`
               text-align: right;
             `}
           >
-            <Button
-              as="a"
-              href={href}
+            <div
+              className={hoverClassName}
               css={css`
-                display: inline-block;
+                font-size: ${theme.fontSizes[-1]};
+                text-decoration: none;
+                color: inherit;
+                display: inline-flex;
+                align-items: center;
+                padding: ${theme.space[0]} ${theme.space[1]};
+                margin-right: ${theme.space[2]};
+                background: ${theme.colors.c1};
+                color: ${theme.colors.c8};
+                gap: ${theme.gap[2]};
+                transition: all 100ms ease-out;
+                // transform: translateY(100%);
+                // opacity: 0;
               `}
             >
               View Project
-            </Button>
+              {href.startsWith('https://') && (
+                <IconExternalLink size={theme.fontSizes[0]} stroke={1} />
+              )}
+            </div>
           </div>
         )}
-      </VStack>
-    </Card>
+      </Card>
+    </LinkBox>
   </Section>
 )
 

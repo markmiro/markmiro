@@ -4,10 +4,13 @@ import { css } from '@emotion/react'
 
 import Page from '../components/Page'
 import theme from '../components/theme'
-import Card from '../components/Card'
+import Card, { CardBody } from '../components/Card'
 import A from '../components/A'
 import { VStack } from '../components/Stack'
 import content from '../components/_siteContent'
+import { LinkBox, LinkOverlay } from '../components/LinkOverlay'
+import { IconExternalLink } from '@tabler/icons'
+import Hr from '../components/Hr'
 
 const Img = ({ src }) => (
   <div
@@ -31,19 +34,6 @@ const Img = ({ src }) => (
   </div>
 )
 
-const FakeA = ({ children }) => (
-  <div>
-    <A
-      as="span"
-      css={css`
-        display: inline-block;
-      `}
-    >
-      {children}
-    </A>
-  </div>
-)
-
 const Grid = styled.div`
   display: grid;
   grid-gap: ${theme.space[4]};
@@ -52,19 +42,51 @@ const Grid = styled.div`
   }
 `
 
+const hoverClassName = 'hover-hint'
+
 function Experiment({ heading, slug, href }) {
   return (
-    <a
-      href={href}
-      css={css`
-        color: inherit;
-      `}
-    >
-      <Card as={VStack} space={2}>
+    <LinkBox>
+      <Card
+        css={css`
+          overflow: hidden;
+          :hover .${hoverClassName} {
+            transform: translateY(0%);
+            opacity: 1;
+          `}
+      >
         <Img src={`/preprebuild/videos/${slug}.gif`} />
-        <FakeA>{heading}</FakeA>
+        <Hr />
+        <CardBody
+          css={css`
+            padding-top: ${theme.space[1]};
+            padding-bottom: ${theme.space[1]};
+          `}
+        >
+          <LinkOverlay
+            href={href}
+            css={css`
+              text-decoration: none;
+              color: inherit;
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+            `}
+          >
+            {heading}
+            <IconExternalLink
+              size={theme.fontSizes[0]}
+              stroke={2}
+              className={hoverClassName}
+              css={css`
+                transition: all 100ms ease-out;
+                opacity: 0;
+              `}
+            />
+          </LinkOverlay>
+        </CardBody>
       </Card>
-    </a>
+    </LinkBox>
   )
 }
 
