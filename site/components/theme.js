@@ -73,13 +73,13 @@ const fontSizes = {
   '-3': round(ms(-3, 1)) + 'em',
   '-2': round(ms(-2, 1)) + 'em',
   '-1': round(ms(-1, 1)) + 'em',
-  '0': round(ms(0, 1)) + 'em',
-  '1': round(ms(1, 1)) + 'em',
-  '2': round(ms(2, 1)) + 'em',
-  '3': round(ms(3, 1)) + 'em',
-  '4': round(ms(4, 1)) + 'em',
-  '5': round(ms(5, 1)) + 'em',
-  '6': round(ms(6, 1)) + 'em',
+  0: round(ms(0, 1)) + 'em',
+  1: round(ms(1, 1)) + 'em',
+  2: round(ms(2, 1)) + 'em',
+  3: round(ms(3, 1)) + 'em',
+  4: round(ms(4, 1)) + 'em',
+  5: round(ms(5, 1)) + 'em',
+  6: round(ms(6, 1)) + 'em',
 }
 
 /*
@@ -124,13 +124,12 @@ export const colorsCss = css`
 // Based on: https://styled-system.com/theme-specification
 const theme = {
   fonts: {
-    body:
-      "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, sans-serif",
+    body: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, sans-serif",
     mono: '"Menlo", "Consolas", monospace',
   },
   measure: {
-    '0': `calc(${fontSizes[0]} * 30)`,
-    '1': `calc(${fontSizes[0]} * 39)`,
+    0: `calc(${fontSizes[0]} * 30)`,
+    1: `calc(${fontSizes[0]} * 39)`,
     navColumnText: `calc(${fontSizes[0]} * 14)`,
   },
   fontSizes,
@@ -172,4 +171,4 @@ const theme = {
   pagePadding: space[4],
 }
 
-export default theme;
+export default theme
