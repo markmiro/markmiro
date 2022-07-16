@@ -31,6 +31,9 @@ const contentInnerCss = css`
   max-width: ${theme.measure[1]};
 `
 
+const spacingX = '2px'
+const spacingY = '0px'
+
 export default function Page({ title, children }) {
   return (
     <>
@@ -47,7 +50,39 @@ export default function Page({ title, children }) {
                 letter-spacing: ${theme.letterSpacings[-1]};
               `}
             >
-              <Heading>{title}</Heading>
+              <Heading
+                css={css`
+                  padding: 0;
+                  width: max-content;
+                  position: relative;
+                  @keyframes appear {
+                    from {
+                      opacity: 0;
+                      transform: scaleX(0);
+                    }
+                    to {
+                      opacity: 1;
+                      transform: scaleX(1);
+                    }
+                  }
+                  ::before {
+                    content: '';
+                    position: absolute;
+                    left: calc(-1 * ${spacingX});
+                    top: calc(-1 * ${spacingY});
+                    width: calc(100% + ${spacingX} * 2);
+                    height: calc(100% + ${spacingY} * 2);
+                    background: transparent;
+                    backdrop-filter: invert(1) hue-rotate(180deg);
+
+                    transition: transform 150ms ease-out;
+                    transform-origin: left;
+                    animation: appear 150ms ease-out;
+                  }
+                `}
+              >
+                {title}
+              </Heading>
             </div>
             <Spacer size={7} />
             {children}
