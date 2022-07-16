@@ -68,7 +68,11 @@ function MobileNav() {
     >
       <Button
         onClick={() => setShouldShowOnMobile((s) => !s)}
-        style={{ display: 'flex', gap: '.5em' }}
+        css={css`
+          display: flex;
+          align-items: center;
+          gap: ${theme.space[0]};
+        `}
       >
         <HamburgerMenuIcon />
         Menu
