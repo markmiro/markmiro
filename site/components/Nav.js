@@ -50,6 +50,7 @@ function MobileNav() {
     transition-timing-function: ease-out;
     transition-duration: 100ms;
     opacity: 1;
+    transform-origin: top;
     transform: scaleY(1) translateY(0);
   `
 
