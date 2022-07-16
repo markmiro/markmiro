@@ -10,6 +10,7 @@ import { Overline } from './Heading'
 import { VStack } from './Stack'
 import A from './A'
 import { IconExternalLink } from '@tabler/icons'
+import { css } from '@emotion/react'
 
 const Container = styled.nav`
   display: flex;
@@ -25,12 +26,20 @@ const NavInner = () => (
       {content.navLinks.map(({ href, children }) =>
         href.startsWith('https://') ? (
           <Link key={href} href={href} passHref>
-            <A>
-              {children}{' '}
-              <ExternalLinkIcon
-                opacity={0.5}
-                style={{ transform: 'translateY(1px)' }}
-              />
+            <A
+              css={css`
+                display: inline-flex;
+                gap: ${theme.gap[0]};
+                svg {
+                  opacity: 0;
+                }
+                :hover svg {
+                  opacity: 1;
+                }
+              `}
+            >
+              {children}
+              <IconExternalLink size={theme.fontSizes[0]} stroke={1} />
             </A>
           </Link>
         ) : (
