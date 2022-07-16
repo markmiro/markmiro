@@ -31,9 +31,6 @@ const contentInnerCss = css`
   max-width: ${theme.measure[1]};
 `
 
-const spacingX = '2px'
-const spacingY = '0px'
-
 export default function Page({ title, children }) {
   return (
     <>
@@ -52,7 +49,7 @@ export default function Page({ title, children }) {
             >
               <Heading
                 css={css`
-                  padding: 0;
+                  padding: 0 2px;
                   width: max-content;
                   position: relative;
                   @keyframes appear {
@@ -68,10 +65,10 @@ export default function Page({ title, children }) {
                   ::before {
                     content: '';
                     position: absolute;
-                    left: calc(-1 * ${spacingX});
-                    top: calc(-1 * ${spacingY});
-                    width: calc(100% + ${spacingX} * 2);
-                    height: calc(100% + ${spacingY} * 2);
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
                     background: transparent;
                     backdrop-filter: invert(1) hue-rotate(180deg);
 
