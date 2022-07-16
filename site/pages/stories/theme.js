@@ -120,6 +120,19 @@ const Theme = () => (
       </Section>
 
       <Section>
+        <CodeHeading>theme.gap</CodeHeading>
+        <HStack>
+          {theme.gap.map((s, i) => (
+            <div key={s}>
+              <pre>[{i}]</pre>
+              <Spacer size={0} />
+              <SizeBox size={s} />
+            </div>
+          ))}
+        </HStack>
+      </Section>
+
+      <Section>
         <CodeHeading>theme.fontSizes</CodeHeading>
         <VStack>
           {Object.keys(theme.fontSizes)
