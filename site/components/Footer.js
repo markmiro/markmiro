@@ -12,7 +12,7 @@ const FooterBox = styled.footer`
   justify-content: space-between;
   align-items: center;
   border-top: 1px solid ${theme.colors.c2};
-  padding: ${theme.pagePadding};
+  padding: ${theme.space[0]} ${theme.pagePadding};
   font-weight: ${theme.fontWeights[0]};
   font-size: ${theme.fontSizes[-1]};
 `
