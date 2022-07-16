@@ -1,16 +1,13 @@
-import React from 'react'
-import styled from '@emotion/styled'
 import { css } from '@emotion/react'
+import styled from '@emotion/styled'
 
+import { IconArrowUpRight } from '@tabler/icons'
+import Card, { CardBody } from '../components/Card'
+import Hr from '../components/Hr'
+import { LinkBox, LinkOverlay } from '../components/LinkOverlay'
 import Page from '../components/Page'
 import theme from '../components/theme'
-import Card, { CardBody } from '../components/Card'
-import A from '../components/A'
-import { VStack } from '../components/Stack'
 import content from '../components/_siteContent'
-import { LinkBox, LinkOverlay } from '../components/LinkOverlay'
-import { IconExternalLink } from '@tabler/icons'
-import Hr from '../components/Hr'
 
 const Img = ({ src }) => (
   <div
@@ -74,7 +71,7 @@ function Experiment({ heading, slug, href }) {
             `}
           >
             {heading}
-            <IconExternalLink
+            <IconArrowUpRight
               size={theme.fontSizes[0]}
               stroke={2}
               className={hoverClassName}

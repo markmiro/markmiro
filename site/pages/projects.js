@@ -1,18 +1,16 @@
-import React from 'react'
 import { css } from '@emotion/react'
 
-import Page from '../components/Page'
-import LoremParagraphs from '../components/LoremParagraphs'
+import { IconArrowUpRight } from '@tabler/icons'
+import Card, { CardBody } from '../components/Card'
 import { Section } from '../components/Heading'
+import { LinkBox, LinkOverlay } from '../components/LinkOverlay'
+import LoremParagraphs from '../components/LoremParagraphs'
+import P from '../components/P'
+import Page from '../components/Page'
+import Spacer from '../components/Spacer'
 import { VStack } from '../components/Stack'
 import theme from '../components/theme'
-import P from '../components/P'
-import Card, { CardBody } from '../components/Card'
 import content from '../components/_siteContent'
-import { IconExternalLink } from '@tabler/icons'
-import A from '../components/A'
-import Spacer from '../components/Spacer'
-import { LinkBox, LinkOverlay } from '../components/LinkOverlay'
 
 const hoverClassName = 'hover-hint'
 
@@ -111,7 +109,7 @@ const Project = ({ href, heading, slug, children }) => (
             >
               View Project
               {href.startsWith('https://') && (
-                <IconExternalLink size={theme.fontSizes[0]} stroke={1} />
+                <IconArrowUpRight size={theme.fontSizes[0]} stroke={1} />
               )}
             </div>
           </div>

@@ -1,12 +1,28 @@
+import { css } from '@emotion/react'
 import styled from '@emotion/styled'
+import { IconArrowUpRight, IconExternalLink } from '@tabler/icons'
+import React from 'react'
+import theme from './theme'
 
-const spacingX = '0px'
+const spacingX = '1px'
 const spacingY = '0px'
+
+const externalIconClassName = 'icon-external'
 
 const A = styled.a`
   color: inherit;
   text-decoration: none;
   position: relative;
+  display: inline-flex;
+  gap: ${theme.gap[2]};
+  align-items: center;
+
+  ${(props) =>
+    props.isActive &&
+    css`
+      color: ${theme.colors.red};
+    `}
+
   ::before {
     content: '';
     position: absolute;
@@ -20,9 +36,49 @@ const A = styled.a`
     transition: transform 150ms ease-out;
     transform-origin: top left;
     transform: scaleX(0);
+    z-index: 1;
   }
   :hover ::before {
-    transform: scaleX(1);
+    transform: ${(props) => (props.isActive ? '' : 'scaleX(1)')};
+  }
+
+  @keyframes icon-appear {
+    from {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    to {
+      opacity: 1;
+      transform: scaleX(1);
+    }
+  }
+
+  .${externalIconClassName} {
+    transform: translateX(-0.25em);
+    opacity: 0;
+  }
+  :hover .${externalIconClassName} {
+    transition-delay: 50ms;
+    transition: 100ms ease-out;
+    transition-property: opacity transform;
+    transform: translateX(0);
+    opacity: 1;
   }
 `
-export default A
+
+const A2 = React.forwardRef(({ children, href, ...rest }, ref) => {
+  return (
+    <A href={href} ref={ref} {...rest}>
+      {children}
+      {href.startsWith('https://') && (
+        <IconArrowUpRight
+          size={theme.fontSizes[0]}
+          stroke={1}
+          className={externalIconClassName}
+        />
+      )}
+    </A>
+  )
+})
+
+export default A2

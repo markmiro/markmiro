@@ -3,6 +3,7 @@ import theme from './theme'
 import Link from 'next/link'
 import content from './_siteContent'
 import A from './A'
+import ActiveLink from './ActiveLink'
 
 const Title = styled.h1`
   font-size: ${theme.fontSizes[2]};

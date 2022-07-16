@@ -1,18 +1,17 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 // Code stolen from: https://nextjs.org/docs/api-reference/next/router#userouter
+import Link from 'next/link'
 import { useRouter } from 'next/router'
-import theme from './theme'
 import A from './A'
+import theme from './theme'
 
-function ActiveLink({ children, href }) {
+function ActiveLink({ children, href, ...rest }) {
   const router = useRouter()
 
-  const [style, setStyle] = useState({})
+  const [isActive, setIsActive] = useState(false)
 
   useEffect(() => {
-    setStyle({
-      color: router.pathname === href ? theme.colors.red : '',
-    })
+    setIsActive(router.pathname === href)
   }, [router, href])
 
   const handleClick = (e) => {
@@ -20,8 +19,16 @@ function ActiveLink({ children, href }) {
     router.push(href)
   }
 
+  if (href.startsWith('https://')) {
+    return (
+      <Link key={href} href={href} passHref>
+        <A {...rest}>{children}</A>
+      </Link>
+    )
+  }
+
   return (
-    <A href={href} onClick={handleClick} style={style}>
+    <A href={href} onClick={handleClick} isActive={isActive} {...rest}>
       {children}
     </A>
   )
