@@ -11,6 +11,7 @@ import Spacer from '../components/Spacer'
 import { VStack } from '../components/Stack'
 import theme from '../components/theme'
 import content from '../components/_siteContent'
+import Hr from '../components/Hr'
 
 const hoverClassName = 'hover-hint'
 
@@ -49,6 +50,7 @@ const Project = ({ href, heading, slug, children }) => (
             />
           </div>
         )}
+        <Hr />
         <CardBody css={css``}>
           <LinkOverlay
             href={href}
