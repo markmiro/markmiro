@@ -1,14 +1,11 @@
-import React from 'react'
 import { css } from '@emotion/react'
-import { useState } from 'react'
 import { IconMenu2 } from '@tabler/icons'
+import { useState } from 'react'
 
-import theme from './theme'
 import Button from './Button'
 import NavInner from './NavInner'
 import Spacer from './Spacer'
-import { opacify } from 'polished'
-import Hr from './Hr'
+import theme from './theme'
 
 function DesktopNav() {
   return (

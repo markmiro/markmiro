@@ -2,11 +2,9 @@ import styled from '@emotion/styled'
 import theme from './theme'
 
 const Button = styled.button`
-  box-shadow: 0 0.1em 2px #00000033;
-  border-radius: 0.1em;
-  border: 1px solid;
+  border: none;
 
-  background: transparent;
+  background: ${theme.colors.c1};
   padding: ${theme.space[0]} ${theme.space[2]};
 
   color: inherit;
@@ -14,7 +12,8 @@ const Button = styled.button`
 
   transition: background 100ms ease-out;
   :hover {
-    background: ${theme.colors.c1};
+    color: ${theme.colors.c0};
+    background: ${theme.colors.c8};
   }
 
   &:active {
