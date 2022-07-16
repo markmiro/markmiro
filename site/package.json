@@ -18,7 +18,7 @@
     "@emotion/react": "11.9.3",
     "@emotion/server": "11.4.0",
     "@emotion/styled": "11.9.3",
-    "@radix-ui/react-icons": "1.1.1",
+    "@tabler/icons": "1.75.0",
     "next": "12.2.0",
     "polished": "4.2.2",
     "react": "18.2.0",

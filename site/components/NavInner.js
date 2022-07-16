@@ -9,7 +9,7 @@ import MyNameAndTitle from './MyNameAndTitle'
 import { Overline } from './Heading'
 import { VStack } from './Stack'
 import A from './A'
-import { ExternalLinkIcon } from '@radix-ui/react-icons'
+import { IconExternalLink } from '@tabler/icons'
 
 const Container = styled.nav`
   display: flex;

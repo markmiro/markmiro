@@ -1,7 +1,7 @@
 import React from 'react'
 import { css } from '@emotion/react'
 import { useState } from 'react'
-import { HamburgerMenuIcon } from '@radix-ui/react-icons'
+import { IconMenu2 } from '@tabler/icons'
 
 import theme from './theme'
 import Button from './Button'
@@ -74,7 +74,7 @@ function MobileNav() {
           gap: ${theme.space[0]};
         `}
       >
-        <HamburgerMenuIcon />
+        <IconMenu2 size={16} stroke={1} strokeLinejoin="miter" />
         Menu
       </Button>
       <div css={shouldShowOnMobile ? visible : invisible}>
