@@ -13,9 +13,8 @@ const page = css`
   display: flex;
   @media ${theme.mediaQueries.mobileAndBelow} {
     flex-direction: column;
-    align-items: center;
   }
-  min-height: 100vh;
+  flex-grow: 1;
 `
 
 const contentCss = css`
@@ -33,7 +32,13 @@ const contentInnerCss = css`
 
 export default function Page({ title, children }) {
   return (
-    <>
+    <div
+      css={css`
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      `}
+    >
       <div css={page}>
         <Head2 title={title} />
         <Nav />
@@ -88,6 +93,6 @@ export default function Page({ title, children }) {
         </section>
       </div>
       <Footer />
-    </>
+    </div>
   )
 }
