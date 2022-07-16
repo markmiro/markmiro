@@ -14,6 +14,7 @@ import { IconExternalLink } from '@tabler/icons'
 const Container = styled.nav`
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 `
 
 const NavInner = () => (
