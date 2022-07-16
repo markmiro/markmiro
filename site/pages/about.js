@@ -14,8 +14,8 @@ export default function About() {
     <Page title="About">
       <HStack space={3} style={{ alignItems: 'flex-start', flexWrap: 'wrap' }}>
         <MyPortrait
+          width="15em"
           css={css`
-              width: 15em;
               ${theme.mediaQueries.mobileAndBelow} {
                 
             `}
