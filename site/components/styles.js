@@ -44,6 +44,8 @@ const globalStylesCss = css`
 
   a {
     color: ${theme.colors.blue};
+    text-underline-offset: 2px;
+    text-decoration-thickness: 1px;
   }
 `
 
