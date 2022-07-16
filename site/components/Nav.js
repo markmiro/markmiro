@@ -81,15 +81,10 @@ function MobileNav() {
         <Button
           onClick={() => setShouldShowOnMobile((s) => !s)}
           css={css`
-            background: ${theme.colors.c1};
-            color: ${theme.colors.c8};
             border: none;
             display: flex;
             align-items: center;
             gap: ${theme.space[0]};
-            :hover {
-              background: ${theme.colors.c8};
-              color: ${theme.colors.c0};
             }
           `}
         >

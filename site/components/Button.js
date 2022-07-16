@@ -17,7 +17,7 @@ const Button = styled.button`
   }
 
   &:active {
-    color: inherit;
+    background: ${theme.colors.c6};
   }
 `
 
