@@ -37,10 +37,12 @@ function MobileNav() {
   const [shouldShowOnMobile, setShouldShowOnMobile] = useState(false)
 
   const invisible = css`
-    opacity: 0;
-    transform: scaleY(0.8) translateY(-40px);
-    pointer-events: none;
-    height: 0;
+    &:not(:focus-within) {
+      opacity: 0;
+      transform: scaleY(0.8);
+      pointer-events: none;
+      height: 0;
+    }
   `
 
   const visible = css`
