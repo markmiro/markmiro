@@ -9,6 +9,11 @@ const round = (n) => Math.round(n * 100) / 100
 
 export const spaceCss = css`
   :root {
+    --g0: 1px;
+    --g1: 2px;
+    --g2: 0.25em;
+    --g3: 0.5em;
+
     --s0: ${round(ms(0, 0.65))}em;
     --s1: ${round(ms(1, 0.65))}em;
     --s2: ${round(ms(2, 0.65))}em;
@@ -61,6 +66,8 @@ const space = [
   'var(--s8)',
   'var(--s9)',
 ]
+
+const gap = ['var(--g0)', 'var(--g1)', 'var(--g2)', 'var(--g3)']
 
 const fontSizes = {
   '-3': round(ms(-3, 1)) + 'em',
@@ -128,6 +135,7 @@ const theme = {
   },
   fontSizes,
   space,
+  gap,
   letterSpacings: {
     '-1': '-0.02em',
     0: 0,
