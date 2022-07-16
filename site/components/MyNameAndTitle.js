@@ -2,6 +2,7 @@ import styled from '@emotion/styled'
 import theme from './theme'
 import Link from 'next/link'
 import content from './_siteContent'
+import A from './A'
 
 const Title = styled.h1`
   font-size: ${theme.fontSizes[2]};
@@ -15,12 +16,12 @@ const Subtitle = styled.h2`
 
 const MyNameAndTitle = () => (
   <Link href="/" passHref>
-    <a style={{ color: 'inherit' }}>
+    <A>
       <hgroup>
         <Title>{content.siteName}</Title>
         <Subtitle>{content.jobTitle}</Subtitle>
       </hgroup>
-    </a>
+    </A>
   </Link>
 )
 
