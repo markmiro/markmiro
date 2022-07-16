@@ -12,6 +12,11 @@ const Button = styled.button`
   color: inherit;
   font-family: ${theme.fonts.body};
 
+  transition: background 100ms ease-out;
+  :hover {
+    background: ${theme.colors.c1};
+  }
+
   &:active {
     color: inherit;
   }
