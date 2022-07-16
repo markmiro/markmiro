@@ -143,7 +143,7 @@ const theme = {
   lineHeights: {
     heading: 1.2,
     p: 1.5,
-    0: 1.45,
+    0: 1.3,
   },
   fontWeights: ['300', '400', '700'],
   mediaQueries: {

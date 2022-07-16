@@ -45,14 +45,13 @@ const Project = ({ href, heading, slug, children }) => (
               css={css`
                 position: absolute;
                 width: 100%;
-                border-bottom: 1px solid ${theme.colors.c1};
+                // border-bottom: 1px solid ${theme.colors.c1};
                 // box-shadow: 0px 1px 2px #00000022, 0px 2px 5px #00000022;
               `}
             />
           </div>
         )}
-        <CardBody>
-          <Spacer size={1} />
+        <CardBody css={css``}>
           <LinkOverlay
             href={href}
             css={css`
@@ -76,9 +75,11 @@ const Project = ({ href, heading, slug, children }) => (
           <Spacer size={0} />
           {(
             <P
-              style={{
-                maxWidth: theme.measure[0],
-              }}
+              css={css`
+                max-width: ${theme.measure[0]};
+                font-size: ${theme.fontSizes[-1]};
+                line-height: ${theme.lineHeights[0]};
+              `}
             >
               {children}
             </P>
