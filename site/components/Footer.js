@@ -17,20 +17,33 @@ const FooterBox = styled.footer`
   font-size: ${theme.fontSizes[-1]};
 `
 
-const Footer = () => {
-  const [dateString, setDateString] = useState('Loading...')
+function Updated() {
+  const [date, setDate] = useState()
 
-  useEffect(() => setDateString(new Date(updated).toLocaleString()))
+  useEffect(() => setDate(new Date(updated)), [])
+
+  if (!date) return 'Loading...'
 
   return (
+    /*
+     * IMPORTANT: make sure date is only rendered on client after mounting
+     */
+    <time
+      dateTime={date && date.toJSON()}
+      css={css`
+        color: ${theme.colors.c4};
+      `}
+    >
+      Updated{' '}
+      {date && `${date.toLocaleDateString()} ${date.toLocaleTimeString()}`}
+    </time>
+  )
+}
+
+const Footer = () => {
+  return (
     <FooterBox>
-      <span
-        css={css`
-          color: ${theme.colors.c4};
-        `}
-      >
-        Updated {dateString}
-      </span>
+      <Updated />
       <Spacer size={1} />
       <Button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
         Scroll to Top ⤴
