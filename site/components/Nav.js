@@ -1,6 +1,7 @@
 import { css } from '@emotion/react'
+import styled from '@emotion/styled'
 import { IconMenu2 } from '@tabler/icons'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import Button from './Button'
 import NavInner from './NavInner'
@@ -32,6 +33,20 @@ function DesktopNav() {
   )
 }
 
+const Backdrop = styled.div`
+  position: fixed;
+  z-index: 1;
+  opacity: 0.2;
+  background: ${theme.colors.c8};
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  @media ${theme.mediaQueries.mobileAndAbove} {
+    display: none;
+  }
+`
+
 function MobileNav() {
   const [shouldShowOnMobile, setShouldShowOnMobile] = useState(false)
 
@@ -53,57 +68,59 @@ function MobileNav() {
   `
 
   return (
-    <div
-      css={css`
-        width: 100%; /* because parent flexbox has center layout */
-        display: block;
-        position: fixed;
-        z-index: 1;
-        top: 0;
-        @media ${theme.mediaQueries.mobileAndAbove} {
-          display: none;
-        }
-      `}
-    >
+    <>
+      {shouldShowOnMobile && (
+        <Backdrop onClick={() => setShouldShowOnMobile(false)} />
+      )}
       <div
         css={css`
-          ${shouldShowOnMobile &&
-          css`
-            background: ${theme.colors.c0};
-            min-width: ${theme.measure.navColumnText};
-            border-right: 1px solid ${theme.colors.c8};
-            border-bottom: 1px solid ${theme.colors.c8};
-          `}
-          width: max-content;
-          padding: 0 ${theme.pagePadding};
+          display: block;
+          position: fixed;
+          z-index: 1;
+          top: 0;
+          @media ${theme.mediaQueries.mobileAndAbove} {
+            display: none;
+          }
         `}
       >
-        <Button
-          onClick={() => setShouldShowOnMobile((s) => !s)}
+        <div
           css={css`
+            ${shouldShowOnMobile &&
+            css`
+              background: ${theme.colors.c0};
+              min-width: ${theme.measure.navColumnText};
+            `}
+            width: max-content;
+            padding: 0 ${theme.pagePadding};
+          `}
+        >
+          <Button
+            onClick={() => setShouldShowOnMobile((s) => !s)}
+            css={css`
             border: none;
             display: flex;
             align-items: center;
             gap: ${theme.space[0]};
             }
           `}
-        >
-          <IconMenu2 size={16} stroke={1} strokeLinejoin="miter" />
-          Menu
-        </Button>
-
-        <div css={shouldShowOnMobile ? visible : invisible}>
-          <div
-            css={css`
-              padding: ${theme.pagePadding} 0;
-            `}
           >
-            <NavInner />
-            <Spacer size={2} />
+            <IconMenu2 size={16} stroke={1} strokeLinejoin="miter" />
+            Menu
+          </Button>
+
+          <div css={shouldShowOnMobile ? visible : invisible}>
+            <div
+              css={css`
+                padding: ${theme.pagePadding} 0;
+              `}
+            >
+              <NavInner />
+              <Spacer size={3} />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }
 
