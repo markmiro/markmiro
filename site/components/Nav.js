@@ -38,7 +38,7 @@ function MobileNav() {
   const invisible = css`
     &:not(:focus-within) {
       opacity: 0;
-      transform: translateX(-10em);
+      transform: translateX(-2em);
       pointer-events: none;
       height: 0;
     }
