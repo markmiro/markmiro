@@ -44,7 +44,6 @@ const globalStylesCss = css`
 
   a {
     color: ${theme.colors.blue};
-    text-decoration: none;
   }
 `
 
