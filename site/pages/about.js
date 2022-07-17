@@ -13,20 +13,13 @@ export default function About() {
   return (
     <Page title="About">
       <HStack space={3} style={{ alignItems: 'flex-start', flexWrap: 'wrap' }}>
-        <MyPortrait
-          width="15em"
-          css={css`
-              ${theme.mediaQueries.mobileAndBelow} {
-                
-            `}
-        />
+        <MyPortrait width="15em" />
         <Section>
           <VStack style={{ alignItems: 'start', maxWidth: '35ch' }}>
             <div>
               <div
                 style={{
                   fontSize: theme.fontSizes[1],
-                  // fontWeight: theme.fontWeights[2],
                 }}
               >
                 Mark Miro
