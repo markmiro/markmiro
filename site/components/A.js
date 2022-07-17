@@ -42,7 +42,7 @@ const A = styled.a`
   :focus {
     outline: none;
   }
-  :is(:hover, :focus) ::before {
+  :is(:hover, :focus)::before {
     transform: ${(props) => (props.isActive ? '' : 'scaleX(1)')};
   }
 
