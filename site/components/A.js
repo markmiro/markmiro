@@ -21,6 +21,7 @@ const A = styled.a`
     props.isActive &&
     css`
       color: ${theme.colors.red};
+      outline: revert !important; // get outline back
     `}
 
   ::before {
@@ -38,7 +39,10 @@ const A = styled.a`
     transform: scaleX(0);
     z-index: 1;
   }
-  :hover ::before {
+  :focus {
+    outline: none;
+  }
+  :is(:hover, :focus) ::before {
     transform: ${(props) => (props.isActive ? '' : 'scaleX(1)')};
   }
 
@@ -57,7 +61,7 @@ const A = styled.a`
     transform: translateX(-0.25em);
     opacity: 0;
   }
-  :hover .${externalIconClassName} {
+  :is(:hover, :focus) .${externalIconClassName} {
     transition-delay: 50ms;
     transition: 100ms ease-out;
     transition-property: opacity transform;

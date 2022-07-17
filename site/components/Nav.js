@@ -50,6 +50,16 @@ const Backdrop = styled.div`
 function MobileNav() {
   const [shouldShowOnMobile, setShouldShowOnMobile] = useState(false)
 
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      e.key === 'Escape' && setShouldShowOnMobile(false)
+    }
+    document.addEventListener('keydown', handleKeyDown)
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [])
+
   const invisible = css`
     &:not(:focus-within) {
       opacity: 0;
@@ -90,6 +100,9 @@ function MobileNav() {
               background: ${theme.colors.c0};
               min-width: ${theme.measure.navColumnText};
             `}
+            :focus-within {
+              background: ${theme.colors.c0};
+            }
             width: max-content;
             padding: 0 ${theme.pagePadding};
           `}
