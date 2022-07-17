@@ -88,6 +88,8 @@ function MobileNav() {
           position: fixed;
           z-index: 1;
           top: 0;
+          max-height: 100vh;
+          overflow: scroll;
           @media ${theme.mediaQueries.mobileAndAbove} {
             display: none;
           }
