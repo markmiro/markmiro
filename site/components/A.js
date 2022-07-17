@@ -85,4 +85,7 @@ const A2 = React.forwardRef(({ children, href, ...rest }, ref) => {
   )
 })
 
+// Add displayName to pass linting
+A2.displayName = 'A2'
+
 export default A2
