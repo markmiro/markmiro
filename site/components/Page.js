@@ -1,5 +1,6 @@
 import React from 'react'
 import { css } from '@emotion/react'
+import { SkipNavLink, SkipNavContent } from '@reach/skip-nav'
 
 import theme from './theme'
 import Nav from './Nav'
@@ -41,9 +42,25 @@ export default function Page({ title, children }) {
     >
       <div css={page}>
         <Head2 title={title} />
+        <SkipNavLink
+          css={css`
+            z-index: 999;
+            padding: ${theme.space[2]};
+            background: white;
+            position: absolute;
+            top: -100%;
+            color: ${theme.colors.blue};
+            :focus {
+              position: fixed;
+              top: 0;
+              left: 0;
+            }
+          `}
+        />
         <Nav />
         <Vr />
         <section css={contentCss}>
+          <SkipNavContent />
           <div css={contentInnerCss}>
             <Spacer size={7} />
             <div

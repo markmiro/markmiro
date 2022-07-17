@@ -7,6 +7,7 @@ specifiers:
   '@emotion/server': 11.4.0
   '@emotion/styled': 11.9.3
   '@next/bundle-analyzer': 12.2.0
+  '@reach/skip-nav': 0.17.0
   '@tabler/icons': 1.75.0
   eslint: 8.19.0
   eslint-config-next: 12.2.0
@@ -27,6 +28,7 @@ dependencies:
   '@emotion/react': 11.9.3_2sb3a56iojvze2npkgcccbebf4
   '@emotion/server': 11.4.0_@emotion+css@11.9.0
   '@emotion/styled': 11.9.3_jamvl4wvj5sxnca575pii6imje
+  '@reach/skip-nav': 0.17.0_biqbaboplfbrettd7655fr4n2y
   '@tabler/icons': 1.75.0_biqbaboplfbrettd7655fr4n2y
   next: 12.2.0_beenoklgwfttvph5dgxj7na7aq
   polished: 4.2.2
@@ -661,6 +663,30 @@ packages:
   /@polka/url/1.0.0-next.21:
     resolution: {integrity: sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==}
     dev: true
+
+  /@reach/skip-nav/0.17.0_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-wkkpQK3ffczzGHis6TaUvpOabuAL9n9Kh5vr4h56XPIJP3X77VcHUDk7MK3HbV1mTgamGxc9Hbd1sXKSWLu3yA==}
+    peerDependencies:
+      react: ^16.8.0 || 17.x
+      react-dom: ^16.8.0 || 17.x
+    dependencies:
+      '@reach/utils': 0.17.0_biqbaboplfbrettd7655fr4n2y
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      tslib: 2.4.0
+    dev: false
+
+  /@reach/utils/0.17.0_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-M5y8fCBbrWeIsxedgcSw6oDlAMQDkl5uv3VnMVJ7guwpf4E48Xlh1v66z/1BgN/WYe2y8mB/ilFD2nysEfdGeA==}
+    peerDependencies:
+      react: ^16.8.0 || 17.x
+      react-dom: ^16.8.0 || 17.x
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      tiny-warning: 1.0.3
+      tslib: 2.4.0
+    dev: false
 
   /@rushstack/eslint-patch/1.1.4:
     resolution: {integrity: sha512-LwzQKA4vzIct1zNZzBmRKI9QuNpLgTQMEjsQLf3BXuGYb3QPTP4Yjf6mkdX+X1mYttZ808QpOwAzZjv28kq7DA==}
@@ -3799,6 +3825,10 @@ packages:
     dependencies:
       convert-hrtime: 3.0.0
     dev: true
+
+  /tiny-warning/1.0.3:
+    resolution: {integrity: sha512-lBN9zLN/oAf68o3zNXYrdCt1kP8WsiGW8Oo2ka41b2IM5JL/S1CTyX1rW0mb/zSuJun0ZUrDxx4sqvYS2FWzPA==}
+    dev: false
 
   /to-fast-properties/2.0.0:
     resolution: {integrity: sha512-/OaKK0xYrs3DmxRYqL/yDc+FxFUVYhDlXMhRmv3z915w2HF1tnN1omB354j8VUGO/hbRzyD6Y3sA7v7GS/ceog==}
