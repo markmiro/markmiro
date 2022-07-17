@@ -20,7 +20,7 @@ function DesktopNav() {
 
         /* If window height is too small, just want to scroll nav, not the whole page */
         max-height: 100vh;
-        overflow: scroll; /* unlikely, but if window height too small we want to scroll */
+        overflow: auto; /* unlikely, but if window height too small we want to scroll */
 
         display: none;
         @media ${theme.mediaQueries.mobileAndAbove} {
@@ -41,6 +41,7 @@ const Backdrop = styled.div`
   top: 0;
   left: 0;
   width: 100%;
+  width: -webkit-fill-available;
   height: 100%;
   @media ${theme.mediaQueries.mobileAndAbove} {
     display: none;
@@ -59,6 +60,11 @@ function MobileNav() {
       document.removeEventListener('keydown', handleKeyDown)
     }
   }, [])
+
+  // Lock body scrolling when nav is open
+  useEffect(() => {
+    window.document.body.style.overflow = shouldShowOnMobile ? 'hidden' : 'auto'
+  }, [shouldShowOnMobile])
 
   const invisible = css`
     &:not(:focus-within) {
@@ -89,7 +95,7 @@ function MobileNav() {
           z-index: 1;
           top: 0;
           max-height: 100vh;
-          overflow: scroll;
+
           @media ${theme.mediaQueries.mobileAndAbove} {
             display: none;
           }
@@ -101,6 +107,10 @@ function MobileNav() {
             css`
               background: ${theme.colors.c0};
               min-width: ${theme.measure.navColumnText};
+              overflow-y: auto;
+              max-height: 100vh;
+              height: -webkit-fill-available;
+              -webkit-overflow-scrolling: touch;
             `}
             :focus-within {
               background: ${theme.colors.c0};
