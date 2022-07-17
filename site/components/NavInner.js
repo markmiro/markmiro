@@ -1,15 +1,12 @@
-import Link from 'next/link'
 import styled from '@emotion/styled'
 
+import ActiveLink from './ActiveLink'
+import { Overline } from './Heading'
+import MyNameAndTitle from './MyNameAndTitle'
+import Spacer from './Spacer'
+import { VStack } from './Stack'
 import theme from './theme'
 import content from './_siteContent'
-import Spacer from './Spacer'
-import ActiveLink from './ActiveLink'
-import MyNameAndTitle from './MyNameAndTitle'
-import { Overline } from './Heading'
-import { VStack } from './Stack'
-import A from './A'
-import { css } from '@emotion/react'
 
 const Container = styled.nav`
   display: flex;
@@ -31,16 +28,10 @@ const NavInner = () => (
     <Spacer size={4} />
     <Overline>Links</Overline>
     <Spacer size={0} />
-    <VStack style={{ alignItems: 'start' }}>
-      {content.socialLinks.map(({ href, children }) => (
-        <ActiveLink
-          key={href}
-          href={href}
-          css={css`
-            font-size: ${theme.fontSizes[-1]};
-          `}
-        >
-          {children}
+    <VStack style={{ alignItems: 'start', fontSize: theme.fontSizes[-1] }}>
+      {content.socialLinks.map(({ href, children, Icon }) => (
+        <ActiveLink key={href} href={href}>
+          <Icon size={16} strokeWidth={1.5} /> {children}
         </ActiveLink>
       ))}
     </VStack>

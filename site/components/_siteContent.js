@@ -1,3 +1,10 @@
+import {
+  IconBrandGithub,
+  IconBrand,
+  IconBrandCodesandbox,
+  IconBrandCodepen,
+  IconBrandTwitter,
+} from '@tabler/icons'
 // Underscore in the filename does not make this a Next.js file
 // Using the naming convention for my own purposes
 
@@ -20,10 +27,26 @@ const content = {
     },
   ],
   socialLinks: [
-    { href: 'https://codesandbox.io/u/markmiro', children: 'CodeSandBox' },
-    { href: 'https://codepen.io/markmiro', children: 'CodePen' },
-    { href: 'https://github.com/markmiro', children: 'GitHub' },
-    { href: 'https://twitter.com/markmiro', children: 'Twitter' },
+    {
+      href: 'https://github.com/markmiro',
+      children: 'GitHub',
+      Icon: IconBrandGithub,
+    },
+    {
+      href: 'https://codesandbox.io/u/markmiro',
+      children: 'CodeSandbox',
+      Icon: IconBrandCodesandbox,
+    },
+    {
+      href: 'https://codepen.io/markmiro',
+      children: 'CodePen',
+      Icon: IconBrandCodepen,
+    },
+    {
+      href: 'https://twitter.com/markmiro',
+      children: 'Twitter',
+      Icon: IconBrandTwitter,
+    },
   ],
   projects: [
     {
