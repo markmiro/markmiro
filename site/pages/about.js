@@ -1,5 +1,3 @@
-import { css } from '@emotion/react'
-import A from '../components/A'
 import { Section } from '../components/Heading'
 import Hr from '../components/Hr'
 import MyPortrait from '../components/MyPortrait'
