@@ -88,6 +88,7 @@ export default function Page({ title, children }) {
                   }
                   ::before {
                     content: '';
+                    pointer-events: none;
                     position: absolute;
                     left: 0;
                     top: 0;
