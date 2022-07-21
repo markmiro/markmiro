@@ -3,6 +3,12 @@
  */
 
 const config = {
+  // https://melvingeorge.me/blog/set-html-lang-attribute-in-nextjs
+  // Adds "en" to html tag
+  i18n: {
+    locales: ['en'],
+    defaultLocale: 'en',
+  },
   // https://nextjs.org/docs/api-reference/next.config.js/react-strict-mode
   reactStrictMode: true,
   compiler: {

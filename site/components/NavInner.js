@@ -18,21 +18,28 @@ const NavInner = () => (
   <Container>
     <MyNameAndTitle />
     <Spacer size={4} />
-    <VStack style={{ alignItems: 'start' }}>
+    <VStack as="ul" style={{ alignItems: 'start' }}>
       {content.navLinks.map(({ href, children }) => (
-        <ActiveLink key={href} href={href}>
-          {children}
-        </ActiveLink>
+        <li>
+          <ActiveLink key={href} href={href}>
+            {children}
+          </ActiveLink>
+        </li>
       ))}
     </VStack>
     <Spacer size={4} />
     <Overline>Links</Overline>
     <Spacer size={0} />
-    <VStack style={{ alignItems: 'start', fontSize: theme.fontSizes[-1] }}>
+    <VStack
+      as="ul"
+      style={{ alignItems: 'start', fontSize: theme.fontSizes[-1] }}
+    >
       {content.socialLinks.map(({ href, children, Icon }) => (
-        <ActiveLink key={href} href={href}>
-          <Icon size={16} strokeWidth={1.5} /> {children}
-        </ActiveLink>
+        <li>
+          <ActiveLink key={href} href={href}>
+            <Icon size={16} strokeWidth={1.5} /> {children}
+          </ActiveLink>
+        </li>
       ))}
     </VStack>
   </Container>

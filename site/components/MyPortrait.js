@@ -5,6 +5,7 @@ const MyPortrait = ({ width = 200, style, ...props }) => (
     {...props}
     src="/figma-export/markmiro-portrait-1x.jpg"
     srcSet="/figma-export/markmiro-portrait-2x.jpg 2x"
+    alt="A portrait of Mark Miro"
     style={{
       background: theme.colors.c1,
       display: 'block',

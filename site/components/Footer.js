@@ -31,7 +31,7 @@ function Updated() {
     <time
       dateTime={date && date.toJSON()}
       css={css`
-        color: ${theme.colors.c4};
+        color: ${theme.colors.c6};
       `}
     >
       Updated{' '}
