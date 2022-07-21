@@ -1,23 +1,10 @@
-import React from 'react'
 import { css } from '@emotion/react'
-import { SkipNavLink, SkipNavContent } from '@reach/skip-nav'
 
-import theme from './theme'
-import Nav from './Nav'
-import Spacer from './Spacer'
-import Heading from './Heading'
-import Footer from './Footer'
-import Vr from './Vr'
-import Head2 from './Head2'
+import { PageHeading } from './PageHeading'
+import PageShell from './PageShell'
 import SlideFadeUp from './SlideFadeUp'
-
-const page = css`
-  display: flex;
-  @media ${theme.mediaQueries.mobileAndBelow} {
-    flex-direction: column;
-  }
-  flex-grow: 1;
-`
+import Spacer from './Spacer'
+import theme from './theme'
 
 const contentCss = css`
   width: 100%;
@@ -34,86 +21,16 @@ const contentInnerCss = css`
 
 export default function Page({ title, children }) {
   return (
-    <div
-      css={css`
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-      `}
-    >
-      <div css={page}>
-        <Head2 title={title} />
-        <SkipNavLink
-          css={css`
-            z-index: 999;
-            padding: ${theme.space[2]};
-            background: white;
-            position: absolute;
-            top: -100%;
-            color: ${theme.colors.blue};
-            :focus {
-              position: fixed;
-              top: 0;
-              left: 0;
-            }
-          `}
-        />
-        <Nav />
-        <Vr />
-        <section css={contentCss}>
-          <SkipNavContent />
-          <div css={contentInnerCss}>
-            <Spacer size={7} />
-            <div
-              css={css`
-                margin-top: -1.5px; /* Visual adjustment to align with top of nav */
-                letter-spacing: ${theme.letterSpacings[-1]};
-              `}
-            >
-              <Heading
-                css={css`
-                  padding: 0 2px;
-                  width: max-content;
-                  position: relative;
-
-                  @keyframes appear {
-                    from {
-                      opacity: 0;
-                      transform: scaleX(0);
-                    }
-                    to {
-                      opacity: 1;
-                      transform: scaleX(1);
-                    }
-                  }
-                  ::before {
-                    content: '';
-                    pointer-events: none;
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                    width: 100%;
-                    height: 100%;
-                    background: transparent;
-                    backdrop-filter: invert(1) hue-rotate(180deg);
-
-                    transform: scaleX(0);
-                    transform-origin: left;
-                    animation: appear 100ms ease-out forwards;
-                    animation-delay: 150ms;
-                  }
-                `}
-              >
-                {title}
-              </Heading>
-            </div>
-            <Spacer size={7} />
-            <SlideFadeUp>{children}</SlideFadeUp>
-            <Spacer size={9} />
-          </div>
-        </section>
-      </div>
-      <Footer />
-    </div>
+    <PageShell title={title}>
+      <section css={contentCss}>
+        <div css={contentInnerCss}>
+          <Spacer size={7} />
+          <PageHeading>{title}</PageHeading>
+          <Spacer size={7} />
+          <SlideFadeUp>{children}</SlideFadeUp>
+          <Spacer size={9} />
+        </div>
+      </section>
+    </PageShell>
   )
 }

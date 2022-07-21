@@ -136,7 +136,7 @@ const theme = {
   space,
   gap,
   letterSpacings: {
-    '-1': '-0.02em',
+    '-1': '-0.01em',
     0: 0,
     1: '0.07em',
   },
