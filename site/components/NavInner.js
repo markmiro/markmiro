@@ -20,10 +20,8 @@ const NavInner = () => (
     <Spacer size={4} />
     <VStack as="ul" style={{ alignItems: 'start' }}>
       {content.navLinks.map(({ href, children }) => (
-        <li>
-          <ActiveLink key={href} href={href}>
-            {children}
-          </ActiveLink>
+        <li key={href}>
+          <ActiveLink href={href}>{children}</ActiveLink>
         </li>
       ))}
     </VStack>
@@ -35,8 +33,8 @@ const NavInner = () => (
       style={{ alignItems: 'start', fontSize: theme.fontSizes[-1] }}
     >
       {content.socialLinks.map(({ href, children, Icon }) => (
-        <li>
-          <ActiveLink key={href} href={href}>
+        <li key={href}>
+          <ActiveLink href={href}>
             <Icon size={16} strokeWidth={1.5} /> {children}
           </ActiveLink>
         </li>
