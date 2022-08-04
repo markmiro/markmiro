@@ -33,9 +33,6 @@ export default function About() {
               </small>
             </div>
             <a href="mailto:contact@markmiro.com">contact@markmiro.com</a>
-            <a href="/Mark-Miro-Resume-Jan-02-2020.pdf" target="_blank">
-              PDF Resume
-            </a>
             <Spacer size={1} />
             <Hr />
             <Spacer />
