@@ -11,6 +11,12 @@ const globalStylesCss = css`
     box-sizing: border-box;
   }
 
+  html,
+  body,
+  #__next {
+    height: 100%;
+  }
+
   button {
     margin: 0;
   }
