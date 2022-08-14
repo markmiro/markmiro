@@ -1,7 +1,4 @@
 import { Global, css } from '@emotion/react'
-// Note: the reset doesn't work with JS disabled in dev, but it does work in prod (according to the docs)
-// https://nextjs.org/docs/basic-features/built-in-css-support#adding-component-level-css
-import 'reset-css/reset.css'
 import theme, { colorsCss, spaceCss } from './theme'
 
 const globalStylesCss = css`
