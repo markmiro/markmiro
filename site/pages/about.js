@@ -1,3 +1,5 @@
+import { css } from '@emotion/react'
+import { IconArrowUpRight } from '@tabler/icons'
 import { Section } from '../components/Heading'
 import Hr from '../components/Hr'
 import MyPortrait from '../components/MyPortrait'
@@ -6,6 +8,19 @@ import Spacer from '../components/Spacer'
 import { HStack, VStack } from '../components/Stack'
 import theme from '../components/theme'
 import content from '../components/_siteContent'
+
+const ExternalLink = ({ href, children }) => (
+  <a
+    href={href}
+    css={css`
+      display: inline-flex;
+      gap: ${theme.gap[0]};
+    `}
+  >
+    {children}
+    <IconArrowUpRight size={theme.fontSizes[0]} stroke={2} />
+  </a>
+)
 
 export default function About() {
   return (
@@ -33,6 +48,12 @@ export default function About() {
               </small>
             </div>
             <a href="mailto:contact@markmiro.com">contact@markmiro.com</a>
+            <ExternalLink
+              href="https://drive.google.com/file/d/1ygPgT0URIPkKSaQbkNdvmNcTF3jBguGe/view?usp=sharing"
+              target="_blank"
+            >
+              PDF Resume
+            </ExternalLink>
             <Spacer size={1} />
             <Hr />
             <Spacer />

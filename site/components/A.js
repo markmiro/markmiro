@@ -1,6 +1,6 @@
 import { css } from '@emotion/react'
 import styled from '@emotion/styled'
-import { IconArrowUpRight, IconExternalLink } from '@tabler/icons'
+import { IconArrowUpRight } from '@tabler/icons'
 import React from 'react'
 import theme from './theme'
 
