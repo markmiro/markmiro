@@ -49,7 +49,7 @@ export default function About() {
             </div>
             <a href="mailto:contact@markmiro.com">contact@markmiro.com</a>
             <ExternalLink
-              href="https://drive.google.com/file/d/1ygPgT0URIPkKSaQbkNdvmNcTF3jBguGe/view?usp=sharing"
+              href="https://drive.google.com/file/d/1WSRlbYqNToYsoQ4eoeWSD1Xud7un-OW8/view?usp=sharing"
               target="_blank"
             >
               PDF Resume
