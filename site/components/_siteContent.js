@@ -1,6 +1,5 @@
 import {
   IconBrandGithub,
-  IconBrand,
   IconBrandCodesandbox,
   IconBrandCodepen,
   IconBrandTwitter,
@@ -49,6 +48,12 @@ const content = {
     },
   ],
   projects: [
+    {
+      href: 'https://migratingcranes.com',
+      heading: 'Migrating Cranes',
+      slug: 'project-migratingcranes',
+      children: 'Immigration data between the US and other countries.',
+    },
     {
       href: 'https://hashdrop.me',
       heading: 'hash💧',
